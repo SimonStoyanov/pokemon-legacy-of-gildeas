@@ -30,6 +30,7 @@
 #include "trainer_see.h"
 #include "trainer_hill.h"
 #include "vs_seeker.h"
+#include "party_menu.h"
 #include "wild_encounter.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
@@ -38,6 +39,7 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
+#include "constants/items.h"
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;
@@ -524,9 +526,33 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
     return NULL;
 }
 
+static bool32 CheckPartyForMove(u16 move) {
+    u8 i;
+    bool32 hasItem, _return = FALSE;
+
+    if (CheckBagHasItem(MoveToHM(move), 1)) 
+    {
+        hasItem = TRUE; 
+    }
+    else return FALSE;
+    
+    if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+    {
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (hasItem && CanTeachMove(&gPlayerParty[i], move) != CANNOT_LEARN_MOVE) {
+                _return = TRUE;
+                break;
+            }
+        }
+    }
+    return _return;
+
+}
+
 static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metatileBehavior, u8 direction)
 {
-    if (FlagGet(FLAG_BADGE05_GET) == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+    if ((FlagGet(FLAG_BADGE05_GET) == TRUE || PartyHasMonWithSurf() == TRUE || CheckPartyForMove(57) == TRUE) && IsPlayerFacingSurfableFishableWater() == TRUE)
         return EventScript_UseSurf;
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE)
