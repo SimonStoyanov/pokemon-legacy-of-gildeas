@@ -12501,6 +12501,22 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_TeachyTV,
     },
 
+    [ITEM_DEXNAV_DETECTOR] =
+    {
+        .name = _("DexNav Detector"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Enables passive\n"
+            "detection of hidden\n"
+            "Pokemons"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_DexNavDetector,
+        .iconPic = gItemIcon_VsSeeker,
+        .iconPalette = gItemIconPalette_VsSeeker,
+    },
+
 // Story Key Items
 
     [ITEM_SS_TICKET] =

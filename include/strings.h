@@ -837,6 +837,8 @@ extern const u8 gText_NextFusionMon[];
 extern const u8 gText_PlayedPokeFluteCatchy[];
 extern const u8 gText_PlayedPokeFlute[];
 extern const u8 gText_PokeFluteAwakenedMon[];
+extern const u8 gText_DexNavEnabled[];
+extern const u8 gText_DexNavDisabled[];
 
 extern const u8 gText_LevelSymbol[];
 extern const u8 gText_PkmnInfo[];

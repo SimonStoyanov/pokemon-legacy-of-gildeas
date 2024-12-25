@@ -227,15 +227,15 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         ShowStartMenu();
         return TRUE;
     }
-    
-    if (input->tookStep && TryFindHiddenPokemon())
-        return TRUE;
-    
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
         return TRUE;
     
-    if (input->pressedRButton && TryStartDexnavSearch())
+    if (input->tookStep && TryFindHiddenPokemon())
         return TRUE;
+
+    if (input->pressedRButton && TryStartDexnavSearch()){
+        return TRUE;
+    }
 
     if(input->input_field_1_2 && DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
     {

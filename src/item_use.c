@@ -1561,6 +1561,20 @@ void ItemUseOutOfBattle_PokeFlute(u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_DexNavDetector(u8 taskId)
+{
+    if (FlagGet(FLAG_SYS_DETECTOR_MODE))
+    {
+        FlagClear(FLAG_SYS_DETECTOR_MODE);
+        DisplayItemMessageOnField(taskId, gText_DexNavDisabled, SetUpItemUseCallback);
+    }
+    else 
+    {
+        FlagSet(FLAG_SYS_DETECTOR_MODE);
+        DisplayItemMessageOnField(taskId, gText_DexNavEnabled, SetUpItemUseCallback);
+    }
+}
+
 static void ItemUseOnFieldCB_TownMap(u8 taskId)
 {
     LockPlayerFieldControls();

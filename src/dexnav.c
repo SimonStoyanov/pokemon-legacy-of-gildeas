@@ -60,10 +60,10 @@
 #include "gba/m4a_internal.h"
 
 #if DEXNAV_ENABLED
-STATIC_ASSERT(FLAG_SYS_DEXNAV_SEARCH != 0);
-STATIC_ASSERT(FLAG_SYS_DETECTOR_MODE != 0);
-STATIC_ASSERT(VAR_DEXNAV_SPECIES != 0);
-STATIC_ASSERT(VAR_DEXNAV_STEP_COUNTER != 0);
+STATIC_ASSERT(FLAG_SYS_DEXNAV_SEARCH != 0, DexNavFlag_Search);
+STATIC_ASSERT(FLAG_SYS_DETECTOR_MODE != 0, DexNavFlag_Detector);
+STATIC_ASSERT(VAR_DEXNAV_SPECIES != 0, DexNavFlag_Species);
+STATIC_ASSERT(VAR_DEXNAV_STEP_COUNTER != 0, DexNavFlag_StepCounter);
 #endif
 
 // Defines
@@ -811,6 +811,7 @@ static u8 GetSearchLevel(u16 dexNum)
     u8 searchLevel;
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
     searchLevel = gSaveBlock3Ptr->dexNavSearchLevels[dexNum];
+    DebugPrintf("Search Level: %d", searchLevel);
 #else
     searchLevel = 0;
 #endif
@@ -2453,6 +2454,8 @@ static void Task_DexNavMain(u8 taskId)
         // check selection is valid. Play sound if invalid
         species = DexNavGetSpecies();
         
+        DebugPrintf("Species %d", SpeciesToNationalPokedexNum(species));
+
         if (species != SPECIES_NONE)
         {            
             PrintSearchableSpecies(species);
@@ -2460,7 +2463,10 @@ static void Task_DexNavMain(u8 taskId)
             PlayCry_Script(species, 0);
             
             // create value to store in a var
+            DebugPrintf("Set Species: %d", VAR_DEXNAV_SPECIES);
+            DebugPrintf("Environment: %d", sDexNavUiDataPtr->environment);
             VarSet(VAR_DEXNAV_SPECIES, ((sDexNavUiDataPtr->environment << 14) | species));
+            DebugPrintf("New Set Species: %d", VAR_DEXNAV_SPECIES);
         }
         else
         {
@@ -2493,10 +2499,7 @@ bool8 TryFindHiddenPokemon(void)
 {
     u16 *stepPtr = GetVarPointer(VAR_DEXNAV_STEP_COUNTER);
     
-    if (DEXNAV_ENABLED == 0
-            || !FlagGet(FLAG_SYS_DETECTOR_MODE)
-            || FlagGet(FLAG_SYS_DEXNAV_SEARCH)
-            || GetFlashLevel() > 0)
+    if (!FlagGet(FLAG_SYS_DETECTOR_MODE) || FlagGet(FLAG_SYS_DEXNAV_SEARCH) || GetFlashLevel() > 0)
     {
         (*stepPtr) = 0;
         return FALSE;
@@ -2504,6 +2507,7 @@ bool8 TryFindHiddenPokemon(void)
     
     (*stepPtr)++;
     (*stepPtr) %= HIDDEN_MON_STEP_COUNT;
+
     if ((*stepPtr) == 0 && (Random() % 100 < HIDDEN_MON_SEARCH_RATE))
     {
         // hidden pokemon
@@ -2515,6 +2519,8 @@ bool8 TryFindHiddenPokemon(void)
         const struct WildPokemonInfo* hiddenMonsInfo = gWildMonHeaders[headerId].hiddenMonsInfo;
         bool8 isHiddenMon = FALSE;
         
+        DebugPrintf("entered IF hidden mon");
+
         // while you can still technically find hidden pokemon if there are not hidden-only pokemon on a map,
         // this prevents any potential lagging on maps you dont want hidden pokemon to appear on
         if (hiddenMonsInfo == NULL)
@@ -2666,10 +2672,15 @@ u32 CalculateDexnavShinyRolls(void)
 
 void TryIncrementSpeciesSearchLevel(u16 dexNum)
 {
+    DebugPrintf("Dex Num: %d", dexNum);
+    DebugPrintf("Search Level: %d", gSaveBlock3Ptr->dexNavSearchLevels[dexNum]);
+
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
     if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && gSaveBlock3Ptr->dexNavSearchLevels[dexNum] < 255)
         gSaveBlock3Ptr->dexNavSearchLevels[dexNum]++;
 #endif
+    DebugPrintf("Search Level: %d", gSaveBlock3Ptr->dexNavSearchLevels[dexNum]);
+
 }
 
 void ResetDexNavSearch(void)
