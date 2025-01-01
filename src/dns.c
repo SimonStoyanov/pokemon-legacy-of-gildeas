@@ -28,10 +28,10 @@ enum
 {
     TIME_MIDNIGHT,
     TIME_DAWN,
-    TIME_DAY,
+    TIME_DAY_,
     TIME_SUNSET,
     TIME_NIGHTFALL,
-    TIME_NIGHT
+    TIME_NIGHT_
 };
 
 /* End hours for each of the timelapses */
@@ -55,7 +55,7 @@ enum
  * "light colour".                                                  */
 const struct LightingColour gLightingColours[] =
 {
-    {
+    /*{
         .paletteNum = 0,
         .colourNum = 1,
         .lightColour = RGB2(30, 30, 5),
@@ -94,7 +94,7 @@ const struct LightingColour gLightingColours[] =
         .paletteNum = 6,
         .colourNum = 3,
         .lightColour = RGB2(22, 21, 3),
-    },
+    },*/
 };
 
 /* Maptypes that are not affected by DNS */
@@ -468,7 +468,7 @@ static u16 GetDNSFilter()
         case TIME_DAWN:
             return gDawnFilters[minutes >> 1];
 
-        case TIME_DAY:
+        case TIME_DAY_:
             return gDayFilter;
 
         case TIME_SUNSET: 
@@ -477,7 +477,7 @@ static u16 GetDNSFilter()
         case TIME_NIGHTFALL:
             return gNightfallFilters[minutes >> 1];
 
-        case TIME_NIGHT:
+        case TIME_NIGHT_:
             return gNightFilter;
     }
 
@@ -512,13 +512,13 @@ u8 GetDnsTimeLapse(u8 hour)
     else if (hour < DAWN_END_HOUR)
         return TIME_DAWN;
     else if (hour < DAY_END_HOUR)
-        return TIME_DAY;
+        return TIME_DAY_;
     else if (hour < SUNSET_END_HOUR)
         return TIME_SUNSET;
     else if (hour < NIGHTFALL_END_HOUR)
         return TIME_NIGHTFALL;
     else 
-        return TIME_NIGHT;
+        return TIME_NIGHT_;
 }
 
 //Checks if current map is affected by dns
