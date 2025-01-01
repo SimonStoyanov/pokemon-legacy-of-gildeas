@@ -49,8 +49,8 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "AbandonedShip_Rooms2_1F_EventScript_ItemRevive",
+      "trainer_sight_or_berry_tree_id": "ITEM_REVIVE",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE"
     },
     {
@@ -86,21 +86,21 @@
       "y": 16,
       "elevation": 3,
       "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": 8
+      "dest_warp_id": "8"
     },
     {
       "x": 5,
       "y": 16,
       "elevation": 3,
       "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": 8
+      "dest_warp_id": "8"
     },
     {
       "x": 4,
       "y": 1,
       "elevation": 3,
       "dest_map": "MAP_ABANDONED_SHIP_CORRIDORS_1F",
-      "dest_warp_id": 11
+      "dest_warp_id": "11"
     }
   ],
   "coord_events": [],

@@ -14,29 +14,29 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_ROUTE126",
       "offset": 0,
-      "map": "MAP_ROUTE126"
+      "direction": "down"
     },
     {
-      "direction": "left",
+      "map": "MAP_LILYCOVE_CITY",
       "offset": 10,
-      "map": "MAP_LILYCOVE_CITY"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE125",
       "offset": 0,
-      "map": "MAP_ROUTE125"
+      "direction": "right"
     },
     {
-      "direction": "right",
+      "map": "MAP_MOSSDEEP_CITY",
       "offset": 40,
-      "map": "MAP_MOSSDEEP_CITY"
+      "direction": "right"
     },
     {
-      "direction": "dive",
+      "map": "MAP_UNDERWATER_ROUTE124",
       "offset": 0,
-      "map": "MAP_UNDERWATER_ROUTE124"
+      "direction": "dive"
     }
   ],
   "object_events": [
@@ -114,8 +114,8 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route124_EventScript_ItemRedShard",
+      "trainer_sight_or_berry_tree_id": "ITEM_RED_SHARD",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_124_RED_SHARD"
     },
     {
@@ -127,8 +127,8 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route124_EventScript_ItemBlueShard",
+      "trainer_sight_or_berry_tree_id": "ITEM_BLUE_SHARD",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_124_BLUE_SHARD"
     },
     {
@@ -140,8 +140,8 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route124_EventScript_ItemYellowShard",
+      "trainer_sight_or_berry_tree_id": "ITEM_YELLOW_SHARD",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_124_YELLOW_SHARD"
     },
     {
@@ -203,7 +203,7 @@
       "y": 48,
       "elevation": 3,
       "dest_map": "MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
