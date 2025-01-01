@@ -23,39 +23,27 @@
 #include <stdexcept>
 #include <string>
 #include <memory>
+#include <cstring>
+#include <cerrno>
 #include "preproc.h"
 #include "c_file.h"
 #include "char_util.h"
 #include "utf8.h"
 #include "string_parser.h"
+#include "io.h"
 
-CFile::CFile(std::string filename) : m_filename(filename)
+CFile::CFile(const char * filenameCStr, bool isStdin)
 {
-    FILE *fp = std::fopen(filename.c_str(), "rb");
+    if (isStdin)
+        m_filename = std::string{"<stdin>/"}.append(filenameCStr);
+    else
+        m_filename = std::string(filenameCStr);
 
-    if (fp == NULL)
-        FATAL_ERROR("Failed to open \"%s\" for reading.\n", filename.c_str());
-
-    std::fseek(fp, 0, SEEK_END);
-
-    m_size = std::ftell(fp);
-
-    if (m_size < 0)
-        FATAL_ERROR("File size of \"%s\" is less than zero.\n", filename.c_str());
-
-    m_buffer = new char[m_size + 1];
-
-    std::rewind(fp);
-
-    if (std::fread(m_buffer, m_size, 1, fp) != 1)
-        FATAL_ERROR("Failed to read \"%s\".\n", filename.c_str());
-
-    m_buffer[m_size] = 0;
-
-    std::fclose(fp);
+    m_buffer = ReadFileToBuffer(filenameCStr, isStdin, &m_size);
 
     m_pos = 0;
     m_lineNum = 1;
+    m_isStdin = isStdin;
 }
 
 CFile::CFile(CFile&& other) : m_filename(std::move(other.m_filename))
@@ -64,13 +52,14 @@ CFile::CFile(CFile&& other) : m_filename(std::move(other.m_filename))
     m_pos = other.m_pos;
     m_size = other.m_size;
     m_lineNum = other.m_lineNum;
+    m_isStdin = other.m_isStdin;
 
-    other.m_buffer = nullptr;
+    other.m_buffer = NULL;
 }
 
 CFile::~CFile()
 {
-    delete[] m_buffer;
+    free(m_buffer);
 }
 
 void CFile::Preproc()
@@ -292,10 +281,10 @@ int ExtractData(const std::unique_ptr<unsigned char[]>& buffer, int offset, int 
 
 void CFile::TryConvertIncbin()
 {
-    std::string idents[6] = { "INCBIN_S8", "INCBIN_U8", "INCBIN_S16", "INCBIN_U16", "INCBIN_S32", "INCBIN_U32" };
+    std::string idents[8] = { "INCBIN_S8", "INCBIN_U8", "INCBIN_S16", "INCBIN_U16", "INCBIN_S32", "INCBIN_U32", "DUMMY", "INCBIN_COMP"};
     int incbinType = -1;
 
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 8; i++)
     {
         if (CheckIdentifier(idents[i]))
         {
@@ -308,6 +297,8 @@ void CFile::TryConvertIncbin()
         return;
 
     int size = 1 << (incbinType / 2);
+    if (size > 4)
+        size = 4;
     bool isSigned = ((incbinType % 2) == 0);
 
     long oldPos = m_pos;
@@ -354,11 +345,15 @@ void CFile::TryConvertIncbin()
 
             if (m_buffer[m_pos] == '\\')
                 RaiseError("unexpected escape in path string");
-            
+
             m_pos++;
         }
 
         std::string path(&m_buffer[startPos], m_pos - startPos);
+
+        // INCBIN_COMP; include *compressed* version of file
+        if (incbinType == 7)
+            path = path.append(".lz");
 
         m_pos++;
 
@@ -389,7 +384,7 @@ void CFile::TryConvertIncbin()
 
         m_pos++;
     }
-    
+
     if (m_buffer[m_pos] != ')')
         RaiseError("expected ')'");
 

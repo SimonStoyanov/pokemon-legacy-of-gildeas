@@ -25,7 +25,7 @@ static void SetMirageRnd(u32 rnd)
 // unused
 void InitMirageRnd(void)
 {
-    SetMirageRnd((Random() << 16) | Random());
+    SetMirageRnd(Random32());
 }
 
 void UpdateMirageRnd(u16 days)
@@ -95,7 +95,7 @@ static void Task_WaitWeather(u8 taskId)
 {
     if (IsWeatherChangeComplete())
     {
-        EnableBothScriptContexts();
+        ScriptContext_Enable();
         DestroyTask(taskId);
     }
 }

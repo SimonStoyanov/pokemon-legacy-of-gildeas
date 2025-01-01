@@ -8,6 +8,7 @@
 #include "text.h"
 
 #define DEFAULT_MAX_SIZE 0x8000 // was 0x8100 in Ruby/Sapphire
+static u8* ReturnHeightStringNoWhitespace(u32 size);
 
 struct UnknownStruct
 {
@@ -36,17 +37,16 @@ static const struct UnknownStruct sBigMonSizeTable[] =
     { 1700,   1,   -26 },
 };
 
-static const u8 sGiftRibbonsMonDataIds[] =
+// - 4 for unused gift ribbon bits in MON_DATA_UNUSED_RIBBONS
+static const u8 sGiftRibbonsMonDataIds[GIFT_RIBBONS_COUNT - 4] =
 {
-    MON_DATA_GIFT_RIBBON_1, MON_DATA_GIFT_RIBBON_2, MON_DATA_GIFT_RIBBON_3,
-    MON_DATA_GIFT_RIBBON_4, MON_DATA_GIFT_RIBBON_5, MON_DATA_GIFT_RIBBON_6,
-    MON_DATA_GIFT_RIBBON_7
+    MON_DATA_MARINE_RIBBON, MON_DATA_LAND_RIBBON, MON_DATA_SKY_RIBBON,
+    MON_DATA_COUNTRY_RIBBON, MON_DATA_NATIONAL_RIBBON, MON_DATA_EARTH_RIBBON,
+    MON_DATA_WORLD_RIBBON
 };
 
 extern const u8 gText_DecimalPoint[];
 extern const u8 gText_Marco[];
-
-#define CM_PER_INCH 2.54
 
 static u32 GetMonSizeHash(struct Pokemon *pkmn)
 {
@@ -83,7 +83,7 @@ static u32 GetMonSize(u16 species, u16 b)
     u32 height;
     u32 var;
 
-    height = GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), 0);
+    height = GetSpeciesHeight(species);
     var = TranslateBigMonSizeTableIndex(b);
     unk0 = sBigMonSizeTable[var].unk0;
     unk2 = sBigMonSizeTable[var].unk2;
@@ -94,14 +94,24 @@ static u32 GetMonSize(u16 species, u16 b)
 
 static void FormatMonSizeRecord(u8 *string, u32 size)
 {
-#ifdef UNITS_IMPERIAL
-    //Convert size from centimeters to inches
-    size = (double)(size * 10) / (CM_PER_INCH * 10);
-#endif
+    size = (f64)(size / 100);
+    StringCopy(string,ReturnHeightStringNoWhitespace(size));
+}
 
-    string = ConvertIntToDecimalStringN(string, size / 10, STR_CONV_MODE_LEFT_ALIGN, 8);
-    string = StringAppend(string, gText_DecimalPoint);
-    ConvertIntToDecimalStringN(string, size % 10, STR_CONV_MODE_LEFT_ALIGN, 1);
+static u8* ReturnHeightStringNoWhitespace(u32 size)
+{
+    u8* heightStr = ConvertMonHeightToString(size);
+    u32 length = StringLength(heightStr);
+    u32 i =  0, j =  0;
+
+    while (i < length && !(heightStr[i] >= CHAR_0 && heightStr[i] <= CHAR_9))
+        i++;
+
+    while (i < length)
+        heightStr[j++] = heightStr[i++];
+
+    heightStr[j] = EOS;
+    return heightStr;
 }
 
 static u8 CompareMonSize(u16 species, u16 *sizeRecord)
@@ -147,7 +157,7 @@ static void GetMonSizeRecordInfo(u16 species, u16 *sizeRecord)
     u32 size = GetMonSize(species, *sizeRecord);
 
     FormatMonSizeRecord(gStringVar3, size);
-    StringCopy(gStringVar1, gSpeciesNames[species]);
+    StringCopy(gStringVar1, GetSpeciesName(species));
     if (*sizeRecord == DEFAULT_MAX_SIZE)
         StringCopy(gStringVar2, gText_Marco);
     else
@@ -197,10 +207,10 @@ void GiveGiftRibbonToParty(u8 index, u8 ribbonId)
     s32 i;
     bool32 gotRibbon = FALSE;
     u8 data = 1;
-    u8 array[8];
+    u8 array[ARRAY_COUNT(sGiftRibbonsMonDataIds)];
     memcpy(array, sGiftRibbonsMonDataIds, sizeof(sGiftRibbonsMonDataIds));
 
-    if (index < 11 && ribbonId < 65)
+    if (index < GIFT_RIBBONS_COUNT && ribbonId <= MAX_GIFT_RIBBON)
     {
         gSaveBlock1Ptr->giftRibbons[index] = ribbonId;
         for (i = 0; i < PARTY_SIZE; i++)

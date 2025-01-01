@@ -26,23 +26,22 @@ u8 SetupBytecodeScript(struct ScriptContext *ctx, const u8 *ptr);
 void SetupNativeScript(struct ScriptContext *ctx, bool8 (*ptr)(void));
 void StopScript(struct ScriptContext *ctx);
 bool8 RunScriptCommand(struct ScriptContext *ctx);
-u8 ScriptPush(struct ScriptContext *ctx, const u8 *ptr);
-const u8 *ScriptPop(struct ScriptContext *ctx);
 void ScriptJump(struct ScriptContext *ctx, const u8 *ptr);
 void ScriptCall(struct ScriptContext *ctx, const u8 *ptr);
 void ScriptReturn(struct ScriptContext *ctx);
 u16 ScriptReadHalfword(struct ScriptContext *ctx);
 u32 ScriptReadWord(struct ScriptContext *ctx);
-void ScriptContext2_Enable(void);
-void ScriptContext2_Disable(void);
-bool8 ScriptContext2_IsEnabled(void);
-void ScriptContext1_Init(void);
-bool8 ScriptContext1_IsScriptSetUp(void);
-bool8 ScriptContext2_RunScript(void);
-void ScriptContext1_SetupScript(const u8 *ptr);
-void ScriptContext1_Stop(void);
-void EnableBothScriptContexts(void);
-void ScriptContext2_RunNewScript(const u8 *ptr);
+u32 ScriptPeekWord(struct ScriptContext *ctx);
+void LockPlayerFieldControls(void);
+void UnlockPlayerFieldControls(void);
+bool8 ArePlayerFieldControlsLocked(void);
+void ScriptContext_Init(void);
+bool8 ScriptContext_IsEnabled(void);
+bool8 ScriptContext_RunScript(void);
+void ScriptContext_SetupScript(const u8 *ptr);
+void ScriptContext_Stop(void);
+void ScriptContext_Enable(void);
+void RunScriptImmediately(const u8 *ptr);
 u8 *MapHeaderGetScriptTable(u8 tag);
 void MapHeaderRunScriptType(u8 tag);
 u8 *MapHeaderCheckScriptTable(u8 tag);
@@ -63,5 +62,8 @@ void InitRamScript_NoObjectEvent(u8 *script, u16 scriptSize);
 
 // srccmd.h
 void SetMovingNpcId(u16 npcId);
+
+extern u8 gMsgIsSignPost;
+extern u8 gMsgBoxIsCancelable;
 
 #endif // GUARD_SCRIPT_H

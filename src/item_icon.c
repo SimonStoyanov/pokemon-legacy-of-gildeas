@@ -5,10 +5,12 @@
 #include "malloc.h"
 #include "sprite.h"
 #include "constants/items.h"
+#include "item.h"
+#include "battle_main.h"
 
 // EWRAM vars
-EWRAM_DATA void *gItemIconDecompressionBuffer = NULL;
-EWRAM_DATA void *gItemIcon4x4Buffer = NULL;
+EWRAM_DATA u8 *gItemIconDecompressionBuffer = NULL;
+EWRAM_DATA u8 *gItemIcon4x4Buffer = NULL;
 
 // const rom data
 #include "data/item_icon_table.h"
@@ -18,7 +20,7 @@ static const struct OamData sOamData_ItemIcon =
     .y = 0,
     .affineMode = ST_OAM_AFFINE_OFF,
     .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = 0,
+    .mosaic = FALSE,
     .bpp = ST_OAM_4BPP,
     .shape = SPRITE_SHAPE(32x32),
     .x = 0,
@@ -55,12 +57,10 @@ const struct SpriteTemplate gItemIconSpriteTemplate =
 // code
 bool8 AllocItemIconTemporaryBuffers(void)
 {
-    gItemIconDecompressionBuffer = gItemIconDecompressionBuffer; // needed to match
     gItemIconDecompressionBuffer = Alloc(0x120);
     if (gItemIconDecompressionBuffer == NULL)
         return FALSE;
 
-    gItemIcon4x4Buffer = gItemIcon4x4Buffer; // needed to match
     gItemIcon4x4Buffer = AllocZeroed(0x200);
     if (gItemIcon4x4Buffer == NULL)
     {
@@ -98,14 +98,14 @@ u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId)
         struct CompressedSpritePalette spritePalette;
         struct SpriteTemplate *spriteTemplate;
 
-        LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
+        LZDecompressWram(GetItemIconPic(itemId), gItemIconDecompressionBuffer);
         CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
         spriteSheet.data = gItemIcon4x4Buffer;
         spriteSheet.size = 0x200;
         spriteSheet.tag = tilesTag;
         LoadSpriteSheet(&spriteSheet);
 
-        spritePalette.data = GetItemIconPicOrPalette(itemId, 1);
+        spritePalette.data = GetItemIconPalette(itemId);
         spritePalette.tag = paletteTag;
         LoadCompressedSpritePalette(&spritePalette);
 
@@ -135,14 +135,14 @@ u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u1
         struct CompressedSpritePalette spritePalette;
         struct SpriteTemplate *spriteTemplate;
 
-        LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
+        LZDecompressWram(GetItemIconPic(itemId), gItemIconDecompressionBuffer);
         CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
         spriteSheet.data = gItemIcon4x4Buffer;
         spriteSheet.size = 0x200;
         spriteSheet.tag = tilesTag;
         LoadSpriteSheet(&spriteSheet);
 
-        spritePalette.data = GetItemIconPicOrPalette(itemId, 1);
+        spritePalette.data = GetItemIconPalette(itemId);
         spritePalette.tag = paletteTag;
         LoadCompressedSpritePalette(&spritePalette);
 
@@ -159,12 +159,30 @@ u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u1
     }
 }
 
-const void *GetItemIconPicOrPalette(u16 itemId, u8 which)
+const void *GetItemIconPic(u16 itemId)
 {
-    if (itemId == 0xFFFF)
-        itemId = ITEM_FIELD_ARROW;
-    else if (itemId >= ITEMS_COUNT)
-        itemId = 0;
+    if (itemId == ITEM_LIST_END)
+        return gItemIcon_ReturnToFieldArrow; // Use last icon, the "return to field" arrow
+    if (itemId >= ITEMS_COUNT)
+        return gItemsInfo[0].iconPic;
+    if (itemId >= ITEM_TM01 && itemId < ITEM_HM01 + NUM_HIDDEN_MACHINES)
+    {
+        if (itemId < ITEM_TM01 + NUM_TECHNICAL_MACHINES)
+            return gItemIcon_TM;
+        return gItemIcon_HM;
+    }
 
-    return gItemIconTable[itemId][which];
+    return gItemsInfo[itemId].iconPic;
+}
+
+const void *GetItemIconPalette(u16 itemId)
+{
+    if (itemId == ITEM_LIST_END)
+        return gItemIconPalette_ReturnToFieldArrow;
+    if (itemId >= ITEMS_COUNT)
+        return gItemsInfo[0].iconPalette;
+    if (itemId >= ITEM_TM01 && itemId < ITEM_HM01 + NUM_HIDDEN_MACHINES)
+        return gTypesInfo[gMovesInfo[gItemsInfo[itemId].secondaryId].type].paletteTMHM;
+
+    return gItemsInfo[itemId].iconPalette;
 }

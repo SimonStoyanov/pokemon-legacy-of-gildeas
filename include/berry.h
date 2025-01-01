@@ -1,7 +1,6 @@
 #ifndef GUARD_BERRY_H
 #define GUARD_BERRY_H
 
-void ClearEnigmaBerries(void);
 void SetEnigmaBerry(u8 *src);
 bool32 IsEnigmaBerryValid(void);
 const struct Berry *GetBerryInfo(u8 berry);
@@ -19,20 +18,23 @@ u8 ItemIdToBerryType(u16 item);
 void GetBerryNameByBerryType(u8 berry, u8 *string);
 void ResetBerryTreeSparkleFlag(u8 id);
 void Bag_ChooseBerry(void);
+void Bag_ChooseMulch(void);
 void ObjectEventInteractionGetBerryTreeData(void);
 void ObjectEventInteractionPlantBerryTree(void);
 void ObjectEventInteractionPickBerryTree(void);
 void ObjectEventInteractionRemoveBerryTree(void);
+void ObjectEventInteractionApplyMulch(void);
 bool8 PlayerHasBerries(void);
-void ResetBerryTreeSparkleFlags(void);
+void SetBerryTreesSeen(void);
+bool32 BerryTreeGrow(struct BerryTree *tree);
 
 extern const struct Berry gBerries[];
 
-struct UnkStruct_0858AB24 {
-    u8 unk0;
-    u16 unk1;
+struct BerryCrushBerryData {
+    u8 difficulty; // The number of A presses required to crush it
+    u16 powder;
 };
 
-extern const struct UnkStruct_0858AB24 gUnknown_0858AB24[];
+extern const struct BerryCrushBerryData gBerryCrush_BerryData[];
 
 #endif // GUARD_BERRY_H

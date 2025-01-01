@@ -2,42 +2,7 @@
 #include "util.h"
 #include "sprite.h"
 #include "palette.h"
-
-const u32 gBitTable[] =
-{
-    1 << 0,
-    1 << 1,
-    1 << 2,
-    1 << 3,
-    1 << 4,
-    1 << 5,
-    1 << 6,
-    1 << 7,
-    1 << 8,
-    1 << 9,
-    1 << 10,
-    1 << 11,
-    1 << 12,
-    1 << 13,
-    1 << 14,
-    1 << 15,
-    1 << 16,
-    1 << 17,
-    1 << 18,
-    1 << 19,
-    1 << 20,
-    1 << 21,
-    1 << 22,
-    1 << 23,
-    1 << 24,
-    1 << 25,
-    1 << 26,
-    1 << 27,
-    1 << 28,
-    1 << 29,
-    1 << 30,
-    1 << 31,
-};
+#include "constants/rgb.h"
 
 static const struct SpriteTemplate sInvisibleSpriteTemplate =
 {
@@ -117,7 +82,7 @@ const u8 gMiscBlank_Gfx[] = INCBIN_U8("graphics/interface/blank.4bpp");
 
 u8 CreateInvisibleSpriteWithCallback(void (*callback)(struct Sprite *))
 {
-    u8 sprite = CreateSprite(&sInvisibleSpriteTemplate, 248, 168, 14);
+    u8 sprite = CreateSprite(&sInvisibleSpriteTemplate, DISPLAY_WIDTH + 8, DISPLAY_HEIGHT + 8, 14);
     gSprites[sprite].invisible = TRUE;
     gSprites[sprite].callback = callback;
     return sprite;
@@ -157,7 +122,7 @@ void CopySpriteTiles(u8 shape, u8 size, u8 *tiles, u16 *tilemap, u8 *output)
 {
     u8 x, y;
     s8 i, j;
-    u8 xflip[32];
+    u8 ALIGNED(4) xflip[32];
     u8 h = sSpriteDimensions[shape][size][1];
     u8 w = sSpriteDimensions[shape][size][0];
 
@@ -252,7 +217,7 @@ u16 CalcCRC16WithTable(const u8 *data, u32 length)
     return ~crc;
 }
 
-u32 CalcByteArraySum(const u8* data, u32 length)
+u32 CalcByteArraySum(const u8 *data, u32 length)
 {
     u32 sum, i;
     for (sum = 0, i = 0; i < length; i++)
@@ -260,7 +225,7 @@ u32 CalcByteArraySum(const u8* data, u32 length)
     return sum;
 }
 
-void BlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor)
+void BlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u32 blendColor)
 {
     u16 i;
     for (i = 0; i < numEntries; i++)
@@ -271,8 +236,8 @@ void BlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor)
         s8 g = data1->g;
         s8 b = data1->b;
         struct PlttData *data2 = (struct PlttData *)&blendColor;
-        gPlttBufferFaded[index] = ((r + (((data2->r - r) * coeff) >> 4)) << 0)
-                                | ((g + (((data2->g - g) * coeff) >> 4)) << 5)
-                                | ((b + (((data2->b - b) * coeff) >> 4)) << 10);
+        gPlttBufferFaded[index] = RGB(r + (((data2->r - r) * coeff) >> 4),
+                                      g + (((data2->g - g) * coeff) >> 4),
+                                      b + (((data2->b - b) * coeff) >> 4));
     }
 }

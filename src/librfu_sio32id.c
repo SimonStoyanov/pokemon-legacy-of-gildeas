@@ -15,7 +15,7 @@ struct RfuSIO32Id
     u16 lastId;
 };
 
-struct RfuSIO32Id gRfuSIO32Id;
+COMMON_DATA struct RfuSIO32Id gRfuSIO32Id = {0};
 
 static const u16 Sio32ConnectionData[] = { 0x494e, 0x544e, 0x4e45, 0x4f44 }; // NINTENDO
 static const char Sio32IDLib_Var[] = "Sio32ID_030820";
@@ -24,7 +24,7 @@ s32 AgbRFU_checkID(u8 maxTries)
 {
     u16 ieBak;
     vu16 *regTMCNTL;
-    s32 id;
+    s32 id = 0;
 
     // Interrupts must be enabled
     if (REG_IME == 0)
@@ -123,33 +123,30 @@ static void Sio32IDIntr(void)
 {
     u32 regSIODATA32;
     u16 delay;
-#ifndef NONMATCHING
-    register u32 rfuSIO32IdUnk0_times_16 asm("r1");
-    register u16 negRfuSIO32IdUnk6 asm("r0");
-#else
     u32 rfuSIO32IdUnk0_times_16;
-    u16 negRfuSIO32IdUnk6;
-#endif
 
     regSIODATA32 = REG_SIODATA32;
     if (gRfuSIO32Id.MS_mode != AGB_CLK_MASTER)
         REG_SIOCNT |= SIO_ENABLE;
-    rfuSIO32IdUnk0_times_16 = 16 * gRfuSIO32Id.MS_mode; // to handle side effect of inline asm
-    rfuSIO32IdUnk0_times_16 = (regSIODATA32 << rfuSIO32IdUnk0_times_16) >> 16;
+    rfuSIO32IdUnk0_times_16 = (regSIODATA32 << (16 * gRfuSIO32Id.MS_mode)) >> 16;
     regSIODATA32 = (regSIODATA32 << 16 * (1 - gRfuSIO32Id.MS_mode)) >> 16;
     if (gRfuSIO32Id.lastId == 0)
     {
-        if (rfuSIO32IdUnk0_times_16 == gRfuSIO32Id.recv_id)
+        u16 backup = rfuSIO32IdUnk0_times_16;
+        if (backup == gRfuSIO32Id.recv_id)
         {
-            if (gRfuSIO32Id.count > 3)
+            if (gRfuSIO32Id.count < 4)
+            {
+                backup = (u16)~gRfuSIO32Id.send_id;
+                if (gRfuSIO32Id.recv_id == backup)
+                {
+                    if (regSIODATA32 == (u16)~gRfuSIO32Id.recv_id)
+                        ++gRfuSIO32Id.count;
+                }
+            }
+            else
             {
                 gRfuSIO32Id.lastId = regSIODATA32;
-            }
-            else if (rfuSIO32IdUnk0_times_16 == (u16)~gRfuSIO32Id.send_id)
-            {
-                negRfuSIO32IdUnk6 = ~gRfuSIO32Id.recv_id;
-                if (regSIODATA32 == negRfuSIO32IdUnk6)
-                    ++gRfuSIO32Id.count;
             }
         }
         else
