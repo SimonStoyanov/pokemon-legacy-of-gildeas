@@ -394,6 +394,10 @@ const u8 gItemEffect_EvoItem[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
+const u8 gItemEffect_TeraShard[6] = {
+    [0] = ITEM0_TERA_SHARD,
+};
+
 const u8 gItemEffect_LeppaBerry[7] = {
     [4] = ITEM4_HEAL_PP_ONE | ITEM4_HEAL_PP,
     [6] = 10, // Amount of PP to recover

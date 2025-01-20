@@ -1083,6 +1083,13 @@ void ItemUseOutOfBattle_EvolutionStone(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_TeraShard(u8 taskId)
+{
+    DebugPrintf("trying use of terashard");
+    gItemUseCB = ItemUseCB_TeraCrystal;
+    SetUpItemUseCallback(taskId);
+}
+
 static u32 GetBallThrowableState(void)
 {
     if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))

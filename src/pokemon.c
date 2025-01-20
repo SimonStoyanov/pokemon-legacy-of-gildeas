@@ -3795,7 +3795,12 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
 
         // Handle ITEM0 effects (infatuation, Dire Hit, X Attack). ITEM0_SACRED_ASH is handled in party_menu.c
         // Now handled in item battle scripts.
-        case 0:
+        case 0: // Tera type change 
+            u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+            dataUnsigned = ItemId_GetHoldEffectParam(item);
+            SetMonData(mon, MON_DATA_TERA_TYPE, &dataUnsigned);
+
+
             break;
 
         // Handle ITEM1 effects (in-battle stat boosting effects)
@@ -4054,6 +4059,12 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                 BeginEvolutionScene(mon, targetSpecies, FALSE, partyIndex);
                                 return FALSE;
                             }
+                        }
+                        break;
+                    
+                    case 8: // TERA SHARD
+                        {
+                            
                         }
                         break;
                     }
