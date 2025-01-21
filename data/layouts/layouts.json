@@ -2702,26 +2702,6 @@
       "blockdata_filepath": "data/layouts/EverGrandeCity_PokemonLeague_1F/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE119_WEATHER_INSTITUTE_1F",
-      "name": "Route119_WeatherInstitute_1F_Layout",
-      "width": 20,
-      "height": 13,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Lab",
-      "border_filepath": "data/layouts/Route119_WeatherInstitute_1F/border.bin",
-      "blockdata_filepath": "data/layouts/Route119_WeatherInstitute_1F/map.bin"
-    },
-    {
-      "id": "LAYOUT_ROUTE119_WEATHER_INSTITUTE_2F",
-      "name": "Route119_WeatherInstitute_2F_Layout",
-      "width": 20,
-      "height": 11,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Lab",
-      "border_filepath": "data/layouts/Route119_WeatherInstitute_2F/border.bin",
-      "blockdata_filepath": "data/layouts/Route119_WeatherInstitute_2F/map.bin"
-    },
-    {
       "id": "LAYOUT_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR",
       "name": "LilycoveCity_DepartmentStoreElevator_Layout",
       "width": 5,
@@ -3000,16 +2980,6 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/LilycoveCity_CoveLilyMotel_2F/border.bin",
       "blockdata_filepath": "data/layouts/LilycoveCity_CoveLilyMotel_2F/map.bin"
-    },
-    {
-      "id": "LAYOUT_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE",
-      "name": "Route124_DivingTreasureHuntersHouse_Layout",
-      "width": 10,
-      "height": 9,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/Route124_DivingTreasureHuntersHouse/border.bin",
-      "blockdata_filepath": "data/layouts/Route124_DivingTreasureHuntersHouse/map.bin"
     },
     {
       "id": "LAYOUT_MT_PYRE_EXTERIOR",
