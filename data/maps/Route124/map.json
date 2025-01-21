@@ -202,11 +202,13 @@
       "x": 70,
       "y": 48,
       "elevation": 3,
-      "dest_map": "MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE",
+      "dest_map": "MAP_DYNAMIC",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
