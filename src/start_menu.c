@@ -306,7 +306,7 @@ static void BuildStartMenuActions(void)
     {
         BuildBattlePikeStartMenu();
     }
-    else if (InBattlePyramid())
+    else if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         BuildBattlePyramidStartMenu();
     }
@@ -329,13 +329,13 @@ static void AddStartMenuAction(u8 action)
 }
 
 static void BuildNormalStartMenu(void)
-{    
+{
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
-    
-    if (FLAG_SYS_DEXNAV_GET != 0 && FlagGet(FLAG_SYS_DEXNAV_GET))
+
+    if (DN_FLAG_DEXNAV_GET != 0 && FlagGet(DN_FLAG_DEXNAV_GET))
         AddStartMenuAction(MENU_ACTION_DEXNAV);
-    
+
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
 
@@ -469,7 +469,7 @@ static void RemoveExtraStartMenuWindows(void)
         CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
         RemoveWindow(sSafariBallsWindowId);
     }
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         ClearStdWindowAndFrameToTransparent(sBattlePyramidFloorWindowId, FALSE);
         RemoveWindow(sBattlePyramidFloorWindowId);
@@ -529,7 +529,7 @@ static bool32 InitStartMenuStep(void)
     case 3:
         if (GetSafariZoneFlag())
             ShowSafariBallsWindow();
-        if (InBattlePyramid())
+        if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
             ShowPyramidFloorWindow();
         sInitStartMenuData[0]++;
         break;
@@ -645,7 +645,7 @@ static bool8 HandleStartMenuInput(void)
         if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_DEXNAV
           && MapHasNoEncounterData())
             return FALSE;
-        
+
         gMenuCallback = sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void;
 
         if (gMenuCallback != StartMenuSaveCallback
@@ -754,7 +754,7 @@ static bool8 StartMenuPlayerNameCallback(void)
 
 static bool8 StartMenuSaveCallback(void)
 {
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
         RemoveExtraStartMenuWindows();
 
     gMenuCallback = SaveStartCallback; // Display save menu
@@ -1036,7 +1036,7 @@ static u8 SaveConfirmSaveCallback(void)
     RemoveStartMenuWindow();
     ShowSaveInfoWindow();
 
-    if (InBattlePyramid())
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         ShowSaveMessage(gText_BattlePyramidConfirmRest, SaveYesNoCallback);
     }
@@ -1497,4 +1497,12 @@ static bool8 StartMenuDexNavCallback(void)
 {
     CreateTask(Task_OpenDexNavFromStartMenu, 0);
     return TRUE;
+}
+
+void Script_ForceSaveGame(struct ScriptContext *ctx)
+{
+    SaveGame();
+    ShowSaveInfoWindow();
+    gMenuCallback = SaveCallback;
+    sSaveDialogCallback = SaveSavingMessageCallback;
 }
