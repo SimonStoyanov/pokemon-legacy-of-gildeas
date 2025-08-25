@@ -3829,7 +3829,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         // Now handled in item battle scripts.
         case 0: // Tera type change 
             u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-            dataUnsigned = ItemId_GetHoldEffectParam(item);
+            dataUnsigned = GetItemHoldEffectParam(item);
             SetMonData(mon, MON_DATA_TERA_TYPE, &dataUnsigned);
 
 
@@ -6388,7 +6388,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
     }
 
     if (caseId == FLAG_SET_SEEN)
-    TryIncrementSpeciesSearchLevel(nationalNum);    // encountering pokemon increments its search level
+    TryIncrementSpeciesSearchLevel();    // encountering pokemon increments its search level
 }
 
 bool8 HasTwoFramesAnimation(u16 species)

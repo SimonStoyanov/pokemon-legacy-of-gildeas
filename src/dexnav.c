@@ -2695,14 +2695,16 @@ u32 CalculateDexNavShinyRolls(void)
 
 void TryIncrementSpeciesSearchLevel()
 {
+    /*
     DebugPrintf("Dex Num: %d", dexNum);
     DebugPrintf("Search Level: %d", gSaveBlock3Ptr->dexNavSearchLevels[dexNum]);
+    */
 
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
     if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies] < 255)
         gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies]++;
 #endif
-    DebugPrintf("Search Level: %d", gSaveBlock3Ptr->dexNavSearchLevels[dexNum]);
+    // DebugPrintf("Search Level: %d", gSaveBlock3Ptr->dexNavSearchLevels[dexNum]);
 
 }
 

@@ -2306,13 +2306,13 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
             break;
         }    
     }
-    if (gSpecialVar_Result == PARTY_SIZE && (CheckBagHasItem(MoveToHM(moveId), 1))){
+    if (gSpecialVar_Result == PARTY_SIZE && (CheckBagHasItem(MoveToHM(move), 1))){
         for (i = 0; i < PARTY_SIZE; i++)
         {
             u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
             if (!species)
                 break;
-            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && CanTeachMove(&gPlayerParty[i], moveId) != CANNOT_LEARN_MOVE)
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && CanTeachMove(&gPlayerParty[i], move) != CANNOT_LEARN_MOVE)
             {
                 gSpecialVar_Result = i;
                 gSpecialVar_0x8004 = species;
