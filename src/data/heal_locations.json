@@ -131,6 +131,12 @@
       "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
       "x": 3,
       "y": 52
+    },
+    {
+      "id": "HEAL_LOCATION_SLATEPORT_CITY_2",
+      "map": "MAP_SLATEPORT_CITY",
+      "x": 20,
+      "y": 26
     }
   ]
 }

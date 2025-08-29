@@ -19,8 +19,8 @@
       "direction": "up"
     },
     {
-      "map": "MAP_LITTLEROOT_TOWN",
-      "offset": 0,
+      "map": "MAP_MAROLIVA_TOWN",
+      "offset": -2,
       "direction": "down"
     }
   ],
