@@ -12436,6 +12436,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sHypnoLevelUpLearnset,
         .teachableLearnset = sHypnoTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_HYPMAREA}),
     },
 #endif //P_FAMILY_DROWZEE
 

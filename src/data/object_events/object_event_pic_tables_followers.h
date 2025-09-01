@@ -821,6 +821,9 @@ static const struct SpriteFrameImage sPicTable_HypnoF[] = {
     overworld_ascending_frames(gObjectEventPic_HypnoF, 4, 4),
 };
 #endif //P_GENDER_DIFFERENCES
+static const struct SpriteFrameImage sPicTable_Hypmarea[] = {
+    overworld_ascending_frames(gObjectEventPic_Hypmarea, 4, 4),
+};
 #endif //P_FAMILY_DROWZEE
 
 #if P_FAMILY_KRABBY
