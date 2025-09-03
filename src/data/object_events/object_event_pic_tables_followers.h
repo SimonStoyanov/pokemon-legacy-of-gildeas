@@ -6730,4 +6730,10 @@ static const struct SpriteFrameImage sPicTable_Pecharunt[] = {
 };
 #endif //P_FAMILY_PECHARUNT
 
+#if P_FAMILY_BUDBITT
+static const struct SpriteFrameImage sPicTable_Budbitt[] = {
+    overworld_ascending_frames(gObjectEventPic_Budbitt, 4, 4),
+};
+#endif //P_FAMILY_PECHARUNT
+
 #endif //OW_POKEMON_OBJECT_EVENTS

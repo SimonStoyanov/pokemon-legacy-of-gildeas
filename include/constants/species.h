@@ -1639,9 +1639,18 @@
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 
 #define GILDEAS_START                                   SPECIES_MIMIKYU_TOTEM_BUSTED
-#define SPECIES_HANAZEKI                                1524
-#define SPECIES_HYPMAREA                                1525
-#define SPECIES_MAEMPERIFF                              1526
+#define SPECIES_BUDBITT                                 1524
+#define SPECIES_THORNALOPE                              1525
+#define SPECIES_SYLVAGARD                               1526
+#define SPECIES_COALIMP                                 1527
+#define SPECIES_FORGEMLIN                               1528
+#define SPECIES_DEVISMITH                               1529
+#define SPECIES_BUCCANUB                                1530
+#define SPECIES_CUTLASSEL                               1531
+#define SPECIES_ADMIROGUE                               1532
+#define SPECIES_HANAZEKI                                1533
+#define SPECIES_HYPMAREA                                1534
+#define SPECIES_MAEMPERIFF                              1535
 
 #define SPECIES_EGG                                     (SPECIES_MAEMPERIFF + 1)
 

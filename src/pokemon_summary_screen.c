@@ -61,7 +61,7 @@
 // Button control text (upper right)
 #define PSS_LABEL_WINDOW_PROMPT_UTILITY 4 // Handles "Switch", "Info", and "Cancel" prompts. Also handles the "Rename" and "IVs"/"EVs"/"STATS" prompts if P_SUMMARY_SCREEN_RENAME and P_SUMMARY_SCREEN_IV_EV_INFO are true, respectively
 #define PSS_LABEL_WINDOW_PROMPT_INFO 5 // unused
-#define PSS_LABEL_WINDOW_PROMPT_SWITCH 6 // unused
+#define PSS_LABEL_WINDOW_UNUSED0 6 // unused
 #define PSS_LABEL_WINDOW_UNUSED1 7
 
 // Info screen
@@ -472,15 +472,6 @@ static const struct WindowTemplate sSummaryTemplate[] =
         .height = 2,
         .paletteNum = 7,
         .baseBlock = 105,
-    },
-    [PSS_LABEL_WINDOW_PROMPT_SWITCH] = {
-        .bg = 0,
-        .tilemapLeft = 22,
-        .tilemapTop = 0,
-        .width = 8,
-        .height = 2,
-        .paletteNum = 7,
-        .baseBlock = 121,
     },
     [PSS_LABEL_WINDOW_UNUSED1] = {
         .bg = 0,
@@ -3258,9 +3249,6 @@ static void PutPageWindowTilemaps(u8 page)
 {
     u8 i;
 
-    LZDecompressWram(gSummaryPage_Skills_Tilemap, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][1]);
-    CopyBgTilemapBufferToVram(1);
-
     ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_INFO_TITLE);
     ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_TITLE);
     ClearWindowTilemap(PSS_LABEL_WINDOW_BATTLE_MOVES_TITLE);
@@ -3276,7 +3264,6 @@ static void PutPageWindowTilemaps(u8 page)
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_INFO_TYPE);
         break;
     case PSS_PAGE_SKILLS:
-        PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_SWITCH);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_TITLE);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT);
@@ -3333,7 +3320,6 @@ static void ClearPageWindowTilemaps(u8 page)
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_INFO_TYPE);
         break;
     case PSS_PAGE_SKILLS:
-        ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_SWITCH);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP);

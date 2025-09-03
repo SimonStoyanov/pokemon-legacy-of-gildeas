@@ -3,6 +3,73 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
 {
 #endif
 
+#if P_FAMILY_BUDBITT
+    [SPECIES_BUDBITT] =
+    {
+        .baseHP        = 45,
+        .baseAttack    = 54,
+        .baseDefense   = 65,
+        .baseSpeed     = 41,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_GRASS),
+        .catchRate = 45,
+        .expYield = 62,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Budbitt"),
+        .cryId = CRY_BUDBITT,
+        .natDexNum = NATIONAL_DEX_BUDBITT,
+        .categoryName = _("Grass Hare"),
+        .height = 4,
+        .weight = 32,
+        // TODO
+        .description = COMPOUND_STRING(
+            "???\n"
+            "???\n"
+            "???\n"
+            "???"),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Budbitt,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .enemyMonElevation = 5,
+        .backPic = gMonBackPic_Budbitt,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Budbitt,
+        .shinyPalette = gMonShinyPalette_Budbitt,
+        .iconSprite = gMonIcon_Budbitt,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 13, SHADOW_SIZE_S)
+        FOOTPRINT(Budbitt)
+        OVERWORLD(
+            sPicTable_Budbitt,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Budbitt,
+            gShinyOverworldPalette_Budbitt
+        )
+        .levelUpLearnset = sHypnoLevelUpLearnset,
+        .teachableLearnset = sHypnoTeachableLearnset,
+    },
+#endif //P_FAMILY_BUDBITT
+
 #if P_FAMILY_HYPMAREA
     [SPECIES_HYPMAREA] =
     {
@@ -52,7 +119,7 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .palette = gMonPalette_Hypmarea,
         .shinyPalette = gMonShinyPalette_Hypmarea,
         .iconSprite = gMonIcon_Hypmarea,
-        .iconPalIndex = 0,
+        .iconPalIndex = 3,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(6, 7, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Hypmarea)

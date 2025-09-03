@@ -6154,6 +6154,13 @@ Cry_Terapagos::
 Cry_Pecharunt::
 	.incbin "sound/direct_sound_samples/cries/pecharunt.bin"
 .endif @ P_FAMILY_PECHARUNT
+
+.if P_FAMILY_BUDBITT == TRUE
+	.align 2
+Cry_Budbitt::
+	.incbin "sound/direct_sound_samples/cries/budbitt.bin"
+.endif @ P_FAMILY_BUDBITT
+
 .endif @ P_CRIES_ENABLED
 
 	.align 2
