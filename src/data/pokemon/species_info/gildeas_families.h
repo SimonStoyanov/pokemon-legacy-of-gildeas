@@ -21,7 +21,7 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_OVERGROW, ABILITY_STAMINA, ABILITY_NONE },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Budbitt"),
         .cryId = CRY_BUDBITT,
@@ -65,7 +65,70 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
             gOverworldPalette_Budbitt,
             gShinyOverworldPalette_Budbitt
         )
-        .levelUpLearnset = sHypnoLevelUpLearnset,
+        .levelUpLearnset = sBudbittLevelUpLearnset,
+        .teachableLearnset = sHypnoTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_THORNALOPE}),
+    },
+    [SPECIES_THORNALOPE] =
+    {
+        .baseHP        = 69,
+        .baseAttack    = 75,
+        .baseDefense   = 85,
+        .baseSpeed     = 68,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 68,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FAIRY),
+        .catchRate = 45,
+        .expYield = 144,
+        .evYield_Defense = 2,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Thornalope"),
+        .cryId = CRY_BUDBITT,
+        .natDexNum = NATIONAL_DEX_THORNALOPE,
+        .categoryName = _("Thorned Hare"),
+        .height = 10,
+        .weight = 244,
+        // TODO
+        .description = COMPOUND_STRING(
+            "???\n"
+            "???\n"
+            "???\n"
+            "???"),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Thornalope,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_H_JUMPS_V_STRETCH,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_Thornalope,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Thornalope,
+        .shinyPalette = gMonShinyPalette_Thornalope,
+        .iconSprite = gMonIcon_Thornalope,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 9, SHADOW_SIZE_M)
+        FOOTPRINT(Thornalope)
+        OVERWORLD(
+            sPicTable_Thornalope,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sThornalopeLevelUpLearnset,
         .teachableLearnset = sHypnoTeachableLearnset,
     },
 #endif //P_FAMILY_BUDBITT

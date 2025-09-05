@@ -26748,6 +26748,39 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Budbitt[] = INCBIN_U16("graphics/pokemon/budbitt/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_Thornalope[] = INCBIN_U32("graphics/pokemon/thornalope/front.4bpp.smol");
+    const u16 gMonPalette_Thornalope[] = INCBIN_U16("graphics/pokemon/thornalope/normal.gbapal");
+    const u32 gMonBackPic_Thornalope[] = INCBIN_U32("graphics/pokemon/thornalope/back.4bpp.smol");
+    const u16 gMonShinyPalette_Thornalope[] = INCBIN_U16("graphics/pokemon/thornalope/shiny.gbapal");
+    const u8 gMonIcon_Thornalope[] = INCBIN_U8("graphics/pokemon/thornalope/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Thornalope[] = INCBIN_U8("graphics/pokemon/thornalope/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Thornalope[] = INCBIN_COMP("graphics/pokemon/thornalope/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Thornalope[] = INCBIN_U16("graphics/pokemon/thornalope/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Thornalope[] = INCBIN_U16("graphics/pokemon/thornalope/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_Sylvagard[] = INCBIN_U32("graphics/pokemon/sylvagard/front.4bpp.smol");
+    const u16 gMonPalette_Sylvagard[] = INCBIN_U16("graphics/pokemon/sylvagard/normal.gbapal");
+    const u32 gMonBackPic_Sylvagard[] = INCBIN_U32("graphics/pokemon/sylvagard/back.4bpp.smol");
+    const u16 gMonShinyPalette_Sylvagard[] = INCBIN_U16("graphics/pokemon/sylvagard/shiny.gbapal");
+    const u8 gMonIcon_Sylvagard[] = INCBIN_U8("graphics/pokemon/sylvagard/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Sylvagard[] = INCBIN_U8("graphics/pokemon/sylvagard/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Sylvagard[] = INCBIN_COMP("graphics/pokemon/sylvagard/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Sylvagard[] = INCBIN_U16("graphics/pokemon/sylvagard/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Sylvagard[] = INCBIN_U16("graphics/pokemon/sylvagard/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
 #endif //P_FAMILY_BUDBITT
 
 #if P_FAMILY_HYPMAREA
