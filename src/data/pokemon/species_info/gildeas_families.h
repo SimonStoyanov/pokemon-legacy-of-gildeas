@@ -16,13 +16,13 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .catchRate = 45,
         .expYield = 62,
         .evYield_Defense = 1,
-        .genderRatio = PERCENT_FEMALE(75),
+        .genderRatio = PERCENT_FEMALE(12.5),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_YELLOW,
+        .abilities = { ABILITY_OVERGROW, ABILITY_STAMINA, ABILITY_EFFECT_SPORE },
+        .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Budbitt"),
         .cryId = CRY_BUDBITT,
         .natDexNum = NATIONAL_DEX_BUDBITT,
@@ -31,10 +31,9 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .weight = 32,
         // TODO
         .description = COMPOUND_STRING(
-            "???\n"
-            "???\n"
-            "???\n"
-            "???"),
+            "It hides among wildflowers, mimicking buds.\n" 
+            "When it feels safe, it hops about and\n" 
+            "scatters seeds that enrich the soil\n"),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -65,8 +64,132 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
             gOverworldPalette_Budbitt,
             gShinyOverworldPalette_Budbitt
         )
-        .levelUpLearnset = sHypnoLevelUpLearnset,
-        .teachableLearnset = sHypnoTeachableLearnset,
+        .levelUpLearnset = sBudbittLevelUpLearnset,
+        .teachableLearnset = sBudbittTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_THORNALOPE}),
+    },
+    [SPECIES_THORNALOPE] =
+    {
+        .baseHP        = 69,
+        .baseAttack    = 75,
+        .baseDefense   = 85,
+        .baseSpeed     = 68,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 68,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FAIRY),
+        .catchRate = 45,
+        .expYield = 144,
+        .evYield_Defense = 2,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_STAMINA, ABILITY_EFFECT_SPORE },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Thornalope"),
+        .cryId = CRY_BUDBITT,
+        .natDexNum = NATIONAL_DEX_THORNALOPE,
+        .categoryName = _("Thorned Hare"),
+        .height = 15,
+        .weight = 244,
+        // TODO
+        .description = COMPOUND_STRING(
+            "Its body blooms with bright flowers.\n" 
+            "It camouflages in meadows and spreads\n" 
+            "pollen that fosters forest growth.\n"),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Thornalope,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_H_JUMPS_V_STRETCH,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_Thornalope,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Thornalope,
+        .shinyPalette = gMonShinyPalette_Thornalope,
+        .iconSprite = gMonIcon_Thornalope,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 9, SHADOW_SIZE_M)
+        FOOTPRINT(Thornalope)
+        OVERWORLD(
+            sPicTable_Thornalope,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sThornalopeLevelUpLearnset,
+        .teachableLearnset = sBudbittTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_SYLVAGARD}),
+    },
+    [SPECIES_SYLVAGARD] =
+    {
+        .baseHP        = 69,
+        .baseAttack    = 75,
+        .baseDefense   = 85,
+        .baseSpeed     = 68,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 68,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FAIRY),
+        .catchRate = 45,
+        .expYield = 263,
+        .evYield_Defense = 2,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_STAMINA, ABILITY_EFFECT_SPORE },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Sylvagard"),
+        .cryId = CRY_BUDBITT,
+        .natDexNum = NATIONAL_DEX_SYLVAGARD,
+        .categoryName = _("Protector"),
+        .height = 22,
+        .weight = 940,
+        // TODO
+        .description = COMPOUND_STRING(
+            "A guardian of ancient woods. Cloaked\n"
+            "in leaves and crowned with antlers, it\n"
+            "defends nature with its mighty shield\n"),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Sylvagard,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_Sylvagard,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Sylvagard,
+        .shinyPalette = gMonShinyPalette_Sylvagard,
+        .iconSprite = gMonIcon_Sylvagard,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Sylvagard)
+        OVERWORLD(
+            sPicTable_Sylvagard,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sSylvagardLevelUpLearnset,
+        .teachableLearnset = sBudbittTeachableLearnset,
     },
 #endif //P_FAMILY_BUDBITT
 
