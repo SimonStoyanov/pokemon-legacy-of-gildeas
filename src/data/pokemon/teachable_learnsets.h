@@ -35843,7 +35843,6 @@ static const u16 sPecharuntTeachableLearnset[] = {
 static const u16 sBudbittTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BODY_SLAM,
-    MOVE_BODY_PRESS,
     MOVE_BULLET_SEED,
     MOVE_CALM_MIND,
     MOVE_DOUBLE_EDGE,
@@ -35853,7 +35852,6 @@ static const u16 sBudbittTeachableLearnset[] = {
     MOVE_FACADE,
     MOVE_FLASH,
     MOVE_GIGA_DRAIN,
-    MOVE_LIGHT_SCREEN,
     MOVE_METRONOME,
     MOVE_MUD_SLAP,
     MOVE_PROTECT,
@@ -35862,7 +35860,6 @@ static const u16 sBudbittTeachableLearnset[] = {
     MOVE_SAFEGUARD,
     MOVE_SLEEP_TALK,
     MOVE_SOLAR_BEAM,
-    MOVE_SOLAR_BLADE,
     MOVE_SUNNY_DAY,
     MOVE_SWAGGER,
     MOVE_SWIFT,
@@ -35871,3 +35868,33 @@ static const u16 sBudbittTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_BUDBITT
+
+#if P_FAMILY_GLISCALE
+static const u16 sGliscaleTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_BODY_SLAM,
+    MOVE_BULLET_SEED,
+    MOVE_CALM_MIND,
+    MOVE_DOUBLE_EDGE,
+    MOVE_DOUBLE_TEAM,
+    MOVE_EARTHQUAKE,
+    MOVE_ENDURE,
+    MOVE_FACADE,
+    MOVE_FLASH,
+    MOVE_GIGA_DRAIN,
+    MOVE_METRONOME,
+    MOVE_MUD_SLAP,
+    MOVE_PROTECT,
+    MOVE_REFLECT,
+    MOVE_REST,
+    MOVE_SAFEGUARD,
+    MOVE_SLEEP_TALK,
+    MOVE_SOLAR_BEAM,
+    MOVE_SUNNY_DAY,
+    MOVE_SWAGGER,
+    MOVE_SWIFT,
+    MOVE_TAUNT,
+    MOVE_TOXIC,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_GLISCALE

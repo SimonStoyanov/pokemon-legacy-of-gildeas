@@ -6742,6 +6742,18 @@ static const struct SpriteFrameImage sPicTable_Thornalope[] = {
 static const struct SpriteFrameImage sPicTable_Sylvagard[] = {
     overworld_ascending_frames(gObjectEventPic_Sylvagard, 4, 4),
 };
-#endif //P_FAMILY_PECHARUNT
+#endif //P_FAMILY_BUDBITT
+
+#if P_FAMILY_GLISCALE
+static const struct SpriteFrameImage sPicTable_Gliscale[] = {
+    overworld_ascending_frames(gObjectEventPic_Gliscale, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Pyroshed[] = {
+    overworld_ascending_frames(gObjectEventPic_Pyroshed, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Furnacobra[] = {
+    overworld_ascending_frames(gObjectEventPic_Furnacobra, 4, 4),
+};
+#endif //P_FAMILY_GLISCALE
 
 #endif //OW_POKEMON_OBJECT_EVENTS

@@ -6161,6 +6161,13 @@ Cry_Budbitt::
 	.incbin "sound/direct_sound_samples/cries/budbitt.bin"
 .endif @ P_FAMILY_BUDBITT
 
+.if P_FAMILY_GLISCALE == TRUE
+	.align 2
+Cry_Gliscale::
+	.incbin "sound/direct_sound_samples/cries/gliscale.bin"
+.endif @ P_FAMILY_GLISCALE
+
+
 .endif @ P_CRIES_ENABLED
 
 	.align 2

@@ -2427,6 +2427,9 @@ gCryTable::
 .if P_FAMILY_BUDBITT == TRUE
 	cry Cry_Budbitt
 .endif @ P_FAMILY_BUDBITT
+.if P_FAMILY_GLISCALE == TRUE
+	cry Cry_Gliscale
+.endif @ P_FAMILY_GLISCALE
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -4858,5 +4861,8 @@ gCryTable_Reverse::
 .if P_FAMILY_BUDBITT == TRUE
 	cry_reverse Cry_Budbitt
 .endif @ P_FAMILY_BUDBITT
+.if P_FAMILY_GLISCALE == TRUE
+	cry_reverse Cry_Gliscale
+.endif @ P_FAMILY_GLISCALE
 
 .endif @ P_CRIES_ENABLED

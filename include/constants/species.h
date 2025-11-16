@@ -1642,9 +1642,9 @@
 #define SPECIES_BUDBITT                                 1524
 #define SPECIES_THORNALOPE                              1525
 #define SPECIES_SYLVAGARD                               1526
-#define SPECIES_COALIMP                                 1527
-#define SPECIES_FORGEMLIN                               1528
-#define SPECIES_DEVISMITH                               1529
+#define SPECIES_GLISCALE                                1527
+#define SPECIES_PYROSHED                                1528
+#define SPECIES_FURNACOBRA                              1529
 #define SPECIES_BUCCANUB                                1530
 #define SPECIES_CUTLASSEL                               1531
 #define SPECIES_ADMIROGUE                               1532
