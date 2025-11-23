@@ -18,7 +18,9 @@ MarolivaTown_OnWarp:
 
 
 MarolivaTown_Home_Sign::
+	lockall
 	msgbox MarolivaTown_Home_Text_Sign, MSGBOX_SIGN
+	releaseall
 	end
 
 MarolivaTown_Home_Text_Sign:
