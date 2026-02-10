@@ -1234,13 +1234,17 @@
     {
       "id": "MAPSEC_MAROLIVA_TOWN",
       "name": "MAROLIVA TOWN",
-      "x": 4,
-      "y": 11,
+      "x": 1,
+      "y": 1,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_001"
+      "id": "MAPSEC_ROUTE_001",
+      "x": 1,
+      "y": 2,
+      "width": 1,
+      "height": 2
     }
   ]
 }
