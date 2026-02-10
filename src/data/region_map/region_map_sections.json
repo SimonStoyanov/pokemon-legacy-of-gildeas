@@ -1245,6 +1245,14 @@
       "y": 2,
       "width": 1,
       "height": 2
+    },
+    {
+      "id": "MAPSEC_ARCHEVALE_TOWN",
+      "name": "ARCHEVALE TOWN",
+      "x": 1,
+      "y": 1,
+      "width": 1,
+      "height": 1
     }
   ]
 }

@@ -1,0 +1,29 @@
+raw `
+
+ArchevaleTown_MapScripts::
+    map_script MAP_SCRIPT_ON_TRANSITION, ArchevaleTown_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, ArchevaleTown_OnFrame
+	@ map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, ArchevaleTown_OnWarp
+	.byte 0
+
+
+ArchevaleTown_OnTransition:
+	setflag FLAG_VISITED_MAROLIVA_TOWN
+    end
+
+ArchevaleTown_OnFrame:
+    end
+
+ArchevaleTown_OnWarp:
+    end
+
+
+ArchevaleTown_Home_Sign::
+	lockall
+	msgbox MarolivaTown_Home_Text_Sign, MSGBOX_SIGN
+	releaseall
+	end
+
+ArchevaleTown_Home_Text_Sign:
+    .string "{PLAYER}'s HOUSE$"
+`
