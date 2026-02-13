@@ -43,7 +43,7 @@ ArchevaleTown_Home_Sign::
 # 22 "data/maps/ArchevaleTown/scripts.pory"
 	lockall
 # 23 "data/maps/ArchevaleTown/scripts.pory"
-	msgbox MarolivaTown_Home_Text_Sign, MSGBOX_SIGN
+	msgbox ArchevaleTown_Home_Text_Sign, MSGBOX_SIGN
 # 24 "data/maps/ArchevaleTown/scripts.pory"
 	releaseall
 # 25 "data/maps/ArchevaleTown/scripts.pory"
