@@ -1233,7 +1233,26 @@
     },
     {
       "id": "MAPSEC_MAROLIVA_TOWN",
-      "name": "MAROLIVA TOWN"
+      "name": "MAROLIVA TOWN",
+      "x": 1,
+      "y": 1,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_001",
+      "x": 1,
+      "y": 2,
+      "width": 1,
+      "height": 2
+    },
+    {
+      "id": "MAPSEC_ARCHEVALE_TOWN",
+      "name": "ARCHEVALE TOWN",
+      "x": 1,
+      "y": 1,
+      "width": 1,
+      "height": 1
     }
   ]
 }

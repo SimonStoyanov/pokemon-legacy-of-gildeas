@@ -33,7 +33,9 @@
     "gMapGroup_IndoorRoute113",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
-    "gMapGroup_IndoorRoute124"
+    "gMapGroup_IndoorRoute124",
+    "gMapGroup_IndoorMaroliva",
+    "gMapGroup_gMapGroup_Gildeas_TownsAndRoutes"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -621,5 +623,11 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
+  ],
+  "gMapGroup_IndoorMaroliva": [
+    "MarolivaTown_PlayerHouse"
+  ],
+  "gMapGroup_gMapGroup_Gildeas_TownsAndRoutes": [
+    "ArchevaleTown"
   ]
 }

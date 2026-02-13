@@ -1160,3 +1160,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 
 	.include "data/maps/MarolivaTown/scripts.inc"
+
+	.include "data/maps/MarolivaTown_PlayerHouse/scripts.inc"
+
+	.include "data/maps/ArchevaleTown/scripts.inc"

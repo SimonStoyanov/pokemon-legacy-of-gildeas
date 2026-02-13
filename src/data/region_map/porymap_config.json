@@ -11,8 +11,8 @@
         "palette": "graphics/pokenav/region_map/map.pal"
       },
       "layout": {
-        "width": 30,
-        "height": 18,
+        "width": 31,
+        "height": 19,
         "offset_left": 1,
         "offset_top": 1,
         "format": "C array",

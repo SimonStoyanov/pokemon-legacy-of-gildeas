@@ -39,12 +39,16 @@ MarolivaTown_OnWarp:
 # 20 "data/maps/MarolivaTown/scripts.pory"
 MarolivaTown_Home_Sign::
 # 21 "data/maps/MarolivaTown/scripts.pory"
-	msgbox MarolivaTown_Home_Text_Sign, MSGBOX_SIGN
+	lockall
 # 22 "data/maps/MarolivaTown/scripts.pory"
-	end
+	msgbox MarolivaTown_Home_Text_Sign, MSGBOX_SIGN
 # 23 "data/maps/MarolivaTown/scripts.pory"
-
+	releaseall
 # 24 "data/maps/MarolivaTown/scripts.pory"
-MarolivaTown_Home_Text_Sign:
+	end
 # 25 "data/maps/MarolivaTown/scripts.pory"
+
+# 26 "data/maps/MarolivaTown/scripts.pory"
+MarolivaTown_Home_Text_Sign:
+# 27 "data/maps/MarolivaTown/scripts.pory"
     .string "{PLAYER}'s HOUSE$"
