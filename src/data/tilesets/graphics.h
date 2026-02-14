@@ -1653,3 +1653,22 @@ const u16 gTilesetPalettes_Snow[][16] =
 };
 
 const u32 gTilesetTiles_Snow[] = INCBIN_U32("data/tilesets/primary/snow/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Archevale[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/archevale/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Archevale[] = INCBIN_U32("data/tilesets/secondary/archevale/tiles.4bpp.lz");

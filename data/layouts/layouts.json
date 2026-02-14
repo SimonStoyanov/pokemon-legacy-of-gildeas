@@ -4437,7 +4437,7 @@
       "width": 40,
       "height": 40,
       "primary_tileset": "gTileset_Snow",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Archevale",
       "border_filepath": "data/layouts/ArchevaleTown/border.bin",
       "blockdata_filepath": "data/layouts/ArchevaleTown/map.bin"
     }
