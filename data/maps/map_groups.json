@@ -632,6 +632,7 @@
     "ArchevaleTown"
   ],
   "gMapGroup_Gildeas_IndoorArchevale": [
-    "ArchevaleTown_PlayerHouse_1F"
+    "ArchevaleTown_PlayerHouse_1F",
+    "ArchevaleTown_PlayerHouse_2F"
   ]
 }

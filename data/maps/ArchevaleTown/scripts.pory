@@ -25,5 +25,11 @@ ArchevaleTown_Home_Sign::
 	end
 
 ArchevaleTown_Home_Text_Sign:
-    .string "{PLAYER}'s HOUSE$"
+    .string "{PLAYER}'s house$"
 `
+
+script ArchevaleTownRival_Home_Sign {
+	lockall
+	msgbox("It's Ness' house")
+	releaseall
+}
