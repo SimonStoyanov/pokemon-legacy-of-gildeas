@@ -8,7 +8,7 @@ ArchevaleTown_MapScripts::
 
 
 ArchevaleTown_OnTransition:
-	setflag FLAG_VISITED_MAROLIVA_TOWN
+	setflag FLAG_VISITED_ARCHEVALE_TOWN
     end
 
 ArchevaleTown_OnFrame:

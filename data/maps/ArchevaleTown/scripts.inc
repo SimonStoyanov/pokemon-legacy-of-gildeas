@@ -19,7 +19,7 @@ ArchevaleTown_MapScripts::
 # 10 "data/maps/ArchevaleTown/scripts.pory"
 ArchevaleTown_OnTransition:
 # 11 "data/maps/ArchevaleTown/scripts.pory"
-	setflag FLAG_VISITED_MAROLIVA_TOWN
+	setflag FLAG_VISITED_ARCHEVALE_TOWN
 # 12 "data/maps/ArchevaleTown/scripts.pory"
     end
 # 13 "data/maps/ArchevaleTown/scripts.pory"
