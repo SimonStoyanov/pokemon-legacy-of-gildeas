@@ -1,0 +1,65 @@
+mapscripts ArchevaleTown_PlayerHouse_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {}
+    MAP_SCRIPT_ON_FRAME_TABLE [
+
+    ]
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        
+	]
+}
+
+script ArchevaleTown_PlayerHouse_1F_MeetCherry {
+	lock
+	setvar(VAR_ARCHEVALE_HOUSE_STATE, 2)
+	switch (var(VAR_0x8008)) {
+		case 0: applymovement(LOCALID_PLAYER, moves(
+			walk_down
+			walk_left * 7
+			walk_down * 6
+			walk_right * 2
+		))
+		case 1: applymovement(LOCALID_PLAYER, moves(
+			walk_left * 8
+			walk_down * 6
+			walk_right * 2
+		))
+		case 2: applymovement(LOCALID_PLAYER, moves(
+			walk_down
+			walk_left * 9
+			walk_down * 6
+			walk_right * 2
+		))
+	}
+	waitmovement(LOCALID_PLAYER)
+    release
+}
+
+script ArchevaleTown_PlayerHouse_1F_MeetCherry0 {
+	setvar(VAR_0x8008, 0)
+	call(ArchevaleTown_PlayerHouse_1F_MeetCherry)
+}
+
+script ArchevaleTown_PlayerHouse_1F_MeetCherry1 {
+	setvar(VAR_0x8008, 1)
+	call(ArchevaleTown_PlayerHouse_1F_MeetCherry)
+}
+
+script ArchevaleTown_PlayerHouse_1F_MeetCherry2 {
+	setvar(VAR_0x8008, 2)
+	call(ArchevaleTown_PlayerHouse_1F_MeetCherry)
+}
+
+script ArchevaleTown_StarterChoice {
+	lock
+	faceplayer
+	setflag(FLAG_SYS_POKEMON_GET)
+	fadescreen(FADE_TO_BLACK)
+	removeobject(LOCALID_CHERRY_BAG)
+	special(ChooseStarter)
+	waitstate
+	setflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
+}
+
+movement MoveToCherry {
+
+}

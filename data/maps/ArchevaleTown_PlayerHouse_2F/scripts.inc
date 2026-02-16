@@ -20,30 +20,30 @@ ArchevaleTown_PlayerHouse_2F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 
 
 ArchevaleTown_PlayerHouse_2F_SetIntroFlags::
-# 15 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+# 13 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	setrespawn HEAL_LOCATION_ARCHEVALE_TOWN_PLAYER_HOUSE_2F
 	return
 
 
 ArchevaleTown_Test::
-# 19 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+# 17 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	lockall
-# 20 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+# 18 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	msgbox ArchevaleTown_Test_Text_0
-# 21 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+# 19 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	releaseall
-# 22 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+# 20 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	setvar VAR_ARCHEVALE_HOUSE_STATE, 1
 	return
 
 
-# 25 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+# 23 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 MyMovement:
-# 26 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+# 24 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	walk_left
 	step_end
 
 ArchevaleTown_Test_Text_0:
-# 20 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+# 18 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	.string "{PLAYER}, COME DOWNSTAIRS, THERE'S A\n"
 	.string "SURPRISE FOR YOU$"
