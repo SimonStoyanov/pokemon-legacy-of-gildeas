@@ -1164,3 +1164,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MarolivaTown_PlayerHouse/scripts.inc"
 
 	.include "data/maps/ArchevaleTown/scripts.inc"
+
+	.include "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.inc"
+
+	.include "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.inc"

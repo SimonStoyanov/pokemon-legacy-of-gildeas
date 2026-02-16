@@ -8,7 +8,7 @@ ArchevaleTown_MapScripts::
 
 
 ArchevaleTown_OnTransition:
-	setflag FLAG_VISITED_MAROLIVA_TOWN
+	setflag FLAG_VISITED_ARCHEVALE_TOWN
     end
 
 ArchevaleTown_OnFrame:
@@ -20,10 +20,16 @@ ArchevaleTown_OnWarp:
 
 ArchevaleTown_Home_Sign::
 	lockall
-	msgbox MarolivaTown_Home_Text_Sign, MSGBOX_SIGN
+	msgbox ArchevaleTown_Home_Text_Sign, MSGBOX_SIGN
 	releaseall
 	end
 
 ArchevaleTown_Home_Text_Sign:
-    .string "{PLAYER}'s HOUSE$"
+    .string "{PLAYER}'s house$"
 `
+
+script ArchevaleTownRival_Home_Sign {
+	lockall
+	msgbox("It's Ness' house")
+	releaseall
+}
