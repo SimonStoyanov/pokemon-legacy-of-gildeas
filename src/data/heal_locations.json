@@ -190,6 +190,12 @@
       "map": "MAP_SLATEPORT_CITY",
       "x": 20,
       "y": 26
+    },
+    {
+      "id": "HEAL_LOCATION_ARCHEVALE_TOWN_PLAYER_HOUSE_2F",
+      "map": "MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_2F",
+      "x": 1,
+      "y": 5
     }
   ]
 }

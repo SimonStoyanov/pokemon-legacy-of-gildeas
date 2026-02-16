@@ -23,7 +23,62 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
