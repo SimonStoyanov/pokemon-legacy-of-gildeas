@@ -1959,7 +1959,7 @@ void TryEnterContestMon(void)
 
 u16 HasMonWonThisContestBefore(void)
 {
-    bool32 hasRankRibbon = FALSE;
+    u16 hasRankRibbon = FALSE;
     struct Pokemon *mon = &gPlayerParty[gContestMonPartyIndex];
     switch (gSpecialVar_ContestCategory)
     {

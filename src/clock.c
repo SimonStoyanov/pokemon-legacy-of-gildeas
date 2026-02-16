@@ -13,7 +13,6 @@
 #include "tv.h"
 #include "wallclock.h"
 #include "constants/form_change_types.h"
-#include "apricorn_tree.h"
 
 static void UpdatePerDay(struct Time *localTime);
 static void UpdatePerMinute(struct Time *localTime);
@@ -56,7 +55,6 @@ static void UpdatePerDay(struct Time *localTime)
         SetShoalItemFlag(daysSince);
         SetRandomLotteryNumber(daysSince);
         UpdateDaysPassedSinceFormChange(daysSince);
-        DailyResetApricornTrees();
         *days = localTime->days;
     }
 }

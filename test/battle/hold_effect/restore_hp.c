@@ -64,21 +64,19 @@ DOUBLE_BATTLE_TEST("Restore HP Item effects do not miss timing after a recoil mo
     }
 }
 
-SINGLE_BATTLE_TEST("Sitrus Berry restores HP immediately after Leech Seed damage")
+#if B_HP_BERRIES <= GEN_3
+SINGLE_BATTLE_TEST("Restore HP Berry triggers only during the end turn")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_LEECH_SEED) == EFFECT_LEECH_SEED);
-        ASSUME(gItemsInfo[ITEM_SITRUS_BERRY].holdEffect == HOLD_EFFECT_RESTORE_PCT_HP);
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(80); HP(41); Item(ITEM_SITRUS_BERRY); }
-        OPPONENT(SPECIES_WYNAUT);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WYNAUT) { MaxHP(100); HP(51); Item(ITEM_ORAN_BERRY); }
     } WHEN {
-        TURN { MOVE(opponent, MOVE_LEECH_SEED); }
-        TURN { }
+        TURN { MOVE(player, MOVE_TACKLE); }
+        TURN {}
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_LEECH_SEED, opponent);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_LEECH_SEED_DRAIN, player);
-        HP_BAR(player);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
-        HP_BAR(player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
     }
 }
+#endif

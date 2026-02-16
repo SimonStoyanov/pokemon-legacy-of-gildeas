@@ -13,7 +13,6 @@
 #include "graphics.h"
 #include "main.h"
 #include "malloc.h"
-#include "menu.h"
 #include "m4a.h"
 #include "palette.h"
 #include "pokemon.h"
@@ -196,7 +195,6 @@ static const u8* const sBattleAnims_StatusConditions[NUM_B_ANIMS_STATUS] =
     [B_ANIM_STATUS_FRZ]         = gBattleAnimStatus_Freeze,
     [B_ANIM_STATUS_CURSED]      = gBattleAnimStatus_Curse,
     [B_ANIM_STATUS_NIGHTMARE]   = gBattleAnimStatus_Nightmare,
-    [B_ANIM_STATUS_FRB]         = gBattleAnimStatus_Frostbite,
 };
 
 static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
@@ -255,8 +253,6 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_TERA_ACTIVATE]          = gBattleAnimGeneral_TeraActivate,
     [B_ANIM_SIMPLE_HEAL]            = gBattleAnimGeneral_SimpleHeal,
     [B_ANIM_POWER_CONSTRUCT]        = gBattleAnimGeneral_PowerConstruct,
-    [B_ANIM_SWAP_TO_SUBSTITUTE]     = gBattleAnimGeneral_SwapToSubstitute,
-    [B_ANIM_SWAP_FROM_SUBSTITUTE]   = gBattleAnimGeneral_SwapFromSubstitute,
 };
 
 static const u8* const sBattleAnims_Special[NUM_B_ANIMS_SPECIAL] =
@@ -1572,12 +1568,15 @@ void LoadMoveBg(u16 bgId)
 {
     if (IsContest())
     {
-        void *decompressionBuffer = malloc_and_decompress(gBattleAnimBackgroundTable[bgId].tilemap, NULL);
+        void *decompressionBuffer = Alloc(0x800);
+        const u32 *tilemap = gBattleAnimBackgroundTable[bgId].tilemap;
+
+        DecompressDataWithHeaderWram(tilemap, decompressionBuffer);
         RelocateBattleBgPal(GetBattleBgPaletteNum(), decompressionBuffer, 0x100, FALSE);
         DmaCopy32(3, decompressionBuffer, (void *)BG_SCREEN_ADDR(26), 0x800);
-        Free(decompressionBuffer);
         DecompressDataWithHeaderVram(gBattleAnimBackgroundTable[bgId].image, (void *)BG_SCREEN_ADDR(4));
         LoadPalette(gBattleAnimBackgroundTable[bgId].palette, BG_PLTT_ID(GetBattleBgPaletteNum()), PLTT_SIZE_4BPP);
+        Free(decompressionBuffer);
     }
     else
     {
@@ -2224,7 +2223,7 @@ static void Cmd_stopsound(void)
 
 static void Cmd_jumpifmovetypeequal(void)
 {
-    const enum Type *type = sBattleAnimScriptPtr + 1;
+    const u8 *type = sBattleAnimScriptPtr + 1;
     sBattleAnimScriptPtr += 2;
     if (*type != GetBattleMoveType(gCurrentMove))
         sBattleAnimScriptPtr += 4;

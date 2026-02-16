@@ -14,7 +14,6 @@
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
-#include "test_runner.h"
 #include "trig.h"
 #include "util.h"
 #include "data.h"
@@ -2313,7 +2312,7 @@ void AnimTask_SwapMonSpriteToFromSubstitute(u8 taskId)
 {
     u8 spriteId;
     u32 x;
-    bool32 done = FALSE;
+    u32 done = FALSE;
 
     spriteId = gBattlerSpriteIds[gBattleAnimAttacker];
     switch (gTasks[taskId].data[10])
@@ -2436,7 +2435,7 @@ void TryShinyAnimation(u8 battler, struct Pokemon *mon)
     if (illusionMon != NULL)
         mon = illusionMon;
 
-    if (IsBattlerSpriteVisible(battler) && IsValidForBattle(mon) && !gTestRunnerHeadless)
+    if (IsBattlerSpriteVisible(battler) && IsValidForBattle(mon))
     {
         if (isShiny)
         {
@@ -2769,3 +2768,4 @@ static void CB_CriticalCaptureThrownBallMovement(struct Sprite *sprite)
         sprite->callback = SpriteCB_Ball_Bounce_Step;
     }
 }
+

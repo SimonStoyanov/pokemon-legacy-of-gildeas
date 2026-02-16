@@ -3,7 +3,7 @@
 
 DOUBLE_BATTLE_TEST("Curious Medicine resets ally's stat stages upon entering battle")
 {
-    enum Ability ability;
+    u32 ability;
 
     PARAMETRIZE { ability = ABILITY_CURIOUS_MEDICINE; }
     PARAMETRIZE { ability = ABILITY_OWN_TEMPO; }

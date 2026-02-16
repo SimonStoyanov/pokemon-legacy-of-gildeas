@@ -14,6 +14,7 @@
 #include "sprite.h"
 #include "util.h"
 #include "constants/abilities.h"
+#include "constants/hold_effects.h"
 #include "constants/rgb.h"
 
 // Sets flags and variables upon a battler's Terastallization.
@@ -61,7 +62,7 @@ void ApplyBattlerVisualsForTeraAnim(u32 battler)
 // Returns whether a battler can Terastallize.
 bool32 CanTerastallize(u32 battler)
 {
-    enum HoldEffect holdEffect = GetBattlerHoldEffectIgnoreNegation(battler);
+    enum ItemHoldEffect holdEffect = GetBattlerHoldEffect(battler, FALSE);
 
     if (gBattleMons[battler].volatiles.transformed && GET_BASE_SPECIES_ID(gBattleMons[battler].species) == SPECIES_TERAPAGOS)
         return FALSE;
@@ -108,20 +109,20 @@ bool32 CanTerastallize(u32 battler)
 }
 
 // Returns a battler's Tera type.
-enum Type GetBattlerTeraType(u32 battler)
+u32 GetBattlerTeraType(u32 battler)
 {
     return GetMonData(GetBattlerMon(battler), MON_DATA_TERA_TYPE);
 }
 
 // Uses up a type's Stellar boost.
-void ExpendTypeStellarBoost(u32 battler, enum Type type)
+void ExpendTypeStellarBoost(u32 battler, u32 type)
 {
     if (type < 32 && gBattleMons[battler].species != SPECIES_TERAPAGOS_STELLAR) // avoid OOB access
         gBattleStruct->stellarBoostFlags[GetBattlerSide(battler)] |= 1u << type;
 }
 
 // Checks whether a type's Stellar boost has been expended.
-bool32 IsTypeStellarBoosted(u32 battler, enum Type type)
+bool32 IsTypeStellarBoosted(u32 battler, u32 type)
 {
     if (type < 32) // avoid OOB access
         return !(gBattleStruct->stellarBoostFlags[GetBattlerSide(battler)] & (1u << type));
@@ -131,19 +132,20 @@ bool32 IsTypeStellarBoosted(u32 battler, enum Type type)
 
 // Returns the STAB power multiplier to use when Terastallized.
 // Power multipliers from Smogon Research thread.
-uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
+uq4_12_t GetTeraMultiplier(u32 battler, u32 type)
 {
-    enum Type teraType = GetBattlerTeraType(ctx->battlerAtk);
+    u32 teraType = GetBattlerTeraType(battler);
+    bool32 hasAdaptability = (GetBattlerAbility(battler) == ABILITY_ADAPTABILITY);
 
     // Safety check.
-    if (GetActiveGimmick(ctx->battlerAtk) != GIMMICK_TERA)
+    if (GetActiveGimmick(battler) != GIMMICK_TERA)
         return UQ_4_12(1.0);
 
     // Stellar-type checks.
     if (teraType == TYPE_STELLAR)
     {
-        bool32 shouldBoost = IsTypeStellarBoosted(ctx->battlerAtk, ctx->moveType);
-        if (IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
+        bool32 shouldBoost = IsTypeStellarBoosted(battler, type);
+        if (IS_BATTLER_OF_BASE_TYPE(battler, type))
         {
             if (shouldBoost)
                 return UQ_4_12(2.0);
@@ -156,18 +158,18 @@ uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
             return UQ_4_12(1.0);
     }
     // Base and Tera type.
-    if (ctx->moveType == teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
+    if (type == teraType && IS_BATTLER_OF_BASE_TYPE(battler, type))
     {
-        if (ctx->abilityAtk == ABILITY_ADAPTABILITY)
+        if (hasAdaptability)
             return UQ_4_12(2.25);
         else
             return UQ_4_12(2.0);
     }
     // Base or Tera type only.
-    else if ((ctx->moveType == teraType && !IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
-             || (ctx->moveType != teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType)))
+    else if ((type == teraType && !IS_BATTLER_OF_BASE_TYPE(battler, type))
+             || (type != teraType && IS_BATTLER_OF_BASE_TYPE(battler, type)))
     {
-        if (ctx->abilityAtk == ABILITY_ADAPTABILITY)
+        if (hasAdaptability)
             return UQ_4_12(2.0);
         else
             return UQ_4_12(1.5);
@@ -179,7 +181,7 @@ uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
     }
 }
 
-u16 GetTeraTypeRGB(enum Type type)
+u16 GetTeraTypeRGB(u32 type)
 {
     return gTypesInfo[type].teraTypeRGBValue;
 }

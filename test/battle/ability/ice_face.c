@@ -11,10 +11,7 @@ SINGLE_BATTLE_TEST("Ice Face blocks physical moves, changing Eiscue into its Noi
         TURN { MOVE(opponent, MOVE_SCRATCH); }
     } SCENE {
         ABILITY_POPUP(player, ABILITY_ICE_FACE);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Eiscue transformed!");
-    } THEN {
-        EXPECT_EQ(player->species, SPECIES_EISCUE_NOICE);
     }
 }
 
@@ -29,8 +26,6 @@ SINGLE_BATTLE_TEST("Ice Face does not block special moves, Eiscue stays in Ice F
         TURN { MOVE(opponent, MOVE_EMBER); }
     } SCENE {
         NOT ABILITY_POPUP(player, ABILITY_ICE_FACE);
-    } THEN {
-        EXPECT_EQ(player->species, SPECIES_EISCUE_ICE);
     }
 }
 
@@ -51,16 +46,11 @@ SINGLE_BATTLE_TEST("Ice Face is restored if hail or snow begins while Noice Face
         TURN { MOVE(opponent, MOVE_SCRATCH); }
     } SCENE {
         ABILITY_POPUP(player, ABILITY_ICE_FACE);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Eiscue transformed!");
         ABILITY_POPUP(player, ABILITY_ICE_FACE);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Eiscue transformed!");
         ABILITY_POPUP(player, ABILITY_ICE_FACE);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Eiscue transformed!");
-    } THEN {
-        EXPECT_EQ(player->species, SPECIES_EISCUE_NOICE);
     }
 }
 

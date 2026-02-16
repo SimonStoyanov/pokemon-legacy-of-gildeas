@@ -948,7 +948,6 @@ extern const u8 gBattleAnimStatus_Paralysis[];
 extern const u8 gBattleAnimStatus_Freeze[];
 extern const u8 gBattleAnimStatus_Curse[];
 extern const u8 gBattleAnimStatus_Nightmare[];
-extern const u8 gBattleAnimStatus_Frostbite[];
 
 // general animations
 extern const u8 gBattleAnimGeneral_StatsChange[];
@@ -1005,8 +1004,6 @@ extern const u8 gBattleAnimGeneral_TeraCharge[];
 extern const u8 gBattleAnimGeneral_TeraActivate[];
 extern const u8 gBattleAnimGeneral_SimpleHeal[];
 extern const u8 gBattleAnimGeneral_PowerConstruct[];
-extern const u8 gBattleAnimGeneral_SwapToSubstitute[];
-extern const u8 gBattleAnimGeneral_SwapFromSubstitute[];
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

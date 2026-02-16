@@ -51,8 +51,6 @@ void ItemUseOutOfBattle_PokeFlute(u8 taskId);
 void ItemUseOutOfBattle_TownMap(u8 taskId);
 void ItemUseOutOfBattle_DexNavDetector(u8 taskId);
 void ItemUseOutOfBattle_TeraShard(u8 taskId);
-bool8 ItemfinderCheckForHiddenItems(const struct MapEvents *, u8);
-u8 GetDirectionToHiddenItem(s16, s16);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,
@@ -64,12 +62,5 @@ enum {
 
 bool32 CanThrowBall(void);
 bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon);
-
-enum ItemTMHMOrEvolutionStone
-{
-    ITEM_IS_OTHER,
-    ITEM_IS_TM_HM,
-    ITEM_IS_EVOLUTION_STONE,
-};
 
 #endif // GUARD_ITEM_USE_H

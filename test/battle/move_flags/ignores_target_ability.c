@@ -10,8 +10,7 @@ ASSUMPTIONS
 
 SINGLE_BATTLE_TEST("ignoresTargetAbility moves do not ignore the attacker's own ability", s16 damage)
 {
-    enum Ability ability;
-    u32 move;
+    u32 ability, move;
 
     PARAMETRIZE { move = MOVE_SUNSTEEL_STRIKE; ability = ABILITY_MAGIC_GUARD; }
     PARAMETRIZE { move = MOVE_SUNSTEEL_STRIKE; ability = ABILITY_UNAWARE; }
@@ -48,8 +47,7 @@ SINGLE_BATTLE_TEST("ignoresTargetAbility moves do not ignore the attacker's own 
 
 SINGLE_BATTLE_TEST("ignoresTargetAbility moves do ignore target's abilities", s16 damage)
 {
-    enum Ability ability;
-    u32 move;
+    u32 ability, move;
 
     PARAMETRIZE { move = MOVE_SUNSTEEL_STRIKE; ability = ABILITY_INNER_FOCUS; }
     PARAMETRIZE { move = MOVE_SUNSTEEL_STRIKE; ability = ABILITY_MULTISCALE; }
@@ -78,7 +76,7 @@ SINGLE_BATTLE_TEST("ignoresTargetAbility moves do ignore target's abilities", s1
 SINGLE_BATTLE_TEST("ignoresTargetAbility allows Pokémon with Battle Armor and Shell Armor to receive critical hits")
 {
     u32 species;
-    enum Ability ability;
+    u32 ability;
 
     PARAMETRIZE { species = SPECIES_KINGLER; ability = ABILITY_SHELL_ARMOR; }
     PARAMETRIZE { species = SPECIES_ARMALDO; ability = ABILITY_BATTLE_ARMOR; }

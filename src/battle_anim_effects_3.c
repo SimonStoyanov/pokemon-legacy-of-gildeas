@@ -2484,10 +2484,11 @@ void AnimTask_HideSwapSprite(u8 taskId)
     case 0:
         gTasks[taskId].data[11] = gSprites[spriteId].x; // Save battler position
         gSprites[spriteId].x = -64; // hide it from screen to avoid the blip/glitch effect when swapping the sprite.
+        gTasks[taskId].data[10] = gBattleAnimArgs[0];
         gTasks[taskId].data[0]++;
         break;
     case 1:
-        HandleSpeciesGfxDataChange(gBattleAnimAttacker, gBattleAnimTarget, SPECIES_GFX_CHANGE_FORM_CHANGE);
+        HandleSpeciesGfxDataChange(gBattleAnimAttacker, gBattleAnimTarget, gTasks[taskId].data[10], gBattleAnimArgs[1]);
         GetBgDataForTransform(&animBg, gBattleAnimAttacker);
 
         if (IsContest())
@@ -2535,6 +2536,14 @@ void AnimTask_HideSwapSprite(u8 taskId)
         break;
     case 2:
         gSprites[spriteId].x = gTasks[taskId].data[11]; // restores battler position
+        if (!IsContest())
+        {
+            if (!IsOnPlayerSide(gBattleAnimAttacker))
+            {
+                if (gTasks[taskId].data[10] == 0)
+                    SetBattlerShadowSpriteCallback(gBattleAnimAttacker, gBattleSpritesDataPtr->battlerData[gBattleAnimAttacker].transformSpecies);
+            }
+        }
 
         DestroyAnimVisualTask(taskId);
         break;
@@ -2587,6 +2596,7 @@ void AnimTask_TransformMon(u8 taskId)
             SetAnimBgAttribute(2, BG_ANIM_MOSAIC, 1);
 
         gTasks[taskId].data[10] = gBattleAnimArgs[0];
+        gTasks[taskId].data[11] = gBattleAnimArgs[1];
         gTasks[taskId].data[0]++;
         break;
     case 1:
@@ -2601,7 +2611,7 @@ void AnimTask_TransformMon(u8 taskId)
         }
         break;
     case 2:
-        HandleSpeciesGfxDataChange(gBattleAnimAttacker, gBattleAnimTarget, gTasks[taskId].data[10]);
+        HandleSpeciesGfxDataChange(gBattleAnimAttacker, gBattleAnimTarget, gTasks[taskId].data[10], gTasks[taskId].data[11]);
         GetBgDataForTransform(&animBg, gBattleAnimAttacker);
 
         if (IsContest())
@@ -2670,7 +2680,7 @@ void AnimTask_TransformMon(u8 taskId)
         {
             if (!IsOnPlayerSide(gBattleAnimAttacker))
             {
-                if (gTasks[taskId].data[10] == SPECIES_GFX_CHANGE_TRANSFORM)
+                if (gTasks[taskId].data[10] == 0)
                     SetBattlerShadowSpriteCallback(gBattleAnimAttacker, gBattleSpritesDataPtr->battlerData[gBattleAnimAttacker].transformSpecies);
             }
         }
@@ -5775,7 +5785,7 @@ static void AnimRecycle_Step(struct Sprite *sprite)
 
 void AnimTask_GetWeather(u8 taskId)
 {
-    bool32 utilityUmbrellaAffected = GetBattlerHoldEffect(gBattleAnimAttacker) == HOLD_EFFECT_UTILITY_UMBRELLA;
+    bool32 utilityUmbrellaAffected = GetBattlerHoldEffect(gBattleAnimAttacker, TRUE) == HOLD_EFFECT_UTILITY_UMBRELLA;
 
     gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_NONE;
     if (gWeatherMoveAnim & B_WEATHER_SUN && !utilityUmbrellaAffected)

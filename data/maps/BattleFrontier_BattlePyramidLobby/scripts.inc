@@ -184,14 +184,10 @@ BattleFrontier_BattlePyramidLobby_EventScript_NotEnoughValidMons::
 
 BattleFrontier_BattlePyramidLobby_EventScript_NotEnoughValidMonsLv50::
 	msgbox BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsLv50, MSGBOX_DEFAULT
-	call BattleFrontier_ShowCaughtBannedSpecies
-	msgbox BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsEnd, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePyramidLobby_EventScript_EndCancelChallenge
 
 BattleFrontier_BattlePyramidLobby_EventScript_NotEnoughValidMonsLvOpen::
 	msgbox BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsLvOpen, MSGBOX_DEFAULT
-	call BattleFrontier_ShowCaughtBannedSpecies
-	msgbox BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsEnd, MSGBOX_DEFAULT
 	goto BattleFrontier_BattlePyramidLobby_EventScript_EndCancelChallenge
 
 BattleFrontier_BattlePyramidLobby_EventScript_CancelChallengeSaveFailed::
@@ -577,7 +573,9 @@ BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsLvOpen:
 	.string "POKéMON qualified for the challenge.\p"
 	.string "Please also remember to take all\n"
 	.string "items from your POKéMON.\p"
-	.string "EGGS{STR_VAR_1}.$"
+	.string "EGGS{STR_VAR_1} ineligible.\p"
+	.string "When you are ready, please have\n"
+	.string "a word with me.$"
 
 BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsLv50:
 	.string "A slight problem, adventurer!\p"
@@ -587,9 +585,7 @@ BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsLv50:
 	.string "and each no higher than Level 50.\p"
 	.string "Please also remember to take all\n"
 	.string "items from your POKéMON.\p"
-	.string "EGGS{STR_VAR_1}.$"
-
-BattleFrontier_BattlePyramidLobby_Text_NotEnoughValidMonsEnd:
+	.string "EGGS{STR_VAR_1} ineligible.\p"
 	.string "When you are ready, please have\n"
 	.string "a word with me.$"
 

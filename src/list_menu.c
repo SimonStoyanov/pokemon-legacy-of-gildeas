@@ -13,10 +13,6 @@
 #include "sound.h"
 #include "constants/songs.h"
 
-// GF cast Task data to ListMenu in many places, which effectively puts
-// an upper bound on sizeof(struct ListMenu).
-STATIC_ASSERT(sizeof(struct ListMenu) <= sizeof(((struct Task *)NULL)->data), ListMenuTooLargeForTaskData);
-
 // Cursors after this point are created using a sprite with their own task.
 // This allows them to have idle animations. Cursors prior to this are simply printed text.
 #define CURSOR_OBJECT_START CURSOR_RED_OUTLINE
@@ -396,10 +392,7 @@ s32 ListMenu_ProcessInput(u8 listTaskId)
 
     if (JOY_NEW(A_BUTTON))
     {
-        if (list->template.isDynamic)
-            return list->scrollOffset + list->selectedRow;
-        else
-            return list->template.items[list->scrollOffset + list->selectedRow].id;
+        return list->template.items[list->scrollOffset + list->selectedRow].id;
     }
     else if (JOY_NEW(B_BUTTON))
     {
@@ -619,6 +612,7 @@ static void ListMenuPrintEntries(struct ListMenu *list, u16 startIndex, u16 yOff
     s32 i;
     u8 x, y;
     u8 yMultiplier = GetFontAttribute(list->template.fontId, FONTATTR_MAX_LETTER_HEIGHT) + list->template.itemVerticalPadding;
+
     for (i = 0; i < count; i++)
     {
         if (list->template.items[startIndex].id != LIST_HEADER)
@@ -627,16 +621,10 @@ static void ListMenuPrintEntries(struct ListMenu *list, u16 startIndex, u16 yOff
             x = list->template.header_X;
 
         y = (yOffset + i) * yMultiplier + list->template.upText_Y;
-        if (list->template.isDynamic)
-        {
-            list->template.itemPrintFunc(list->template.windowId, startIndex, y);
-        }
-        else
-        {
-            if (list->template.itemPrintFunc != NULL)
-                list->template.itemPrintFunc(list->template.windowId, list->template.items[startIndex].id, y);
-            ListMenuPrint(list, list->template.items[startIndex].name, x, y);
-        }
+        if (list->template.itemPrintFunc != NULL)
+            list->template.itemPrintFunc(list->template.windowId, list->template.items[startIndex].id, y);
+
+        ListMenuPrint(list, list->template.items[startIndex].name, x, y);
         startIndex++;
     }
 }
@@ -723,7 +711,7 @@ static u8 ListMenuUpdateSelectedRowIndexAndScrollOffset(struct ListMenu *list, b
             while (selectedRow != 0)
             {
                 selectedRow--;
-                if (list->template.isDynamic || list->template.items[scrollOffset + selectedRow].id != LIST_HEADER)
+                if (list->template.items[scrollOffset + selectedRow].id != LIST_HEADER)
                 {
                     list->selectedRow = selectedRow;
                     return 1;
@@ -737,7 +725,7 @@ static u8 ListMenuUpdateSelectedRowIndexAndScrollOffset(struct ListMenu *list, b
             while (selectedRow > newRow)
             {
                 selectedRow--;
-                if (list->template.isDynamic || list->template.items[scrollOffset + selectedRow].id != LIST_HEADER)
+                if (list->template.items[scrollOffset + selectedRow].id != LIST_HEADER)
                 {
                     list->selectedRow = selectedRow;
                     return 1;
@@ -759,7 +747,7 @@ static u8 ListMenuUpdateSelectedRowIndexAndScrollOffset(struct ListMenu *list, b
             while (selectedRow < list->template.maxShowed - 1)
             {
                 selectedRow++;
-                if (list->template.isDynamic || list->template.items[scrollOffset + selectedRow].id != LIST_HEADER)
+                if (list->template.items[scrollOffset + selectedRow].id != LIST_HEADER)
                 {
                     list->selectedRow = selectedRow;
                     return 1;
@@ -773,7 +761,7 @@ static u8 ListMenuUpdateSelectedRowIndexAndScrollOffset(struct ListMenu *list, b
             while (selectedRow < newRow)
             {
                 selectedRow++;
-                if (list->template.isDynamic || list->template.items[scrollOffset + selectedRow].id != LIST_HEADER)
+                if (list->template.items[scrollOffset + selectedRow].id != LIST_HEADER)
                 {
                     list->selectedRow = selectedRow;
                     return 1;
@@ -837,26 +825,16 @@ bool8 ListMenuChangeSelectionFull(struct ListMenu *list, bool32 updateCursor, bo
     oldSelectedRow = list->selectedRow;
     cursorCount = 0;
     selectionChange = 0;
-
     for (i = 0; i < count; i++)
     {
-        if (list->template.isDynamic)
+        do
         {
             u8 ret = ListMenuUpdateSelectedRowIndexAndScrollOffset(list, movingDown);
             selectionChange |= ret;
+            if (ret != 2)
+                break;
             cursorCount++;
-        }
-        else
-        {
-            do
-            {
-                u8 ret = ListMenuUpdateSelectedRowIndexAndScrollOffset(list, movingDown);
-                selectionChange |= ret;
-                if (ret != 2)
-                    break;
-                cursorCount++;
-            } while (list->template.items[list->scrollOffset + list->selectedRow].id == LIST_HEADER);
-        }
+        } while (list->template.items[list->scrollOffset + list->selectedRow].id == LIST_HEADER);
     }
 
     if (updateCursor)

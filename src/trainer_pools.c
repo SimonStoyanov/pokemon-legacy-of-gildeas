@@ -1,6 +1,5 @@
 #include "global.h"
 #include "data.h"
-#include "item.h"
 #include "malloc.h"
 #include "pokemon.h"
 #include "random.h"
@@ -167,10 +166,6 @@ static u32 PickMonFromPool(const struct Trainer *trainer, u8 *poolIndexArray, u3
     //  If no mon has been found yet continue looking
     if (monIndex == POOL_SLOT_DISABLED)
         monIndex = pickFunctions.OtherFunction(trainer, poolIndexArray, partyIndex, monsCount, battleTypeFlags, rules);
-    //  If a mon still hasn't been found, return POOL_SLOT_DISABLED which makes party generation default to regular party generation
-    if (monIndex == POOL_SLOT_DISABLED)
-        return monIndex;
-
     u32 chosenTags = trainer->party[monIndex].tags;
     u16 chosenSpecies = trainer->party[monIndex].species;
     u16 chosenItem = trainer->party[monIndex].heldItem;
@@ -232,10 +227,6 @@ static u32 PickMonFromPool(const struct Trainer *trainer, u8 *poolIndexArray, u3
                     poolIndexArray[currIndex] = POOL_SLOT_DISABLED;
                 }
             }
-            if (rules->megaStoneClause && gItemsInfo[currentItem].sortType == ITEM_TYPE_MEGA_STONE && gItemsInfo[chosenItem].sortType == ITEM_TYPE_MEGA_STONE)
-                poolIndexArray[currIndex] = POOL_SLOT_DISABLED;
-            if (rules->zCrystalClause && gItemsInfo[currentItem].sortType == ITEM_TYPE_Z_CRYSTAL && gItemsInfo[chosenItem].sortType == ITEM_TYPE_Z_CRYSTAL)
-                poolIndexArray[currIndex] = POOL_SLOT_DISABLED;
         }
     }
     return monIndex;

@@ -1,7 +1,7 @@
 #ifndef GUARD_HOLD_EFFECTS_H
 #define GUARD_HOLD_EFFECTS_H
 
-enum __attribute__((packed)) HoldEffect
+enum ItemHoldEffect
 {
     HOLD_EFFECT_NONE,
     HOLD_EFFECT_RESTORE_HP,
@@ -120,7 +120,7 @@ enum __attribute__((packed)) HoldEffect
     // Gen7 hold effects
     HOLD_EFFECT_PROTECTIVE_PADS,
     HOLD_EFFECT_TERRAIN_EXTENDER,
-    HOLD_EFFECT_TERRAIN_SEED,
+    HOLD_EFFECT_SEEDS,
     HOLD_EFFECT_ADRENALINE_ORB,
     HOLD_EFFECT_MEMORY,
     HOLD_EFFECT_Z_CRYSTAL,
@@ -150,14 +150,5 @@ enum __attribute__((packed)) HoldEffect
 #define HOLD_EFFECT_PARAM_GRASSY_TERRAIN    1
 #define HOLD_EFFECT_PARAM_MISTY_TERRAIN     2
 #define HOLD_EFFECT_PARAM_PSYCHIC_TERRAIN   3
-
-enum ItemActivationState
-{
-    ACTIVATION_ON_USABLE_AGAIN,
-    ACTIVATION_ON_PICK_UP,
-    ACTIVATION_ON_HARVEST,
-    ACTIVATION_ON_HP_THRESHOLD,
-    ACTIVATION_ON_STATUS_CHANGE,
-};
 
 #endif // GUARD_HOLD_EFFECTS_H

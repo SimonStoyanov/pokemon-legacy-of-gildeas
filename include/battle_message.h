@@ -1,7 +1,6 @@
 #ifndef GUARD_BATTLE_MESSAGE_H
 #define GUARD_BATTLE_MESSAGE_H
 
-#include "constants/abilities.h"
 #include "constants/battle.h"
 #include "constants/battle_string_ids.h"
 
@@ -239,13 +238,13 @@ struct BattleMsgData
     u16 currentMove;
     u16 originallyUsedMove;
     u16 lastItem;
-    enum Ability lastAbility;
+    u16 lastAbility;
     u8 scrActive;
     u8 bakScriptPartyIdx;
     u8 hpScale;
     u8 itemEffectBattler;
-    enum Type moveType;
-    enum Ability abilities[MAX_BATTLERS_COUNT];
+    u8 moveType;
+    u16 abilities[MAX_BATTLERS_COUNT];
     u8 textBuffs[3][TEXT_BUFF_ARRAY_COUNT];
 };
 
@@ -335,6 +334,5 @@ extern const u8 gText_BattleTourney[];
 
 extern const u16 gMissStringIds[];
 extern const u16 gStatUpStringIds[];
-extern const u16 gStatDownStringIds[];
 
 #endif // GUARD_BATTLE_MESSAGE_H

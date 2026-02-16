@@ -1,17 +1,16 @@
 #include "global.h"
 #include "test/battle.h"
 
-WILD_BATTLE_TEST("Pokemon gain experience after catching a Pokemon (Gen6+)")
+#if B_EXP_CATCH >= GEN_6
+
+WILD_BATTLE_TEST("Pokemon gain exp after catching a Pokemon")
 {
     u8 level = 0;
-    u32 config = 0;
 
-    PARAMETRIZE { level = MAX_LEVEL; config = GEN_5; }
-    PARAMETRIZE { level = 50;        config = GEN_5; }
-    PARAMETRIZE { level = 50;        config = GEN_6; }
+    PARAMETRIZE { level = 50; }
+    PARAMETRIZE { level = MAX_LEVEL; }
 
     GIVEN {
-        WITH_CONFIG(CONFIG_EXP_CATCH, config);
         PLAYER(SPECIES_WOBBUFFET) { Level(level); }
         OPPONENT(SPECIES_CATERPIE) { HP(1); }
     } WHEN {
@@ -19,13 +18,13 @@ WILD_BATTLE_TEST("Pokemon gain experience after catching a Pokemon (Gen6+)")
     } SCENE {
         MESSAGE("You used Ultra Ball!");
         ANIMATION(ANIM_TYPE_SPECIAL, B_ANIM_BALL_THROW, player);
-        if (level != MAX_LEVEL && config >= GEN_6) {
+        if (level != MAX_LEVEL) {
             EXPERIENCE_BAR(player);
-        } else {
-            NOT EXPERIENCE_BAR(player);
         }
     }
 }
+
+#endif // B_EXP_CATCH
 
 WILD_BATTLE_TEST("Higher leveled Pokemon give more exp", s32 exp)
 {

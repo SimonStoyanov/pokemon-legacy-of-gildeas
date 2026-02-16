@@ -150,7 +150,8 @@ static void Intro_WaitForShinyAnimAndHealthbox(u32 battler)
             gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].triedShinyMonAnim = FALSE;
             gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].finishedShinyMonAnim = FALSE;
 
-            FreeShinyStars();
+            FreeSpriteTilesByTag(ANIM_TAG_GOLD_STARS);
+            FreeSpritePaletteByTag(ANIM_TAG_GOLD_STARS);
         }
         else
         {
@@ -162,7 +163,8 @@ static void Intro_WaitForShinyAnimAndHealthbox(u32 battler)
 
             if (GetBattlerPosition(battler) == B_POSITION_OPPONENT_RIGHT)
             {
-                FreeShinyStars();
+                FreeSpriteTilesByTag(ANIM_TAG_GOLD_STARS);
+                FreeSpritePaletteByTag(ANIM_TAG_GOLD_STARS);
             }
         }
 

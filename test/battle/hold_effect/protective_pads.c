@@ -9,7 +9,7 @@ ASSUMPTIONS
 
 SINGLE_BATTLE_TEST("Protective Pads protected moves still make direct contact", s16 damage)
 {
-    enum Ability ability;
+    u32 ability;
     PARAMETRIZE { ability = ABILITY_KLUTZ; }
     PARAMETRIZE { ability = ABILITY_FLUFFY; }
     GIVEN {

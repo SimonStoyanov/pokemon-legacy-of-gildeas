@@ -7,13 +7,10 @@ ASSUMPTIONS
     ASSUME(GetMoveNonVolatileStatus(MOVE_WILL_O_WISP) == MOVE_EFFECT_BURN);
 }
 
-SINGLE_BATTLE_TEST("Burn deals 1/8th damage (Gen2-6) or 1/16th (Gen1 and Gen7+) per turn")
+SINGLE_BATTLE_TEST("Burn deals 1/16th (Gen7+) or 1/8th damage per turn")
 {
-    u32 j, config, value;
-    PARAMETRIZE { config = GEN_7; value = 16; }
-    PARAMETRIZE { config = GEN_6; value = 8; }
+    u32 j;
     GIVEN {
-        WITH_CONFIG(CONFIG_BURN_DAMAGE, config);
         PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -22,7 +19,7 @@ SINGLE_BATTLE_TEST("Burn deals 1/8th damage (Gen2-6) or 1/16th (Gen1 and Gen7+) 
     } SCENE {
         s32 maxHP = GetMonData(&PLAYER_PARTY[0], MON_DATA_MAX_HP);
         for (j = 0; j < 4; j++)
-            HP_BAR(player, damage: maxHP / value);
+            HP_BAR(player, damage: maxHP / ((B_BURN_DAMAGE >= GEN_7) ? 16 : 8));
     }
 }
 
@@ -77,8 +74,7 @@ SINGLE_BATTLE_TEST("Will-O-Wisp can't burn a fire type")
 
 AI_SINGLE_BATTLE_TEST("AI avoids Will-o-Wisp when it can not burn target")
 {
-    u32 species;
-    enum Ability ability;
+    u32 species, ability;
 
     PARAMETRIZE { species = SPECIES_BUIZEL; ability = ABILITY_WATER_VEIL; }
     PARAMETRIZE { species = SPECIES_DEWPIDER; ability = ABILITY_WATER_BUBBLE; }

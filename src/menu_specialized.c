@@ -1,11 +1,9 @@
 #include "global.h"
 #include "malloc.h"
 #include "battle_main.h"
-#include "contest.h"
 #include "contest_effect.h"
 #include "data.h"
 #include "decompress.h"
-#include "event_data.h"
 #include "gpu_regs.h"
 #include "graphics.h"
 #include "menu.h"
@@ -838,10 +836,10 @@ static void MoveRelearnerMenuLoadContestMoveDescription(u32 chosenMove)
         return;
     }
 
-    str = gContestCategoryInfo[GetMoveContestCategory(chosenMove)].name;
+    str = gContestMoveTypeTextPointers[GetMoveContestCategory(chosenMove)];
     AddTextPrinterParameterized(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, 4, 25, TEXT_SKIP_DRAW, NULL);
 
-    str = gContestEffects[GetMoveContestEffect(chosenMove)].description;
+    str = gContestEffectDescriptionPointers[GetMoveContestEffect(chosenMove)];
     AddTextPrinterParameterized(RELEARNERWIN_DESC_CONTEST, FONT_NARROW, str, 0, 65, TEXT_SKIP_DRAW, NULL);
 
     CopyWindowToVram(RELEARNERWIN_DESC_CONTEST, COPYWIN_GFX);

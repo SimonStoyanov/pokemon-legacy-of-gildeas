@@ -240,7 +240,7 @@ void RtcReset(void)
     RtcRestoreInterrupts();
 }
 
-static void UNUSED FormatDecimalTime(u8 *dest, s32 hour, s32 minute, s32 second)
+void FormatDecimalTime(u8 *dest, s32 hour, s32 minute, s32 second)
 {
     dest = ConvertIntToDecimalStringN(dest, hour, STR_CONV_MODE_LEADING_ZEROS, 2);
     *dest++ = CHAR_COLON;
@@ -250,7 +250,7 @@ static void UNUSED FormatDecimalTime(u8 *dest, s32 hour, s32 minute, s32 second)
     *dest = EOS;
 }
 
-static void UNUSED FormatHexTime(u8 *dest, s32 hour, s32 minute, s32 second)
+void FormatHexTime(u8 *dest, s32 hour, s32 minute, s32 second)
 {
     dest = ConvertIntToHexStringN(dest, hour, STR_CONV_MODE_LEADING_ZEROS, 2);
     *dest++ = CHAR_COLON;
@@ -260,12 +260,12 @@ static void UNUSED FormatHexTime(u8 *dest, s32 hour, s32 minute, s32 second)
     *dest = EOS;
 }
 
-static void UNUSED FormatHexRtcTime(u8 *dest)
+void FormatHexRtcTime(u8 *dest)
 {
     FormatHexTime(dest, sRtc.hour, sRtc.minute, sRtc.second);
 }
 
-static void UNUSED FormatDecimalDate(u8 *dest, s32 year, s32 month, s32 day)
+void FormatDecimalDate(u8 *dest, s32 year, s32 month, s32 day)
 {
     dest = ConvertIntToDecimalStringN(dest, year, STR_CONV_MODE_LEADING_ZEROS, 4);
     *dest++ = CHAR_HYPHEN;
@@ -275,7 +275,7 @@ static void UNUSED FormatDecimalDate(u8 *dest, s32 year, s32 month, s32 day)
     *dest = EOS;
 }
 
-static void UNUSED FormatHexDate(u8 *dest, s32 year, s32 month, s32 day)
+void FormatHexDate(u8 *dest, s32 year, s32 month, s32 day)
 {
     dest = ConvertIntToHexStringN(dest, year, STR_CONV_MODE_LEADING_ZEROS, 4);
     *dest++ = CHAR_HYPHEN;
@@ -334,8 +334,7 @@ enum TimeOfDay GetTimeOfDay(void)
 
 enum TimeOfDay GetTimeOfDayForDex(void)
 {
-    enum TimeOfDay timeOfDay = OW_TIME_OF_DAY_ENCOUNTERS ? GetTimeOfDay() : TIME_OF_DAY_DEFAULT;
-    return GenConfigTimeOfDay(timeOfDay);
+    return OW_TIME_OF_DAY_ENCOUNTERS ? GetTimeOfDay() : TIME_OF_DAY_DEFAULT;
 }
 
 void RtcInitLocalTimeOffset(s32 hour, s32 minute)
@@ -457,24 +456,12 @@ enum Weekday GetDayOfWeek(void)
     return dateTime.dayOfWeek;
 }
 
-enum TimeOfDay GenConfigTimeOfDay(enum TimeOfDay timeOfDay)
-{
-    if ((((timeOfDay == TIME_MORNING || timeOfDay == TIME_EVENING) && OW_TIMES_OF_DAY == GEN_3)
-        || (timeOfDay == TIME_EVENING && OW_TIMES_OF_DAY == GEN_4))
-        && timeOfDay < TIME_LAST)
-        timeOfDay++;
-
-    return timeOfDay;
-}
-
 enum TimeOfDay TryIncrementTimeOfDay(enum TimeOfDay timeOfDay)
 {
-    timeOfDay = timeOfDay == TIME_LAST ? TIME_FIRST : timeOfDay + 1;
-    return GenConfigTimeOfDay(timeOfDay);
+    return timeOfDay == TIME_NIGHT ? TIME_MORNING : timeOfDay + 1;
 }
 
 enum TimeOfDay TryDecrementTimeOfDay(enum TimeOfDay timeOfDay)
 {
-    timeOfDay = timeOfDay == TIME_FIRST ? TIME_LAST : timeOfDay - 1;
-    return GenConfigTimeOfDay(timeOfDay);
+    return timeOfDay == TIME_MORNING ? TIME_NIGHT : timeOfDay - 1;
 }
