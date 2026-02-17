@@ -42,8 +42,7 @@ EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum::
 
 EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent::
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 3
-	setvar VAR_ARCHEVALE_HOUSE_STATE, 3
-	clearflag FLAG_HIDE_PLAYERS_HOUSE_DAD
+	setvar VAR_ARCHEVALE_HOUSE_STATE, 4
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent::

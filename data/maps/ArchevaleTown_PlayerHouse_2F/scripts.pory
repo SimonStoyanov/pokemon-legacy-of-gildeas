@@ -18,8 +18,5 @@ script ArchevaleTown_Test {
 	msgbox(format("{PLAYER}, COME DOWNSTAIRS, THERE'S A SURPRISE FOR YOU"))
 	releaseall
 	setvar(VAR_ARCHEVALE_HOUSE_STATE, 1)
-}
-
-movement MyMovement {
-	walk_left
+	clearflag(FLAG_HIDE_PLAYERS_HOUSE_CHERRY)
 }

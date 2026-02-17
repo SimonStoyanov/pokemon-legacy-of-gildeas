@@ -34,14 +34,10 @@ ArchevaleTown_Test::
 	releaseall
 # 20 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	setvar VAR_ARCHEVALE_HOUSE_STATE, 1
+# 21 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+	clearflag FLAG_HIDE_PLAYERS_HOUSE_CHERRY
 	return
 
-
-# 23 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-MyMovement:
-# 24 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	walk_left
-	step_end
 
 ArchevaleTown_Test_Text_0:
 # 18 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"

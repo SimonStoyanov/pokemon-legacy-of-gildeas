@@ -48,6 +48,23 @@ script ArchevaleTown_PlayerHouse_1F_MeetCherry2 {
 	call(ArchevaleTown_PlayerHouse_1F_MeetCherry)
 }
 
+script ArchevaleTown_PlayerHouse_1F_MeetCherry3 {
+	lock
+	msgbox(format("MOM: Don't go out yet, didn't you want to get a partner?"))
+	applymovement(LOCALID_PLAYER, moves(walk_up))
+	waitmovement(LOCALID_PLAYER)
+	release
+}
+
+script PlayersHouse_1F_EventScript_Cherry {
+	lock
+	faceplayer
+	msgbox(format("A tough decision indeed {PLAYER}, but rest assured, these are great partners!"))
+	applymovement(LOCALID_CHERRY, moves(face_original_direction))
+	waitmovement(LOCALID_CHERRY)
+	release
+}
+
 script ArchevaleTown_StarterChoice {
 	lock
 	faceplayer

@@ -75,26 +75,56 @@ ArchevaleTown_PlayerHouse_1F_MeetCherry2::
 	return
 
 
-ArchevaleTown_StarterChoice::
+ArchevaleTown_PlayerHouse_1F_MeetCherry3::
 # 52 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	lock
 # 53 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	faceplayer
+	msgbox ArchevaleTown_PlayerHouse_1F_MeetCherry3_Text_0
 # 54 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	setvar VAR_ARCHEVALE_HOUSE_STATE, 2
+	applymovement LOCALID_PLAYER, ArchevaleTown_PlayerHouse_1F_MeetCherry3_Movement_0
 # 55 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	setflag FLAG_STARTER_GAINED
+	waitmovement LOCALID_PLAYER
 # 56 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 57 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 58 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	removeobject LOCALID_CHERRY_BAG
-# 59 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	special ChooseStarter
+	release
+	return
+
+
+PlayersHouse_1F_EventScript_Cherry::
 # 60 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	waitstate
+	lock
 # 61 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	faceplayer
+# 62 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Cherry_Text_0
+# 63 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	applymovement LOCALID_CHERRY, PlayersHouse_1F_EventScript_Cherry_Movement_0
+# 64 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	waitmovement LOCALID_CHERRY
+# 65 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	release
+	return
+
+
+ArchevaleTown_StarterChoice::
+# 69 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	lock
+# 70 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	faceplayer
+# 71 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	setvar VAR_ARCHEVALE_HOUSE_STATE, 2
+# 72 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	setflag FLAG_STARTER_GAINED
+# 73 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 74 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 75 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	removeobject LOCALID_CHERRY_BAG
+# 76 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	special ChooseStarter
+# 77 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	waitstate
+# 78 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	setflag FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG
 	return
 
@@ -210,3 +240,25 @@ ArchevaleTown_PlayerHouse_1F_MeetCherry_Movement_2:
 # 29 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	walk_right
 	step_end
+
+# 54 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+ArchevaleTown_PlayerHouse_1F_MeetCherry3_Movement_0:
+# 54 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	walk_up
+	step_end
+
+# 63 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+PlayersHouse_1F_EventScript_Cherry_Movement_0:
+# 63 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	face_original_direction
+	step_end
+
+ArchevaleTown_PlayerHouse_1F_MeetCherry3_Text_0:
+# 53 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	.string "MOM: Don't go out yet, didn't you want\n"
+	.string "to get a partner?$"
+
+PlayersHouse_1F_EventScript_Cherry_Text_0:
+# 62 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	.string "A tough decision indeed {PLAYER}, but\n"
+	.string "rest assured, these are great partners!$"
