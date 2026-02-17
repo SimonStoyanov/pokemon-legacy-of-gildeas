@@ -10,7 +10,6 @@ mapscripts ArchevaleTown_PlayerHouse_1F_MapScripts {
 
 script ArchevaleTown_PlayerHouse_1F_MeetCherry {
 	lock
-	setvar(VAR_ARCHEVALE_HOUSE_STATE, 2)
 	switch (var(VAR_0x8008)) {
 		case 0: applymovement(LOCALID_PLAYER, moves(
 			walk_down
@@ -52,14 +51,12 @@ script ArchevaleTown_PlayerHouse_1F_MeetCherry2 {
 script ArchevaleTown_StarterChoice {
 	lock
 	faceplayer
+	setvar(VAR_ARCHEVALE_HOUSE_STATE, 2)
+	setflag(FLAG_STARTER_GAINED)
 	setflag(FLAG_SYS_POKEMON_GET)
 	fadescreen(FADE_TO_BLACK)
 	removeobject(LOCALID_CHERRY_BAG)
 	special(ChooseStarter)
 	waitstate
 	setflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
-}
-
-movement MoveToCherry {
-
 }

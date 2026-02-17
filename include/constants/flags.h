@@ -93,10 +93,10 @@
 #define FLAG_UNUSED_0x04F    0x4F // Unused Flag
 
 // Scripts
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
-#define FLAG_SET_WALL_CLOCK                      0x51
-#define FLAG_RESCUED_BIRCH                       0x52
-#define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
+#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL     0x50
+#define FLAG_SET_WALL_CLOCK                         0x51
+#define FLAG_STARTER_GAINED                              0x52
+#define FLAG_LEGENDARIES_IN_SOOTOPOLIS              0x53
 
 #define FLAG_UNUSED_0x054                    0x54  // Unused Flag
 #define FLAG_UNUSED_0x055                    0x55  // Unused Flag
