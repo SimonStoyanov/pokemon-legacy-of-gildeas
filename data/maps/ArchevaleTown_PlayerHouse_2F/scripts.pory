@@ -11,6 +11,7 @@ mapscripts ArchevaleTown_PlayerHouse_2F_MapScripts {
 
 script ArchevaleTown_PlayerHouse_2F_SetIntroFlags {
 	setrespawn(HEAL_LOCATION_ARCHEVALE_TOWN_PLAYER_HOUSE_2F)
+	setflag(FLAG_RECEIVED_RUNNING_SHOES)
 }
 
 script ArchevaleTown_Test {
@@ -18,5 +19,7 @@ script ArchevaleTown_Test {
 	msgbox(format("{PLAYER}, COME DOWNSTAIRS, THERE'S A SURPRISE FOR YOU"))
 	releaseall
 	setvar(VAR_ARCHEVALE_HOUSE_STATE, 1)
+	setflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
+	setflag(FLAG_HIDE_PLAYERS_HOUSE_PERCY)
 	clearflag(FLAG_HIDE_PLAYERS_HOUSE_CHERRY)
 }

@@ -4,7 +4,7 @@ mapscripts ArchevaleTown_PlayerHouse_1F_MapScripts {
 
     ]
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        
+
 	]
 }
 
@@ -30,7 +30,24 @@ script ArchevaleTown_PlayerHouse_1F_MeetCherry {
 		))
 	}
 	waitmovement(LOCALID_PLAYER)
-    release
+	msgbox(format("CHERRY: Good to see you {PLAYER}, today is a special day, ain't it? You may finally join the golden pilgrimage.\N
+		To do so, as you know, you will need a partner to accompany you through this journey."))
+
+	applymovement(LOCALID_CHERRY, moves(
+		walk_right
+		walk_up * 2
+		walk_left * 3
+		face_down
+	))
+	waitmovement(LOCALID_CHERRY)
+
+	clearflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
+	addobject(LOCALID_CHERRY_BAG, MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_1F)
+
+	delay(2)
+	msgbox(format("These are my last 3 Pokémon, please choose which will be your companion"))
+
+    releaseall
 }
 
 script ArchevaleTown_PlayerHouse_1F_MeetCherry0 {
@@ -59,7 +76,7 @@ script ArchevaleTown_PlayerHouse_1F_MeetCherry3 {
 script PlayersHouse_1F_EventScript_Cherry {
 	lock
 	faceplayer
-	msgbox(format("A tough decision indeed {PLAYER}, but rest assured, these are great partners!"))
+	msgbox(format("CHERRY: A tough decision indeed {PLAYER}, but rest assured, these are great partners!"))
 	applymovement(LOCALID_CHERRY, moves(face_original_direction))
 	waitmovement(LOCALID_CHERRY)
 	release
@@ -69,20 +86,88 @@ script ArchevaleTown_StarterChoice {
 	lock
 	faceplayer
 	setvar(VAR_ARCHEVALE_HOUSE_STATE, 2)
-	setflag(FLAG_STARTER_GAINED)
 	setflag(FLAG_SYS_POKEMON_GET)
 	fadescreen(FADE_TO_BLACK)
-	removeobject(LOCALID_CHERRY_BAG)
 	special(ChooseStarter)
 	waitstate
-	setflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
+	clearflag(FLAG_HIDE_PLAYERS_HOUSE_PERCY)
+
+	playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
+	msgbox(format("???: I'm late!"))
+
+	call(PlayersHouse_1F_EventScript_Rival)
+
+	release
 }
 
 script PlayersHouse_1F_EventScript_Rival {
-	msgbox("Let's go!")
+	lock
+	
+	addobject(LOCALID_PERCY_HOUSE_1F, MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_1F)
+
+	applymovement(LOCALID_PERCY_HOUSE_1F, moves(
+		walk_fast_up * 2
+	))
+	waitmovement(LOCALID_PERCY_HOUSE_1F)
+
+	msgbox(format("PERCY: Can I still get a partner aunty Cherry?"))
+	msgbox(format("CHERRY: Suit yourself"))
+
+	
+	applymovement(LOCALID_PERCY_HOUSE_1F, moves(
+		walk_left
+		walk_up
+		face_right
+	))
+	waitmovement(LOCALID_PERCY_HOUSE_1F)
+
+	delay(60)
+
+	applymovement(LOCALID_PERCY_HOUSE_1F, moves(
+		face_up
+	))
+	waitmovement(LOCALID_PERCY_HOUSE_1F)
+
 	switch (var(VAR_STARTER_MON)) {
-		case 0: call(Route103_EventScript_StartMayBattleTreecko)
-		case 1: call(Route103_EventScript_StartMayBattleTorchic)
-		case 2: call(Route103_EventScript_StartMayBattleMudkip)
+		case 0: call(PlayerHouse1F_Rival_BudbittChosen)
+		case 1: call(PlayerHouse1F_Rival_GliscaleChosen)
+		case 2: call(PlayerHouse1F_Rival_WaterChosen)
 	}
+
+	msgbox(format("PERCY: Well I'll be...\n...\pBegginer's luck! I'll see you soon"))
+
+	applymovement(LOCALID_PERCY_HOUSE_1F, moves(
+		walk_fast_down * 2
+	))
+
+	setflag(FLAG_HIDE_PLAYERS_HOUSE_PERCY)
+	removeobject(LOCALID_PERCY_HOUSE_1F, MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_1F)
+
+	msgbox(format("CHERRY: An outstanding job, for a first battle. I hope you take good care of Percy on your journey"))
+
+	setflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
+	removeobject(LOCALID_CHERRY_BAG)
+
+	releaseall
+}
+
+script PlayerHouse1F_Rival_BudbittChosen {
+	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Budbitt...\N
+		Then I'll get this little guy! Let's tests our skills!"))	
+
+	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_TREECKO, Route103_Text_MayDefeated)
+}
+
+script PlayerHouse1F_Rival_GliscaleChosen {
+	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Gliscale...\N
+		Then I'll get this little guy! Let's tests our skills!"))	
+	
+	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_TORCHIC, Route103_Text_MayDefeated)
+}
+
+script PlayerHouse1F_Rival_WaterChosen {
+	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Water...\N
+		Then I'll get this little guy! Let's tests our skills!"))	
+
+	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_MUDKIP, Route103_Text_MayDefeated)
 }

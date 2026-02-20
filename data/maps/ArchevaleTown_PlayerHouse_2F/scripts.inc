@@ -35,6 +35,10 @@ ArchevaleTown_Test::
 # 20 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	setvar VAR_ARCHEVALE_HOUSE_STATE, 1
 # 21 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+	setflag FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG
+# 22 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+	setflag FLAG_HIDE_PLAYERS_HOUSE_PERCY
+# 23 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	clearflag FLAG_HIDE_PLAYERS_HOUSE_CHERRY
 	return
 
