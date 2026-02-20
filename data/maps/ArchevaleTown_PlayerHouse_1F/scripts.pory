@@ -77,3 +77,12 @@ script ArchevaleTown_StarterChoice {
 	waitstate
 	setflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
 }
+
+script PlayersHouse_1F_EventScript_Rival {
+	msgbox("Let's go!")
+	switch (var(VAR_STARTER_MON)) {
+		case 0: call(Route103_EventScript_StartMayBattleTreecko)
+		case 1: call(Route103_EventScript_StartMayBattleTorchic)
+		case 2: call(Route103_EventScript_StartMayBattleMudkip)
+	}
+}

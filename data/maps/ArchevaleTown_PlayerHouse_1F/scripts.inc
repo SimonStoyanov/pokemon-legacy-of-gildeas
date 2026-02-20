@@ -129,6 +129,35 @@ ArchevaleTown_StarterChoice::
 	return
 
 
+PlayersHouse_1F_EventScript_Rival::
+# 82 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Rival_Text_0
+# 83 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	switch VAR_STARTER_MON
+# 84 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	case 0, PlayersHouse_1F_EventScript_Rival_2
+# 85 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	case 1, PlayersHouse_1F_EventScript_Rival_3
+# 86 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	case 2, PlayersHouse_1F_EventScript_Rival_4
+	return
+
+PlayersHouse_1F_EventScript_Rival_2:
+# 84 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	call Route103_EventScript_StartMayBattleTreecko
+	return
+
+PlayersHouse_1F_EventScript_Rival_3:
+# 85 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	call Route103_EventScript_StartMayBattleTorchic
+	return
+
+PlayersHouse_1F_EventScript_Rival_4:
+# 86 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	call Route103_EventScript_StartMayBattleMudkip
+	return
+
+
 # 14 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 ArchevaleTown_PlayerHouse_1F_MeetCherry_Movement_0:
 # 15 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
@@ -262,3 +291,7 @@ PlayersHouse_1F_EventScript_Cherry_Text_0:
 # 62 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	.string "A tough decision indeed {PLAYER}, but\n"
 	.string "rest assured, these are great partners!$"
+
+PlayersHouse_1F_EventScript_Rival_Text_0:
+# 82 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	.string "Let's go!$"
