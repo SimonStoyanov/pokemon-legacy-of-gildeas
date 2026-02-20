@@ -1,32 +1,35 @@
 raw `
 
-ArchevaleTown_MapScripts::
-    map_script MAP_SCRIPT_ON_TRANSITION, ArchevaleTown_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, ArchevaleTown_OnFrame
-	@ map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, ArchevaleTown_OnWarp
-	.byte 0
-
-
 ArchevaleTown_OnTransition:
 	setflag FLAG_VISITED_ARCHEVALE_TOWN
     end
 
 ArchevaleTown_OnFrame:
-    end
+    .2byte 0
 
 ArchevaleTown_OnWarp:
     end
-
-
-ArchevaleTown_Home_Sign::
-	lockall
-	msgbox ArchevaleTown_Home_Text_Sign, MSGBOX_SIGN
-	releaseall
-	end
-
-ArchevaleTown_Home_Text_Sign:
-    .string "{PLAYER}'s house$"
+	
 `
+
+mapscripts ArchevaleTown_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: ArchevaleTown_OnTransition
+    MAP_SCRIPT_ON_FRAME_TABLE: ArchevaleTown_OnFrame
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_ARCHEVALE_HOUSE_STATE, 2: ArchevaleTown_SetIntro
+	]
+}
+
+script ArchevaleTown_SetIntro {
+	setflag(FLAG_HIDE_PLAYERS_HOUSE_CHERRY)
+	setvar(VAR_ARCHEVALE_HOUSE_STATE, 3)
+}
+
+script ArchevaleTown_Home_Sign {
+	lockall
+	msgbox("{PLAYER}'s house")
+	releaseall
+}
 
 script ArchevaleTownRival_Home_Sign {
 	lockall
