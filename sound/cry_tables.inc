@@ -4864,5 +4864,8 @@ gCryTable_Reverse::
 .if P_FAMILY_GLISCALE == TRUE
 	cry_reverse Cry_Gliscale
 .endif @ P_FAMILY_GLISCALE
+.if P_FAMILY_BUCCANUB == TRUE
+	cry_reverse Cry_Buccanub
+.endif @ P_FAMILY_GLISCALE
 
 .endif @ P_CRIES_ENABLED

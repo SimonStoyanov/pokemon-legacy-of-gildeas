@@ -26898,6 +26898,26 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 
 #endif //P_FAMILY_GLISCALE
 
+#if P_FAMILY_BUCCANUB
+    const u32 gMonFrontPic_Buccanub[] = INCBIN_U32("graphics/pokemon/buccanub/front.4bpp.smol");
+    const u16 gMonPalette_Buccanub[] = INCBIN_U16("graphics/pokemon/buccanub/normal.gbapal");
+    const u32 gMonBackPic_Buccanub[] = INCBIN_U32("graphics/pokemon/buccanub/back.4bpp.smol");
+    const u16 gMonShinyPalette_Buccanub[] = INCBIN_U16("graphics/pokemon/buccanub/shiny.gbapal");
+    const u8 gMonIcon_Buccanub[] = INCBIN_U8("graphics/pokemon/buccanub/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Buccanub[] = INCBIN_U8("graphics/pokemon/buccanub/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Buccanub[] = INCBIN_COMP("graphics/pokemon/buccanub/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Buccanub[] = INCBIN_U16("graphics/pokemon/buccanub/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Buccanub[] = INCBIN_U16("graphics/pokemon/buccanub/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+#endif //P_FAMILY_BUCCANUB
+
+
 #if P_FAMILY_HYPMAREA
     const u32 gMonFrontPic_Hypmarea[] = INCBIN_U32("graphics/pokemon/hypmarea/front.4bpp.smol");
     const u16 gMonPalette_Hypmarea[] = INCBIN_U16("graphics/pokemon/hypmarea/normal.gbapal");
