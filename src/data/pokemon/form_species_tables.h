@@ -2229,6 +2229,7 @@ static const u16 sAlcremieFormSpeciesIdTable[] = {
 #if P_FAMILY_FALINKS
 static const u16 sFalinksFormSpeciesIdTable[] = {
     SPECIES_FALINKS,
+    SPECIES_FALINKS_WEST,
 #if P_GEN_9_MEGA_EVOLUTIONS
     SPECIES_FALINKS_MEGA,
 #endif

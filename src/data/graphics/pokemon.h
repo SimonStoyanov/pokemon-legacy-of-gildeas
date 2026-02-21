@@ -23943,14 +23943,23 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonBackPic_Falinks[] = INCBIN_U32("graphics/pokemon/falinks/back.4bpp.smol");
     const u16 gMonShinyPalette_Falinks[] = INCBIN_U16("graphics/pokemon/falinks/shiny.gbapal");
     const u8 gMonIcon_Falinks[] = INCBIN_U8("graphics/pokemon/falinks/icon.4bpp");
+    const u32 gMonFrontPic_Falinks_West[] = INCBIN_U32("graphics/pokemon/falinks/west/front.4bpp.smol");
+    const u16 gMonPalette_Falinks_West[] = INCBIN_U16("graphics/pokemon/falinks/west/normal.gbapal");
+    const u32 gMonBackPic_Falinks_West[] = INCBIN_U32("graphics/pokemon/falinks/west/back.4bpp.smol");
+    const u16 gMonShinyPalette_Falinks_West[] = INCBIN_U16("graphics/pokemon/falinks/west/shiny.gbapal");
+    const u8 gMonIcon_Falinks_West[] = INCBIN_U8("graphics/pokemon/falinks/west/icon.4bpp");
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Falinks[] = INCBIN_U8("graphics/pokemon/falinks/footprint.1bpp");
+    const u8 gMonFootprint_Falinks_West[] = INCBIN_U8("graphics/pokemon/falinks/footprint.1bpp");
 #endif //P_FOOTPRINTS
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Falinks[] = INCBIN_COMP("graphics/pokemon/falinks/overworld.4bpp");
+    const u32 gObjectEventPic_Falinks_West[] = INCBIN_COMP("graphics/pokemon/falinks/west/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Falinks[] = INCBIN_U16("graphics/pokemon/falinks/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_Falinks[] = INCBIN_U16("graphics/pokemon/falinks/overworld_shiny.gbapal");
+    const u16 gOverworldPalette_Falinks_West[] = INCBIN_U16("graphics/pokemon/falinks/west/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Falinks_West[] = INCBIN_U16("graphics/pokemon/falinks/west/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_FALINKS

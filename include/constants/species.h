@@ -1678,8 +1678,9 @@
 #define SPECIES_HANAZEKI                                1559
 #define SPECIES_HYPMAREA                                1560
 #define SPECIES_MAEMPERIFF                              1561
+#define SPECIES_FALINKS_WEST                            1562
 
-#define SPECIES_EGG                                     (SPECIES_MAEMPERIFF + 1)
+#define SPECIES_EGG                                     (SPECIES_FALINKS_WEST + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

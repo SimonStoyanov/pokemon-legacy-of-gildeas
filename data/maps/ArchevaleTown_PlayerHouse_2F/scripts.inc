@@ -22,28 +22,30 @@ ArchevaleTown_PlayerHouse_2F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 ArchevaleTown_PlayerHouse_2F_SetIntroFlags::
 # 13 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	setrespawn HEAL_LOCATION_ARCHEVALE_TOWN_PLAYER_HOUSE_2F
+# 14 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+	setflag FLAG_RECEIVED_RUNNING_SHOES
 	return
 
 
 ArchevaleTown_Test::
-# 17 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	lockall
 # 18 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	msgbox ArchevaleTown_Test_Text_0
+	lockall
 # 19 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	releaseall
+	msgbox ArchevaleTown_Test_Text_0
 # 20 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	setvar VAR_ARCHEVALE_HOUSE_STATE, 1
+	releaseall
 # 21 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	setflag FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG
+	setvar VAR_ARCHEVALE_HOUSE_STATE, 1
 # 22 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	setflag FLAG_HIDE_PLAYERS_HOUSE_PERCY
+	setflag FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG
 # 23 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+	setflag FLAG_HIDE_PLAYERS_HOUSE_PERCY
+# 24 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	clearflag FLAG_HIDE_PLAYERS_HOUSE_CHERRY
 	return
 
 
 ArchevaleTown_Test_Text_0:
-# 18 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+# 19 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	.string "{PLAYER}, COME DOWNSTAIRS, THERE'S A\n"
 	.string "SURPRISE FOR YOU$"

@@ -154,75 +154,85 @@ PlayersHouse_1F_EventScript_Rival::
 	addobject LOCALID_PERCY_HOUSE_1F, MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_1F
 # 108 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	applymovement LOCALID_PERCY_HOUSE_1F, PlayersHouse_1F_EventScript_Rival_Movement_0
-# 112 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	msgbox PlayersHouse_1F_EventScript_Rival_Text_0
+# 111 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	waitmovement LOCALID_PERCY_HOUSE_1F
 # 113 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Rival_Text_0
+# 114 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	msgbox PlayersHouse_1F_EventScript_Rival_Text_1
-# 116 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 117 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	applymovement LOCALID_PERCY_HOUSE_1F, PlayersHouse_1F_EventScript_Rival_Movement_1
-# 121 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 122 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	waitmovement LOCALID_PERCY_HOUSE_1F
-# 123 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	delay 10
-# 125 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 124 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	delay 60
+# 126 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	applymovement LOCALID_PERCY_HOUSE_1F, PlayersHouse_1F_EventScript_Rival_Movement_2
-# 128 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 129 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	waitmovement LOCALID_PERCY_HOUSE_1F
-# 130 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	switch VAR_STARTER_MON
 # 131 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	case 0, PlayersHouse_1F_EventScript_Rival_3
+	switch VAR_STARTER_MON
 # 132 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	case 1, PlayersHouse_1F_EventScript_Rival_4
+	case 0, PlayersHouse_1F_EventScript_Rival_3
 # 133 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	case 1, PlayersHouse_1F_EventScript_Rival_4
+# 134 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	case 2, PlayersHouse_1F_EventScript_Rival_5
 PlayersHouse_1F_EventScript_Rival_1:
-# 136 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 137 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	msgbox PlayersHouse_1F_EventScript_Rival_Text_2
-# 138 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	setflag FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG
 # 139 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	applymovement LOCALID_PERCY_HOUSE_1F, PlayersHouse_1F_EventScript_Rival_Movement_3
+# 143 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	setflag FLAG_HIDE_PLAYERS_HOUSE_PERCY
+# 144 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	removeobject LOCALID_PERCY_HOUSE_1F, MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_1F
+# 146 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Rival_Text_3
+# 148 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	setflag FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG
+# 149 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	removeobject LOCALID_CHERRY_BAG
-# 141 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 151 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	releaseall
 	return
 
 PlayersHouse_1F_EventScript_Rival_3:
-# 131 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 132 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	call PlayerHouse1F_Rival_BudbittChosen
 	goto PlayersHouse_1F_EventScript_Rival_1
 
 PlayersHouse_1F_EventScript_Rival_4:
-# 132 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 133 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	call PlayerHouse1F_Rival_GliscaleChosen
 	goto PlayersHouse_1F_EventScript_Rival_1
 
 PlayersHouse_1F_EventScript_Rival_5:
-# 133 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 134 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	call PlayerHouse1F_Rival_WaterChosen
 	goto PlayersHouse_1F_EventScript_Rival_1
 
 
 PlayerHouse1F_Rival_BudbittChosen::
-# 145 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 155 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	msgbox PlayerHouse1F_Rival_BudbittChosen_Text_0
-# 148 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 158 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_TREECKO, Route103_Text_MayDefeated
 	return
 
 
 PlayerHouse1F_Rival_GliscaleChosen::
-# 152 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 162 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	msgbox PlayerHouse1F_Rival_GliscaleChosen_Text_0
-# 155 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 165 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_TORCHIC, Route103_Text_MayDefeated
 	return
 
 
 PlayerHouse1F_Rival_WaterChosen::
-# 159 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 169 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	msgbox PlayerHouse1F_Rival_WaterChosen_Text_0
-# 162 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 172 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_MUDKIP, Route103_Text_MayDefeated
 	return
 
@@ -377,20 +387,28 @@ PlayersHouse_1F_EventScript_Rival_Movement_0:
 	walk_fast_up
 	step_end
 
-# 116 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-PlayersHouse_1F_EventScript_Rival_Movement_1:
 # 117 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	walk_left
+PlayersHouse_1F_EventScript_Rival_Movement_1:
 # 118 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-	walk_up
+	walk_left
 # 119 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	walk_up
+# 120 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	face_right
 	step_end
 
-# 125 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
-PlayersHouse_1F_EventScript_Rival_Movement_2:
 # 126 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+PlayersHouse_1F_EventScript_Rival_Movement_2:
+# 127 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	face_up
+	step_end
+
+# 139 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+PlayersHouse_1F_EventScript_Rival_Movement_3:
+# 140 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_down
+# 140 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_down
 	step_end
 
 ArchevaleTown_PlayerHouse_1F_MeetCherry_Text_0:
@@ -423,36 +441,42 @@ ArchevaleTown_StarterChoice_Text_0:
 	.string "???: I'm late!$"
 
 PlayersHouse_1F_EventScript_Rival_Text_0:
-# 112 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 113 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	.string "PERCY: Can I still get a partner aunty\n"
 	.string "Cherry?$"
 
 PlayersHouse_1F_EventScript_Rival_Text_1:
-# 113 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 114 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	.string "CHERRY: Suit yourself$"
 
 PlayersHouse_1F_EventScript_Rival_Text_2:
-# 136 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 137 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	.string "PERCY: Well I'll be...\n"
 	.string "...\p"
 	.string "Begginer's luck! I'll see you soon$"
 
+PlayersHouse_1F_EventScript_Rival_Text_3:
+# 146 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+	.string "CHERRY: An outstanding job, for a first\n"
+	.string "battle. I hope you take good care of\l"
+	.string "Percy on your journey$"
+
 PlayerHouse1F_Rival_BudbittChosen_Text_0:
-# 145 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 155 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	.string "PERCY: Hey {PLAYER}! So you've\n"
 	.string "chosen Budbitt...\l"
 	.string "Then I'll get this little guy! Let's\l"
 	.string "tests our skills!$"
 
 PlayerHouse1F_Rival_GliscaleChosen_Text_0:
-# 152 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 162 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	.string "PERCY: Hey {PLAYER}! So you've\n"
 	.string "chosen Gliscale...\l"
 	.string "Then I'll get this little guy! Let's\l"
 	.string "tests our skills!$"
 
 PlayerHouse1F_Rival_WaterChosen_Text_0:
-# 159 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
+# 169 "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.pory"
 	.string "PERCY: Hey {PLAYER}! So you've\n"
 	.string "chosen Water...\l"
 	.string "Then I'll get this little guy! Let's\l"

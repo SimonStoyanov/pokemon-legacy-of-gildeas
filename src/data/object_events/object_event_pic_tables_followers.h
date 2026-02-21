@@ -5914,6 +5914,9 @@ static const struct SpriteFrameImage sPicTable_AlcremieStrawberry[] = {
 static const struct SpriteFrameImage sPicTable_Falinks[] = {
     overworld_ascending_frames(gObjectEventPic_Falinks, 4, 4),
 };
+static const struct SpriteFrameImage sPicTable_Falinks_West[] = {
+    overworld_ascending_frames(gObjectEventPic_Falinks_West, 4, 4),
+};
 #endif //P_FAMILY_FALINKS
 
 #if P_FAMILY_PINCURCHIN
