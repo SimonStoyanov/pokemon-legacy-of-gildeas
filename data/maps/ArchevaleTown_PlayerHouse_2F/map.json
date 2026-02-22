@@ -1,0 +1,108 @@
+{
+  "id": "MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_2F",
+  "name": "ArchevaleTown_PlayerHouse_2F",
+  "layout": "LAYOUT_ARCHEVALE_TOWN_PLAYER_HOUSE_2F",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_ARCHEVALE_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_1F",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_ARCHEVALE_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ArchevaleTown_Test"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PlayersHouse_2F_EventScript_Notebook"
+    },
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "LittlerootTown_BrendansHouse_2F_EventScript_PC"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlayersHouse_2F_EventScript_GameCube"
+    }
+  ]
+}

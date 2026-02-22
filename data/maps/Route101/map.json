@@ -17,11 +17,6 @@
       "map": "MAP_OLDALE_TOWN",
       "offset": 0,
       "direction": "up"
-    },
-    {
-      "map": "MAP_MAROLIVA_TOWN",
-      "offset": -5,
-      "direction": "down"
     }
   ],
   "object_events": [
@@ -51,19 +46,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
-      "x": 7,
-      "y": 14,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route101_EventScript_BirchsBag",
-      "flag": "FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG"
     },
     {
       "local_id": "LOCALID_ROUTE101_ZIGZAGOON",

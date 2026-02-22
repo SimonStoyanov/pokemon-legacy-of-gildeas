@@ -280,6 +280,203 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Pyroshed"),
         .cryId = CRY_GLISCALE,
+        .natDexNum = NATIONAL_DEX_PYROSHED,
+        .categoryName = _("Forge Snake"),
+        .height = 12,
+        .weight = 248,
+        // TODO
+        .description = COMPOUND_STRING(
+            "Pyroshed’s steel plates grow as it sheds its\n"
+            "skin, forging a stronger armor each time.\n"
+            "The fire inside burns hotter with every molt."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Pyroshed,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_STRETCH,
+        .enemyMonElevation = 0,
+        .backPic = gMonBackPic_Pyroshed,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Pyroshed,
+        .shinyPalette = gMonShinyPalette_Pyroshed,
+        .iconSprite = gMonIcon_Pyroshed,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 10, SHADOW_SIZE_L)
+        FOOTPRINT(Pyroshed)
+        OVERWORLD(
+            sPicTable_Pyroshed,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pyroshed,
+            gShinyOverworldPalette_Pyroshed
+        )
+        .levelUpLearnset = sPyroshedLevelUpLearnset,
+        .teachableLearnset = sGliscaleTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_FURNACOBRA}),
+    },
+    [SPECIES_FURNACOBRA] =
+    {
+        .baseHP        = 92,
+        .baseAttack    = 68,
+        .baseDefense   = 95,
+        .baseSpeed     = 88,
+        .baseSpAttack  = 115,
+        .baseSpDefense = 72,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_STEEL),
+        .catchRate = 45,
+        .expYield = 263,
+        .evYield_SpAttack = 2,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MONSTER),
+        .abilities = { ABILITY_BLAZE, ABILITY_BLAZE, ABILITY_DROUGHT },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Furnacobra"),
+        .cryId = CRY_GLISCALE,
+        .natDexNum = NATIONAL_DEX_FURNACOBRA,
+        .categoryName = _("Armorer"),
+        .height = 19,
+        .weight = 758,
+        // TODO
+        .description = COMPOUND_STRING(
+            "Inside its chest burns a volcanic furnace hot\n"
+            "enough to melt titanium. It vents black smoke\n"
+            "through its horn, signaling the completion of\n"
+            "new armor growing beneath its scales."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Furnacobra,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_STRETCH,
+        .enemyMonElevation = 3,
+        .backPic = gMonBackPic_Furnacobra,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Furnacobra,
+        .shinyPalette = gMonShinyPalette_Furnacobra,
+        .iconSprite = gMonIcon_Furnacobra,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-1, 13, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Furnacobra)
+        OVERWORLD(
+            sPicTable_Furnacobra,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Furnacobra,
+            gShinyOverworldPalette_Furnacobra
+        )
+        .levelUpLearnset = sFurnacobraLevelUpLearnset,
+        .teachableLearnset = sGliscaleTeachableLearnset,
+    },
+#endif //P_FAMILY_GLISCALE
+
+#if P_FAMILY_BUCCANUB
+    [SPECIES_BUCCANUB] =
+    {
+        .baseHP        = 55,
+        .baseAttack    = 70,
+        .baseDefense   = 50,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 35,
+        .baseSpDefense = 50,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 45,
+        .expYield = 62,
+        .evYield_Attack = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MONSTER),
+        .abilities = { ABILITY_TORRENT, ABILITY_TORRENT, ABILITY_SHARPNESS },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Buccanub"),
+        .cryId = CRY_BUCCANUB,
+        .natDexNum = NATIONAL_DEX_BUCCANUB,
+        .categoryName = _("Cadet Shark"),
+        .height = 5,
+        .weight = 36,
+        // TODO
+        .description = COMPOUND_STRING(
+            "It salutes stronger Pokémon as both a\n"
+            "challenge and a sign of respect before\n"
+            "launching swift and sharp strikes."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Buccanub,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_TIP_MOVE_FORWARD,
+        .enemyMonElevation = 3,
+        .backPic = gMonBackPic_Buccanub,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 4,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Buccanub,
+        .shinyPalette = gMonShinyPalette_Buccanub,
+        .iconSprite = gMonIcon_Buccanub,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 14, SHADOW_SIZE_L)
+        FOOTPRINT(Buccanub)
+        OVERWORLD(
+            sPicTable_Buccanub,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Buccanub,
+            gShinyOverworldPalette_Buccanub
+        )
+        .levelUpLearnset = sBuccanubLevelUpLearnset,
+        .teachableLearnset = sBuccanubTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_PYROSHED}),
+    },/*
+    [SPECIES_PYROSHED] =
+    {
+        .baseHP        = 77,
+        .baseAttack    = 55,
+        .baseDefense   = 70,
+        .baseSpeed     = 72,
+        .baseSpAttack  = 84,
+        .baseSpDefense = 62,
+        .types = MON_TYPES(TYPE_FIRE),
+        .catchRate = 45,
+        .expYield = 62,
+        .evYield_SpAttack = 1,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MONSTER),
+        .abilities = { ABILITY_BLAZE, ABILITY_BLAZE, ABILITY_DROUGHT },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Pyroshed"),
+        .cryId = CRY_GLISCALE,
         .natDexNum = NATIONAL_DEX_GLISCALE,
         .categoryName = _("Forge Snake"),
         .height = 12,
@@ -387,8 +584,8 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         )
         .levelUpLearnset = sFurnacobraLevelUpLearnset,
         .teachableLearnset = sGliscaleTeachableLearnset,
-    },
-#endif //P_FAMILY_GLISCALE
+    },*/
+#endif //P_FAMILY_BUCCANUB
 
 #if P_FAMILY_HYPMAREA
     [SPECIES_HYPMAREA] =

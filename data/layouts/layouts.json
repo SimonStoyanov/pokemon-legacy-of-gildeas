@@ -4414,12 +4414,52 @@
     {
       "id": "LAYOUT_MAROLIVA_TOWN",
       "name": "MarolivaTown_Layout",
-      "width": 51,
-      "height": 29,
+      "width": 60,
+      "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/MarolivaTown/border.bin",
       "blockdata_filepath": "data/layouts/MarolivaTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAROLIVA_TOWN_PLAYER_HOUSE",
+      "name": "MarolivaTown_PlayerHouse_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/MarolivaTown_PlayerHouse/border.bin",
+      "blockdata_filepath": "data/layouts/MarolivaTown_PlayerHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARCHEVALE_TOWN",
+      "name": "ArchevaleTown_Layout",
+      "width": 49,
+      "height": 45,
+      "primary_tileset": "gTileset_Snow",
+      "secondary_tileset": "gTileset_Archevale",
+      "border_filepath": "data/layouts/ArchevaleTown/border.bin",
+      "blockdata_filepath": "data/layouts/ArchevaleTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARCHEVALE_TOWN_PLAYER_HOUSE_1F",
+      "name": "ArchevaleTown_PlayerHouse_1F_Layout",
+      "width": 16,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ArchevaleTown_PlayerHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ArchevaleTown_PlayerHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARCHEVALE_TOWN_PLAYER_HOUSE_2F",
+      "name": "ArchevaleTown_PlayerHouse_2F_Layout",
+      "width": 12,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ArchevaleTown_PlayerHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ArchevaleTown_PlayerHouse_2F/map.bin"
     }
   ]
 }

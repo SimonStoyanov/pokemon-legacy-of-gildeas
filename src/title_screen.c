@@ -33,8 +33,8 @@ enum {
 #define VERSION_BANNER_LEFT_X 98
 #define VERSION_BANNER_RIGHT_X 162
 #define VERSION_BANNER_Y 2
-#define VERSION_BANNER_Y_GOAL 66
-#define START_BANNER_X 128
+#define VERSION_BANNER_Y_GOAL 76
+#define START_BANNER_X 118
 
 #define CLEAR_SAVE_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_UP)
 #define RESET_RTC_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_LEFT)
@@ -60,8 +60,8 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 // const rom data
 static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.gbapal");
 
-static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.smol");
-static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.smolTM");
+static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/erebosZenith.4bpp.smol");
+static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/erebosZenith.bin.smolTM");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.smol");
 static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.smol");
 
@@ -712,12 +712,12 @@ static void Task_TitleScreenPhase1(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDY, 0);
 
         // Create left side of version banner
-        spriteId = CreateSprite(&sVersionBannerLeftSpriteTemplate, VERSION_BANNER_LEFT_X, VERSION_BANNER_Y, 0);
+        spriteId = CreateSprite(&sVersionBannerLeftSpriteTemplate, VERSION_BANNER_LEFT_X - 10, VERSION_BANNER_Y, 0);
         gSprites[spriteId].sAlphaBlendIdx = ARRAY_COUNT(gTitleScreenAlphaBlend);
         gSprites[spriteId].sParentTaskId = taskId;
 
         // Create right side of version banner
-        spriteId = CreateSprite(&sVersionBannerRightSpriteTemplate, VERSION_BANNER_RIGHT_X, VERSION_BANNER_Y, 0);
+        spriteId = CreateSprite(&sVersionBannerRightSpriteTemplate, VERSION_BANNER_RIGHT_X - 10, VERSION_BANNER_Y, 0);
         gSprites[spriteId].sParentTaskId = taskId;
 
         gTasks[taskId].tCounter = 144;
@@ -854,16 +854,70 @@ static void CB2_GoToBerryFixScreen(void)
     }
 }
 
+struct FadeColors
+{
+    u16 color1;
+    u16 color2;
+    u8 colorIndex;
+};
+
+#ifndef RHH_EXPANSION
+#define RGB2GBA(r, g, b) (((r >> 3) & 31) | (((g >> 3) & 31) << 5) | (((b >> 3) & 31) << 10))
+#endif
+
+static const struct FadeColors sFadeColors[] = {
+/*
+    {
+        .color1 = RGB2GBA(, , ),
+        .color2 = RGB2GBA(, , ),
+        .colorIndex = 
+    }
+*/
+    {
+        .color1 = RGB2GBA(24, 8, 33),
+        .color2 = RGB2GBA(222, 66, 41),
+        .colorIndex = 15
+    }
+};
+
 static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
     if ((frameNum % 4) == 0) // Change color every 4th frame
     {
-        s32 intensity = Cos(frameNum, 128) + 128;
-        s32 r = 31 - ((intensity * 32 - intensity) / 256);
-        s32 g = 31 - (intensity * 22 / 256);
-        s32 b = 12;
+        s32 intensity = (((Cos(frameNum, 128) + 128) * 10) / 250);
+        s32 r;
+        s32 g;
+        s32 b;
+        u16 color;
+        u32 i;
 
-        u16 color = RGB(r, g, b);
-        LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
-   }
+        for (i = 0; i < ARRAY_COUNT(sFadeColors); i++)
+        {
+            if (intensity == 0)
+            {
+                color = sFadeColors[i].color2;
+            }
+            else
+            {
+                if (GET_R(sFadeColors[i].color1) <= GET_R(sFadeColors[i].color2))
+                    r = (GET_R(sFadeColors[i].color2) - (((GET_R(sFadeColors[i].color2) - GET_R(sFadeColors[i].color1)) * intensity) / 10));
+                else
+                    r = (GET_R(sFadeColors[i].color2) + (((GET_R(sFadeColors[i].color1) - GET_R(sFadeColors[i].color2)) * intensity) / 10));
+
+                if (GET_G(sFadeColors[i].color1) <= GET_G(sFadeColors[i].color2))
+                    g = (GET_G(sFadeColors[i].color2) - (((GET_G(sFadeColors[i].color2) - GET_G(sFadeColors[i].color1)) * intensity) / 10));
+                else
+                    g = (GET_G(sFadeColors[i].color2) + (((GET_G(sFadeColors[i].color1) - GET_G(sFadeColors[i].color2)) * intensity) / 10));
+
+                if (GET_B(sFadeColors[i].color1) <= GET_B(sFadeColors[i].color2))
+                    b = (GET_B(sFadeColors[i].color2) - (((GET_B(sFadeColors[i].color2) - GET_B(sFadeColors[i].color1)) * intensity) / 10));
+                else
+                    b = (GET_B(sFadeColors[i].color2) + (((GET_B(sFadeColors[i].color1) - GET_B(sFadeColors[i].color2)) * intensity) / 10));
+
+                color = RGB(r, g, b);
+            }
+            
+            LoadPalette(&color, BG_PLTT_ID(14) + sFadeColors[i].colorIndex, sizeof(color));
+        }
+    }
 }

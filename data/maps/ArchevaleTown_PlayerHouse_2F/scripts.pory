@@ -1,0 +1,25 @@
+mapscripts ArchevaleTown_PlayerHouse_2F_MapScripts {
+    //MAP_SCRIPT_ON_RESUME: MyNewCity_OnResume
+    MAP_SCRIPT_ON_TRANSITION {}
+    MAP_SCRIPT_ON_FRAME_TABLE [
+
+    ]
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_ARCHEVALE_HOUSE_STATE, 0: ArchevaleTown_PlayerHouse_2F_SetIntroFlags
+	]
+}
+
+script ArchevaleTown_PlayerHouse_2F_SetIntroFlags {
+	setrespawn(HEAL_LOCATION_ARCHEVALE_TOWN_PLAYER_HOUSE_2F)
+	setflag(FLAG_RECEIVED_RUNNING_SHOES)
+}
+
+script ArchevaleTown_Test {
+	lockall
+	msgbox(format("{PLAYER}, COME DOWNSTAIRS, THERE'S A SURPRISE FOR YOU"))
+	releaseall
+	setvar(VAR_ARCHEVALE_HOUSE_STATE, 1)
+	setflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
+	setflag(FLAG_HIDE_PLAYERS_HOUSE_PERCY)
+	clearflag(FLAG_HIDE_PLAYERS_HOUSE_CHERRY)
+}

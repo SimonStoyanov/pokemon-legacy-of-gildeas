@@ -1106,7 +1106,7 @@ static void PrintTimeOnCard(void)
     if (!sData->isHoenn)
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 88, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
     else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 89, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 87, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
 
     if (sData->isLink)
     {
@@ -1133,7 +1133,7 @@ static void PrintTimeOnCard(void)
     else
     {
         x = 128;
-        y = 89;
+        y = 87;
     }
     totalWidth = width + 30;
     x -= totalWidth;
@@ -1508,15 +1508,25 @@ static void DrawStarsAndBadgesOnCard(void)
     FillBgTilemapBufferRect(3, 143, 15, yOffsets[sData->isHoenn], sData->trainerCard.stars, 1, 4);
     if (!sData->isLink)
     {
-        x = 4;
+        x = 3;
         for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
         {
             if (sData->badgeCount[i])
             {
-                FillBgTilemapBufferRect(3, tileNum, x, 15, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 15, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 16, x, 16, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 16, 1, 1, palNum);
+                if (i <= 7) {
+                    FillBgTilemapBufferRect(3, tileNum, x, 14, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 14, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 32, x, 15, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 33, x + 1, 15, 1, 1, palNum);
+
+                    if (i == 7) { x = 0; tileNum = 190; }
+                }
+                else {
+                    FillBgTilemapBufferRect(3, tileNum + 16, x, 16, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 16, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 32 + 16, x, 17, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 33 + 16, x + 1, 17, 1, 1, palNum);
+                }
             }
         }
     }

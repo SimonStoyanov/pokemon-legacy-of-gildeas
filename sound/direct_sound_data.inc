@@ -6167,6 +6167,12 @@ Cry_Gliscale::
 	.incbin "sound/direct_sound_samples/cries/gliscale.bin"
 .endif @ P_FAMILY_GLISCALE
 
+.if P_FAMILY_BUCCANUB == TRUE
+	.align 2
+Cry_Buccanub::
+	.incbin "sound/direct_sound_samples/cries/buccanub.bin"
+.endif @ P_FAMILY_BUCCANUB
+
 
 .endif @ P_CRIES_ENABLED
 

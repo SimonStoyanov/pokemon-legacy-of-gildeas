@@ -9666,16 +9666,16 @@ Marshtomp
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_MAY_ROUTE_103_MUDKIP ===
-Name: MAY
+=== TRAINER_PERCY_FIRST_BATTLE_MUDKIP ===
+Name: PERCY
 Class: Rival
-Pic: May
+Pic: Rival Percy
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Treecko
+Budbitt
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9721,16 +9721,16 @@ Grovyle
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_MAY_ROUTE_103_TREECKO ===
-Name: MAY
+=== TRAINER_PERCY_FIRST_BATTLE_TREECKO ===
+Name: PERCY
 Class: Rival
-Pic: May
+Pic: Rival Percy
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Torchic
+Gliscale
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9776,16 +9776,16 @@ Combusken
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_MAY_ROUTE_103_TORCHIC ===
-Name: MAY
+=== TRAINER_PERCY_FIRST_BATTLE_TORCHIC ===
+Name: PERCY
 Class: Rival
-Pic: May
+Pic: Rival Percy
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Mudkip
+Buccanub
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
