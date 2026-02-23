@@ -26915,6 +26915,23 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
+    const u32 gMonFrontPic_Corshark[] = INCBIN_U32("graphics/pokemon/corshark/front.4bpp.smol");
+    const u16 gMonPalette_Corshark[] = INCBIN_U16("graphics/pokemon/corshark/normal.gbapal");
+    const u32 gMonBackPic_Corshark[] = INCBIN_U32("graphics/pokemon/corshark/back.4bpp.smol");
+    const u16 gMonShinyPalette_Corshark[] = INCBIN_U16("graphics/pokemon/corshark/shiny.gbapal");
+    const u8 gMonIcon_Corshark[] = INCBIN_U8("graphics/pokemon/corshark/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Corshark[] = INCBIN_U8("graphics/pokemon/corshark/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Corshark[] = INCBIN_COMP("graphics/pokemon/corshark/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Corshark[] = INCBIN_U16("graphics/pokemon/corshark/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Corshark[] = INCBIN_U16("graphics/pokemon/corshark/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+
 #endif //P_FAMILY_BUCCANUB
 
 

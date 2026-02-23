@@ -414,8 +414,8 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .cryId = CRY_BUCCANUB,
         .natDexNum = NATIONAL_DEX_BUCCANUB,
         .categoryName = _("Cadet Shark"),
-        .height = 5,
-        .weight = 36,
+        .height = 7,
+        .weight = 48,
         // TODO
         .description = COMPOUND_STRING(
             "It salutes stronger Pokémon as both a\n"
@@ -453,17 +453,17 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         )
         .levelUpLearnset = sBuccanubLevelUpLearnset,
         .teachableLearnset = sBuccanubTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_PYROSHED}),
-    },/*
-    [SPECIES_PYROSHED] =
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_CORSHARK}),
+    },
+    [SPECIES_CORSHARK] =
     {
-        .baseHP        = 77,
-        .baseAttack    = 55,
-        .baseDefense   = 70,
-        .baseSpeed     = 72,
-        .baseSpAttack  = 84,
-        .baseSpDefense = 62,
-        .types = MON_TYPES(TYPE_FIRE),
+        .baseHP        = 80,
+        .baseAttack    = 100,
+        .baseDefense   = 60,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_WATER, TYPE_FIGHTING),
         .catchRate = 45,
         .expYield = 62,
         .evYield_SpAttack = 1,
@@ -473,14 +473,14 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MONSTER),
-        .abilities = { ABILITY_BLAZE, ABILITY_BLAZE, ABILITY_DROUGHT },
+        .abilities = { ABILITY_TORRENT, ABILITY_TORRENT, ABILITY_SHARPNESS },
         .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Pyroshed"),
-        .cryId = CRY_GLISCALE,
-        .natDexNum = NATIONAL_DEX_GLISCALE,
-        .categoryName = _("Forge Snake"),
-        .height = 12,
-        .weight = 248,
+        .speciesName = _("Corshark"),
+        .cryId = CRY_BUCCANUB,
+        .natDexNum = NATIONAL_DEX_CORSHARK,
+        .categoryName = _("Corsair"),
+        .height = 11,
+        .weight = 185,
         // TODO
         .description = COMPOUND_STRING(
             "Pyroshed’s steel plates grow as it sheds its\n"
@@ -490,36 +490,36 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Pyroshed,
+        .frontPic = gMonFrontPic_Corshark,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 2,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        .frontAnimId = ANIM_V_STRETCH,
+        .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
         .enemyMonElevation = 0,
-        .backPic = gMonBackPic_Pyroshed,
+        .backPic = gMonBackPic_Corshark,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_Pyroshed,
-        .shinyPalette = gMonShinyPalette_Pyroshed,
-        .iconSprite = gMonIcon_Pyroshed,
+        .palette = gMonPalette_Corshark,
+        .shinyPalette = gMonShinyPalette_Corshark,
+        .iconSprite = gMonIcon_Corshark,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-2, 10, SHADOW_SIZE_L)
-        FOOTPRINT(Pyroshed)
+        SHADOW(-4, 10, SHADOW_SIZE_L)
+        FOOTPRINT(Corshark)
         OVERWORLD(
-            sPicTable_Pyroshed,
+            sPicTable_Corshark,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Pyroshed,
-            gShinyOverworldPalette_Pyroshed
+            gOverworldPalette_Corshark,
+            gShinyOverworldPalette_Corshark
         )
-        .levelUpLearnset = sPyroshedLevelUpLearnset,
-        .teachableLearnset = sGliscaleTeachableLearnset,
+        .levelUpLearnset = sCorsharkLevelUpLearnset,
+        .teachableLearnset = sBuccanubTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_FURNACOBRA}),
-    },
+    },/*
     [SPECIES_FURNACOBRA] =
     {
         .baseHP        = 92,

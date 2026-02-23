@@ -1673,8 +1673,8 @@
 #define SPECIES_PYROSHED                                1554
 #define SPECIES_FURNACOBRA                              1555
 #define SPECIES_BUCCANUB                                1556
-#define SPECIES_CUTLASSEL                               1557
-#define SPECIES_ADMIROGUE                               1558
+#define SPECIES_CORSHARK                                1557
+#define SPECIES_ADMIRAZOR                               1558
 #define SPECIES_HANAZEKI                                1559
 #define SPECIES_HYPMAREA                                1560
 #define SPECIES_MAEMPERIFF                              1561

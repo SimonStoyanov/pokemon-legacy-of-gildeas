@@ -14,7 +14,7 @@ static const struct LevelUpMove sBudbittLevelUpLearnset[] = {
     LEVEL_UP_MOVE(44, MOVE_SOLAR_BLADE),
     LEVEL_UP_END
 };
-
+ 
 static const struct LevelUpMove sThornalopeLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
@@ -126,6 +126,23 @@ static const struct LevelUpMove sBuccanubLevelUpLearnset[] = {
     LEVEL_UP_MOVE(41, MOVE_BOUNCE),
     LEVEL_UP_MOVE(44, MOVE_FLYING_PRESS),
     LEVEL_UP_MOVE(50, MOVE_DOUBLE_EDGE),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sCorsharkLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_POUND),
+    LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
+    LEVEL_UP_MOVE( 1, MOVE_WORK_UP),
+    LEVEL_UP_MOVE( 1, MOVE_AQUA_JET),
+    LEVEL_UP_MOVE( 1, MOVE_POWER_UP_PUNCH),
+    LEVEL_UP_MOVE(20, MOVE_FLIP_TURN),
+    LEVEL_UP_MOVE(27, MOVE_RAPID_SPIN),
+    LEVEL_UP_MOVE(34, MOVE_CRUNCH),
+    LEVEL_UP_MOVE(39, MOVE_LIQUIDATION),
+    LEVEL_UP_MOVE(43, MOVE_BOUNCE),
+    LEVEL_UP_MOVE(47, MOVE_FLYING_PRESS),
+    LEVEL_UP_MOVE(55, MOVE_DOUBLE_EDGE),
     LEVEL_UP_END
 };
 

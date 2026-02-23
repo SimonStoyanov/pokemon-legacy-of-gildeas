@@ -6764,6 +6764,9 @@ static const struct SpriteFrameImage sPicTable_Furnacobra[] = {
 static const struct SpriteFrameImage sPicTable_Buccanub[] = {
     overworld_ascending_frames(gObjectEventPic_Buccanub, 4, 4),
 };
+static const struct SpriteFrameImage sPicTable_Corshark[] = {
+    overworld_ascending_frames(gObjectEventPic_Corshark, 4, 4),
+};
 #endif //P_FAMILY_BUCCANUB
 
 #endif //OW_POKEMON_OBJECT_EVENTS
