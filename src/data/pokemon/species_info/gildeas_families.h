@@ -463,18 +463,18 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .baseSpeed     = 65,
         .baseSpAttack  = 55,
         .baseSpDefense = 60,
-        .types = MON_TYPES(TYPE_WATER, TYPE_FIGHTING),
+        .types = MON_TYPES(TYPE_WATER),
         .catchRate = 45,
         .expYield = 62,
-        .evYield_SpAttack = 1,
-        .evYield_Speed = 1,
+        .evYield_Attack = 1,
+        .evYield_HP = 1,
         .genderRatio = PERCENT_FEMALE(12.5),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MONSTER),
         .abilities = { ABILITY_TORRENT, ABILITY_TORRENT, ABILITY_SHARPNESS },
-        .bodyColor = BODY_COLOR_RED,
+        .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Corshark"),
         .cryId = CRY_BUCCANUB,
         .natDexNum = NATIONAL_DEX_CORSHARK,
@@ -483,9 +483,10 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .weight = 185,
         // TODO
         .description = COMPOUND_STRING(
-            "Pyroshed’s steel plates grow as it sheds its\n"
-            "skin, forging a stronger armor each time.\n"
-            "The fire inside burns hotter with every molt."),
+            "The red markings on its body pulse\n"
+            "faintly when it senses battle. It \n"
+            "practices sweeping tail strikes\n"
+            "against crashing waves to build strength"),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -518,73 +519,73 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         )
         .levelUpLearnset = sCorsharkLevelUpLearnset,
         .teachableLearnset = sBuccanubTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_FURNACOBRA}),
-    },/*
-    [SPECIES_FURNACOBRA] =
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_ADMIRAZOR}),
+    },
+    [SPECIES_ADMIRAZOR] =
     {
-        .baseHP        = 92,
-        .baseAttack    = 68,
-        .baseDefense   = 95,
-        .baseSpeed     = 88,
-        .baseSpAttack  = 115,
-        .baseSpDefense = 72,
-        .types = MON_TYPES(TYPE_FIRE, TYPE_STEEL),
+        .baseHP        = 100,
+        .baseAttack    = 128,
+        .baseDefense   = 75,
+        .baseSpeed     = 92,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_WATER, TYPE_FIGHTING),
         .catchRate = 45,
         .expYield = 263,
-        .evYield_SpAttack = 2,
-        .evYield_Defense = 1,
+        .evYield_Attack = 2,
+        .evYield_Speed = 1,
         .genderRatio = PERCENT_FEMALE(12.5),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MONSTER),
-        .abilities = { ABILITY_BLAZE, ABILITY_BLAZE, ABILITY_DROUGHT },
-        .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Furnacobra"),
-        .cryId = CRY_GLISCALE,
-        .natDexNum = NATIONAL_DEX_GLISCALE,
-        .categoryName = _("Armorer"),
-        .height = 19,
-        .weight = 758,
+        .abilities = { ABILITY_TORRENT, ABILITY_TORRENT, ABILITY_SHARPNESS },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Admirazor"),
+        .cryId = CRY_BUCCANUB,
+        .natDexNum = NATIONAL_DEX_ADMIRAZOR,
+        .categoryName = _("Admiral"),
+        .height = 21,
+        .weight = 680,
         // TODO
         .description = COMPOUND_STRING(
-            "Inside its chest burns a volcanic furnace hot\n"
-            "enough to melt titanium. It vents black smoke\n"
-            "through its horn, signaling the completion of\n"
-            "new armor growing beneath its scales."),
+            "Admirazor rules its territory like a\n"
+            "seasoned captain. Its sweeping tail strikes\n"
+            "can shatter steel, leaving deep gouges in\n"
+            "the hulls of abandoned ships."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Furnacobra,
+        .frontPic = gMonFrontPic_Admirazor,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        .frontAnimId = ANIM_V_STRETCH,
-        .enemyMonElevation = 3,
-        .backPic = gMonBackPic_Furnacobra,
+        .frontAnimId = ANIM_BACK_AND_LUNGE,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_Admirazor,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_Furnacobra,
-        .shinyPalette = gMonShinyPalette_Furnacobra,
-        .iconSprite = gMonIcon_Furnacobra,
+        .palette = gMonPalette_Admirazor,
+        .shinyPalette = gMonShinyPalette_Admirazor,
+        .iconSprite = gMonIcon_Admirazor,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-1, 13, SHADOW_SIZE_XL_BATTLE_ONLY)
-        FOOTPRINT(Furnacobra)
+        SHADOW(-4, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Admirazor)
         OVERWORLD(
-            sPicTable_Furnacobra,
+            sPicTable_Admirazor,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Furnacobra,
-            gShinyOverworldPalette_Furnacobra
+            gOverworldPalette_Admirazor,
+            gShinyOverworldPalette_Admirazor
         )
-        .levelUpLearnset = sFurnacobraLevelUpLearnset,
+        .levelUpLearnset = sAdmirazorLevelUpLearnset,
         .teachableLearnset = sGliscaleTeachableLearnset,
-    },*/
+    },
 #endif //P_FAMILY_BUCCANUB
 
 #if P_FAMILY_HYPMAREA

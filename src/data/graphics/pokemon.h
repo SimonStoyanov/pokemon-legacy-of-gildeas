@@ -26931,6 +26931,22 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
+    const u32 gMonFrontPic_Admirazor[] = INCBIN_U32("graphics/pokemon/admirazor/front.4bpp.smol");
+    const u16 gMonPalette_Admirazor[] = INCBIN_U16("graphics/pokemon/admirazor/normal.gbapal");
+    const u32 gMonBackPic_Admirazor[] = INCBIN_U32("graphics/pokemon/admirazor/back.4bpp.smol");
+    const u16 gMonShinyPalette_Admirazor[] = INCBIN_U16("graphics/pokemon/admirazor/shiny.gbapal");
+    const u8 gMonIcon_Admirazor[] = INCBIN_U8("graphics/pokemon/admirazor/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Admirazor[] = INCBIN_U8("graphics/pokemon/admirazor/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Admirazor[] = INCBIN_COMP("graphics/pokemon/admirazor/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Admirazor[] = INCBIN_U16("graphics/pokemon/admirazor/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Admirazor[] = INCBIN_U16("graphics/pokemon/admirazor/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
 
 #endif //P_FAMILY_BUCCANUB
 
