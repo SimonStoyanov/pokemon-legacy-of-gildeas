@@ -2430,6 +2430,9 @@ gCryTable::
 .if P_FAMILY_GLISCALE == TRUE
 	cry Cry_Gliscale
 .endif @ P_FAMILY_GLISCALE
+.if P_FAMILY_BUCCANUB == TRUE
+	cry Cry_Buccanub
+.endif @ P_FAMILY_BUCCANUB
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -4866,6 +4869,6 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_GLISCALE
 .if P_FAMILY_BUCCANUB == TRUE
 	cry_reverse Cry_Buccanub
-.endif @ P_FAMILY_GLISCALE
+.endif @ P_FAMILY_BUCCANUB
 
 .endif @ P_CRIES_ENABLED

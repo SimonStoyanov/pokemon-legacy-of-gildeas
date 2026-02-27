@@ -584,9 +584,210 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
             gShinyOverworldPalette_Admirazor
         )
         .levelUpLearnset = sAdmirazorLevelUpLearnset,
-        .teachableLearnset = sGliscaleTeachableLearnset,
+        .teachableLearnset = sBuccanubTeachableLearnset,
     },
 #endif //P_FAMILY_BUCCANUB
+
+#if P_FAMILY_BROWT
+    [SPECIES_BROWT] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 50,
+        .baseDefense   = 50,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 50,
+        .types = MON_TYPES(TYPE_GRASS),
+        .catchRate = 45,
+        .expYield = 62,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_OVERGROW, ABILITY_OVERGROW },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Browt"),
+        .cryId = CRY_BROWT,
+        .natDexNum = NATIONAL_DEX_BROWT,
+        .categoryName = _("Bean Chick"),
+        .height = 3,
+        .weight = 34,
+        // TODO
+        .description = COMPOUND_STRING(
+            "Browt runs about energetically while\n"
+            "photosynthesizing using the leaves on its\n"
+            "brow. It’s lively, but it can also be a\n"
+            "bit clumsy."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Browt,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_Browt,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Browt,
+        .shinyPalette = gMonShinyPalette_Browt,
+        .iconSprite = gMonIcon_Browt,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 11, SHADOW_SIZE_M)
+        FOOTPRINT(Browt)
+        OVERWORLD(
+            sPicTable_Browt,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Browt,
+            gShinyOverworldPalette_Browt
+        )
+        .levelUpLearnset = sBrowtLevelUpLearnset,
+        .teachableLearnset = sBrowtTeachableLearnset,
+    },
+#endif //P_FAMILY_BROWT
+
+#if P_FAMILY_POMBON
+    [SPECIES_POMBON] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 50,
+        .baseDefense   = 50,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 50,
+        .types = MON_TYPES(TYPE_FIRE),
+        .catchRate = 45,
+        .expYield = 62,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MONSTER),
+        .abilities = { ABILITY_BLAZE, ABILITY_BLAZE, ABILITY_BLAZE },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Pombon"),
+        .cryId = CRY_POMBON,
+        .natDexNum = NATIONAL_DEX_POMBON,
+        .categoryName = _("Puppy"),
+        .height = 4,
+        .weight = 67,
+        // TODO
+        .description = COMPOUND_STRING(
+            "The area below its throat glows faintly\n"
+            "from the heat-generating organ within\n"
+            "its lungs. This Pokémon is guileless\n"
+            "and friendly."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Pombon,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_STRETCH,
+        .enemyMonElevation = 0,
+        .backPic = gMonBackPic_Pombon,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Pombon,
+        .shinyPalette = gMonShinyPalette_Pombon,
+        .iconSprite = gMonIcon_Pombon,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(2, 12, SHADOW_SIZE_L)
+        FOOTPRINT(Pombon)
+        OVERWORLD(
+            sPicTable_Pombon,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pombon,
+            gShinyOverworldPalette_Pombon
+        )
+        .levelUpLearnset = sPombonLevelUpLearnset,
+        .teachableLearnset = sPombonTeachableLearnset,
+    },
+#endif //P_FAMILY_POMBON
+
+#if P_FAMILY_GECQUA
+    [SPECIES_GECQUA] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 50,
+        .baseDefense   = 50,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 50,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 45,
+        .expYield = 62,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MONSTER),
+        .abilities = { ABILITY_TORRENT, ABILITY_TORRENT, ABILITY_TORRENT },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Gecqua"),
+        .cryId = CRY_GECQUA,
+        .natDexNum = NATIONAL_DEX_GECQUA,
+        .categoryName = _("Water Gecko"),
+        .height = 3,
+        .weight = 43,
+        // TODO
+        .description = COMPOUND_STRING(
+            "This Pokémon launches springy balls of\n"
+            "water from its tail. Gecqua is very\n"
+            "intelligent and maneuvers shrewdly\n"
+            "while putting on airs"),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Gecqua,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_H_STRETCH,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_Gecqua,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Gecqua,
+        .shinyPalette = gMonShinyPalette_Gecqua,
+        .iconSprite = gMonIcon_Gecqua,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(5, 8, SHADOW_SIZE_L)
+        FOOTPRINT(Gecqua)
+        OVERWORLD(
+            sPicTable_Gecqua,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Gecqua,
+            gShinyOverworldPalette_Gecqua
+        )
+        .levelUpLearnset = sGecquaLevelUpLearnset,
+        .teachableLearnset = sGecquaTeachableLearnset,
+    },
+#endif //P_FAMILY_GECQUA
 
 #if P_FAMILY_HYPMAREA
     [SPECIES_HYPMAREA] =
