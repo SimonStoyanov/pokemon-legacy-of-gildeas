@@ -41,7 +41,13 @@ ArchevaleTown_Test::
 # 23 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	setflag FLAG_HIDE_PLAYERS_HOUSE_PERCY
 # 24 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+	setflag FLAG_SYS_QUEST_MENU_GET
+# 25 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	clearflag FLAG_HIDE_PLAYERS_HOUSE_CHERRY
+# 26 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_1_STARTERS
+# 27 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
+	openquestmenu
 	return
 
 

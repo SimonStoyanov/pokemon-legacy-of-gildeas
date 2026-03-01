@@ -65,6 +65,7 @@
 #include "constants/vars.h"
 #include "constants/weather.h"
 #include "constants/speaker_names.h"
+#include "constants/quests.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -1169,12 +1170,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ArchevaleTown/scripts.inc"
 	.include "data/maps/ArchevaleTown_PlayerHouse_1F/scripts.inc"
 	.include "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.inc"
-
-
-	.include "data/maps/ArchevaleTown_PercyHouse_2F/scripts.inc"
-
 	.include "data/maps/ArchevaleTown_PercyHouse_1F/scripts.inc"
-
+	.include "data/maps/ArchevaleTown_PercyHouse_2F/scripts.inc"
 	.include "data/maps/ArchevaleTown_CherryLab/scripts.inc"
-
 	.include "data/maps/ArchevaleTown_Mart/scripts.inc"
