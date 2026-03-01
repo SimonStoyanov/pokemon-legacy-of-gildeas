@@ -6759,11 +6759,34 @@ static const struct SpriteFrameImage sPicTable_Furnacobra[] = {
 };
 #endif //P_FAMILY_GLISCALE
 
-
 #if P_FAMILY_BUCCANUB
 static const struct SpriteFrameImage sPicTable_Buccanub[] = {
     overworld_ascending_frames(gObjectEventPic_Buccanub, 4, 4),
 };
+static const struct SpriteFrameImage sPicTable_Corshark[] = {
+    overworld_ascending_frames(gObjectEventPic_Corshark, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Admirazor[] = {
+    overworld_ascending_frames(gObjectEventPic_Admirazor, 4, 4),
+};
 #endif //P_FAMILY_BUCCANUB
+
+#if P_FAMILY_BROWT
+static const struct SpriteFrameImage sPicTable_Browt[] = {
+    overworld_ascending_frames(gObjectEventPic_Browt, 4, 4),
+};
+#endif //P_FAMILY_BROWT
+
+#if P_FAMILY_POMBON
+static const struct SpriteFrameImage sPicTable_Pombon[] = {
+    overworld_ascending_frames(gObjectEventPic_Pombon, 4, 4),
+};
+#endif //P_FAMILY_POMBON
+
+#if P_FAMILY_GECQUA
+static const struct SpriteFrameImage sPicTable_Gecqua[] = {
+    overworld_ascending_frames(gObjectEventPic_Gecqua, 4, 4),
+};
+#endif //P_FAMILY_GECQUA
 
 #endif //OW_POKEMON_OBJECT_EVENTS

@@ -31,8 +31,60 @@ script ArchevaleTown_Home_Sign {
 	releaseall
 }
 
-script ArchevaleTownRival_Home_Sign {
+script ArchevaleTown_Lab_Sign {
 	lockall
-	msgbox("It's Ness' house")
+	msgbox("PROF. CHERRY'S POKEMON LAB")
 	releaseall
 }
+
+script ArchevaleTownRival_Home_Sign {
+	lockall
+	msgbox("It's Percy's house")
+	releaseall
+}
+
+script ArchevaleTownWinda_Home_Sign {
+	lockall
+	msgbox("It's Winda's house")
+	releaseall
+}
+
+script ArchevaleTownWavey_Home_Sign {
+	lockall
+	msgbox("It's Wavey's house")
+	releaseall
+}
+
+script ArchevaleTown_Warning {
+	lockall
+	msgbox(format("ARCHEVALE TOWN\nWhere stone remembers the first frost\pBe wary of stepping on ice"))
+	releaseall
+}
+
+script ArchevaleTown_EventScript_FatMan {
+	lockall
+	faceplayer
+	msgbox(format("New discoveries are done everyday regarding Pokémon's biology\pTechnology is amazing!"))
+	releaseall
+}
+
+script ArchevaleTown_EventScript_NinjaBoy {
+	lockall
+	faceplayer
+	msgbox(format("I love sliding through ice!"))
+	releaseall
+}
+
+
+script ArchevaleTown_Rock_Enigma {
+	lockall
+	braillemsgbox(ArchevaleTown_Braille)
+	releaseall
+}
+
+raw `
+ArchevaleTown_Braille:
+	brailleformat 5, 0, 25, 19, 8, 3
+	.braille "IT HIDES\n"
+	.braille "IN SHADOW.$"
+`

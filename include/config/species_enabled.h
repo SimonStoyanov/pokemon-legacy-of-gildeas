@@ -605,14 +605,11 @@
 #define P_FAMILY_PECHARUNT               P_GEN_9_POKEMON
 
 #define P_FAMILY_BUDBITT                 P_GILDEAS_POKEMON
-#define P_FAMILY_THORNALOPE              P_GILDEAS_POKEMON
-#define P_FAMILY_SYLVAGARD               P_GILDEAS_POKEMON
 #define P_FAMILY_GLISCALE                P_GILDEAS_POKEMON
-#define P_FAMILY_PYROSHED                P_GILDEAS_POKEMON
-#define P_FAMILY_FURNACOBRA              P_GILDEAS_POKEMON
 #define P_FAMILY_BUCCANUB                P_GILDEAS_POKEMON
-#define P_FAMILY_CUTLASSEL               P_GILDEAS_POKEMON
-#define P_FAMILY_ADMIROGUE               P_GILDEAS_POKEMON
+#define P_FAMILY_BROWT                   P_GILDEAS_POKEMON
+#define P_FAMILY_POMBON                  P_GILDEAS_POKEMON
+#define P_FAMILY_GECQUA                  P_GILDEAS_POKEMON
 #define P_FAMILY_HANAZEKI                P_GILDEAS_POKEMON
 #define P_FAMILY_HYPMAREA                P_GILDEAS_POKEMON
 #define P_FAMILY_MAEMPERIFF              P_GILDEAS_POKEMON

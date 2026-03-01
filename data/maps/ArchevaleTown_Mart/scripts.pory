@@ -1,0 +1,26 @@
+mapscripts ArchevaleTown_Mart_MapScripts { }
+
+script ArchevaleTown_Mart_Clerk {
+    lock
+    faceplayer
+    msgbox(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(ArchevaleTown_Mart_Items)
+    msgbox(gText_PleaseComeAgain)
+    release
+}
+
+mart ArchevaleTown_Mart_Items {
+    ITEM_POKE_BALL
+    ITEM_POTION
+    ITEM_ANTIDOTE
+    ITEM_ICE_HEAL
+    ITEM_PARALYZE_HEAL
+    ITEM_AWAKENING
+    ITEM_ESCAPE_ROPE
+    ITEM_REPEL
+    ITEM_LINKING_CORD
+    ITEM_X_SPEED
+    ITEM_X_ATTACK
+    ITEM_X_DEFENSE
+}

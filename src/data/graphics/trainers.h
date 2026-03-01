@@ -283,6 +283,9 @@ const u16 gTrainerPalette_RubySapphireMay[] = INCBIN_U16("graphics/trainers/pale
 const u32 gTrainerFrontPic_RivalPercy[] = INCBIN_U32("graphics/trainers/front_pics/percy.4bpp.smol");
 const u16 gTrainerPalette_RivalPercy[] = INCBIN_U16("graphics/trainers/palettes/percy.gbapal");
 
+const u32 gTrainerFrontPic_RivalDahlia[] = INCBIN_U32("graphics/trainers/front_pics/dahlia.4bpp.smol");
+const u16 gTrainerPalette_RivalDahlia[] = INCBIN_U16("graphics/trainers/palettes/dahlia.gbapal");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -405,6 +408,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan),
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
     TRAINER_SPRITE(TRAINER_PIC_RIVAL_PERCY, gTrainerFrontPic_RivalPercy, gTrainerPalette_RivalPercy),
+    TRAINER_SPRITE(TRAINER_PIC_RIVAL_DAHLIA, gTrainerFrontPic_RivalDahlia, gTrainerPalette_RivalDahlia),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
