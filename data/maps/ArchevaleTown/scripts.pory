@@ -61,10 +61,17 @@ script ArchevaleTown_Warning {
 	releaseall
 }
 
+script ArchevaleTown_EventScript_SmallGirl {
+	lockall
+	faceplayer
+	msgbox(format("Um, um, um!\pIf you go outside and go in the grass,\nwild POKéMON will jump out!$"))
+	releaseall
+}
+
 script ArchevaleTown_EventScript_FatMan {
 	lockall
 	faceplayer
-	msgbox(format("Did you know that HM's can be used now witout teaching them to your Pokémon?\pTechnology is amazing!"))
+	msgbox(format("Did you know that HM's can be used now without teaching them to your Pokémon?\pTechnology is amazing!"))
 	releaseall
 }
 

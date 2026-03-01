@@ -178,7 +178,7 @@ ArchevaleTown_Warning_Text_0:
 ArchevaleTown_EventScript_FatMan_Text_0:
 # 67 "data/maps/ArchevaleTown/scripts.pory"
 	.string "Did you know that HM's can be used now\n"
-	.string "witout teaching them to your Pokémon?\p"
+	.string "without teaching them to your Pokémon?\p"
 	.string "Technology is amazing!$"
 
 ArchevaleTown_EventScript_NinjaBoy_Text_0:
