@@ -1,0 +1,15 @@
+mapscripts ArchevaleTown_PercyHouse_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {}
+    MAP_SCRIPT_ON_FRAME_TABLE [
+
+    ]
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+
+	]
+}
+
+script ArchevaleTown_PercyHouse_2F_NOTMINE {
+	lock
+	msgbox(format("I shouldn't be reading Percy's stuff"))
+	release
+}

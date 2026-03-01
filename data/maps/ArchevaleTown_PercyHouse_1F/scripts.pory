@@ -1,0 +1,33 @@
+mapscripts ArchevaleTown_PercyHouse_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {}
+    MAP_SCRIPT_ON_FRAME_TABLE [
+
+    ]
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+
+	]
+}
+
+script PercyHouse_1F_EventScript_Mom {
+	lock
+	faceplayer
+	msgbox(format("Have you seen Percy? I think he went out already.\pTake care!"))
+	applymovement(LOCALID_PERCYMOM, moves(face_original_direction))
+	release
+}
+
+script PercyHouse_1F_EventScript_Grandma {
+	lock
+	faceplayer
+	msgbox(format("Oh... to be young... Get a hold of these memories to come"))
+	applymovement(LOCALID_GRANDMA, moves(face_original_direction))
+	release
+}
+
+script PercyHouse_1F_EventScript_Sister {
+	lock
+	faceplayer
+	msgbox(format("I want to go out too!"))
+	applymovement(LOCALID_SISTER, moves(face_original_direction))
+	release
+}
