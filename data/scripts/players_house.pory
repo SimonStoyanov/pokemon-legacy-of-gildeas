@@ -670,6 +670,7 @@ script PlayersHouse_1F_EventScript_Mom {
 	faceplayer
 	switch (var(VAR_ARCHEVALE_HOUSE_STATE)) {
 		case 1: call(PlayerHouse_1F_GoOn)
+		case 2: call(PlayerHouse_1F_GoOn)
 		case 4: call(PlayersHouse_1F_EventScript_DontPushYourselfTooHard)
 		default: call(PlayersHouse_1F_EventScript_MomHealsParty)
 	}	
@@ -678,6 +679,12 @@ script PlayersHouse_1F_EventScript_Mom {
 
 script PlayerHouse_1F_GoOn {
 	msgbox(format("MOM: Go on, your adventure awaits!"))
+	release
+	end
+}
+
+script PlayerHouse_1F_CherryAwaits {
+	msgbox(format("MOM: Don't make Prof. Cherry wait, she's at the lab"))
 	release
 	end
 }

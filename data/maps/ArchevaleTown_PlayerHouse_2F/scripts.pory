@@ -11,18 +11,14 @@ mapscripts ArchevaleTown_PlayerHouse_2F_MapScripts {
 
 script ArchevaleTown_PlayerHouse_2F_SetIntroFlags {
 	setrespawn(HEAL_LOCATION_ARCHEVALE_TOWN_PLAYER_HOUSE_2F)
-	setflag(FLAG_RECEIVED_RUNNING_SHOES)
+	setflag(FLAG_SYS_QUEST_MENU_GET)
 }
 
 script ArchevaleTown_Test {
 	lockall
-	msgbox(format("{PLAYER}, COME DOWNSTAIRS, THERE'S A SURPRISE FOR YOU"))
+	msgbox(format("MOM: {PLAYER}, honey! You'll be late to meet Prof Cherry"))
 	releaseall
 	setvar(VAR_ARCHEVALE_HOUSE_STATE, 1)
-	setflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
-	setflag(FLAG_HIDE_PLAYERS_HOUSE_PERCY)
-	setflag(FLAG_SYS_QUEST_MENU_GET)
-	clearflag(FLAG_HIDE_PLAYERS_HOUSE_CHERRY)
 	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_1_STARTERS)
 	openquestmenu
 }

@@ -1335,11 +1335,13 @@ PlayersHouse_1F_EventScript_Mom::
 # 672 "data/scripts/players_house.pory"
 	case 1, PlayersHouse_1F_EventScript_Mom_3
 # 673 "data/scripts/players_house.pory"
-	case 4, PlayersHouse_1F_EventScript_Mom_4
+	case 2, PlayersHouse_1F_EventScript_Mom_4
 # 674 "data/scripts/players_house.pory"
+	case 4, PlayersHouse_1F_EventScript_Mom_5
+# 675 "data/scripts/players_house.pory"
 	call PlayersHouse_1F_EventScript_MomHealsParty
 PlayersHouse_1F_EventScript_Mom_1:
-# 676 "data/scripts/players_house.pory"
+# 677 "data/scripts/players_house.pory"
 	release
 	return
 
@@ -1350,18 +1352,36 @@ PlayersHouse_1F_EventScript_Mom_3:
 
 PlayersHouse_1F_EventScript_Mom_4:
 # 673 "data/scripts/players_house.pory"
+	call PlayerHouse_1F_GoOn
+	goto PlayersHouse_1F_EventScript_Mom_1
+
+PlayersHouse_1F_EventScript_Mom_5:
+# 674 "data/scripts/players_house.pory"
 	call PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto PlayersHouse_1F_EventScript_Mom_1
 
 
 PlayerHouse_1F_GoOn::
-# 680 "data/scripts/players_house.pory"
-	msgbox PlayerHouse_1F_GoOn_Text_0
 # 681 "data/scripts/players_house.pory"
+	msgbox PlayerHouse_1F_GoOn_Text_0
+# 682 "data/scripts/players_house.pory"
+	release
+	end
+
+
+PlayerHouse_1F_CherryAwaits::
+# 687 "data/scripts/players_house.pory"
+	msgbox PlayerHouse_1F_CherryAwaits_Text_0
+# 688 "data/scripts/players_house.pory"
 	release
 	end
 
 
 PlayerHouse_1F_GoOn_Text_0:
-# 680 "data/scripts/players_house.pory"
+# 681 "data/scripts/players_house.pory"
 	.string "MOM: Go on, your adventure awaits!$"
+
+PlayerHouse_1F_CherryAwaits_Text_0:
+# 687 "data/scripts/players_house.pory"
+	.string "MOM: Don't make Prof. Cherry wait, she's\n"
+	.string "at the lab$"

@@ -104,49 +104,61 @@ ArchevaleTown_Warning::
 	return
 
 
-ArchevaleTown_EventScript_FatMan::
+ArchevaleTown_EventScript_SmallGirl::
 # 65 "data/maps/ArchevaleTown/scripts.pory"
 	lockall
 # 66 "data/maps/ArchevaleTown/scripts.pory"
 	faceplayer
 # 67 "data/maps/ArchevaleTown/scripts.pory"
-	msgbox ArchevaleTown_EventScript_FatMan_Text_0
+	msgbox ArchevaleTown_EventScript_SmallGirl_Text_0
 # 68 "data/maps/ArchevaleTown/scripts.pory"
 	releaseall
 	return
 
 
-ArchevaleTown_EventScript_NinjaBoy::
+ArchevaleTown_EventScript_FatMan::
 # 72 "data/maps/ArchevaleTown/scripts.pory"
 	lockall
 # 73 "data/maps/ArchevaleTown/scripts.pory"
 	faceplayer
 # 74 "data/maps/ArchevaleTown/scripts.pory"
-	msgbox ArchevaleTown_EventScript_NinjaBoy_Text_0
+	msgbox ArchevaleTown_EventScript_FatMan_Text_0
 # 75 "data/maps/ArchevaleTown/scripts.pory"
 	releaseall
 	return
 
 
-ArchevaleTown_Rock_Enigma::
-# 80 "data/maps/ArchevaleTown/scripts.pory"
+ArchevaleTown_EventScript_NinjaBoy::
+# 79 "data/maps/ArchevaleTown/scripts.pory"
 	lockall
+# 80 "data/maps/ArchevaleTown/scripts.pory"
+	faceplayer
 # 81 "data/maps/ArchevaleTown/scripts.pory"
-	braillemsgbox ArchevaleTown_Braille
+	msgbox ArchevaleTown_EventScript_NinjaBoy_Text_0
 # 82 "data/maps/ArchevaleTown/scripts.pory"
 	releaseall
 	return
 
 
-# 85 "data/maps/ArchevaleTown/scripts.pory"
-
-# 86 "data/maps/ArchevaleTown/scripts.pory"
-ArchevaleTown_Braille:
+ArchevaleTown_Rock_Enigma::
 # 87 "data/maps/ArchevaleTown/scripts.pory"
-	brailleformat 5, 0, 25, 19, 8, 3
+	lockall
 # 88 "data/maps/ArchevaleTown/scripts.pory"
-	.braille "IT HIDES\n"
+	braillemsgbox ArchevaleTown_Braille
 # 89 "data/maps/ArchevaleTown/scripts.pory"
+	releaseall
+	return
+
+
+# 92 "data/maps/ArchevaleTown/scripts.pory"
+
+# 93 "data/maps/ArchevaleTown/scripts.pory"
+ArchevaleTown_Braille:
+# 94 "data/maps/ArchevaleTown/scripts.pory"
+	brailleformat 5, 0, 25, 19, 8, 3
+# 95 "data/maps/ArchevaleTown/scripts.pory"
+	.braille "IT HIDES\n"
+# 96 "data/maps/ArchevaleTown/scripts.pory"
 	.braille "IN SHADOW.$"
 
 ArchevaleTown_Home_Sign_Text_0:
@@ -175,12 +187,18 @@ ArchevaleTown_Warning_Text_0:
 	.string "Where stone remembers the first frost\p"
 	.string "Be wary of stepping on ice$"
 
-ArchevaleTown_EventScript_FatMan_Text_0:
+ArchevaleTown_EventScript_SmallGirl_Text_0:
 # 67 "data/maps/ArchevaleTown/scripts.pory"
+	.string "Um, um, um!\p"
+	.string "If you go outside and go in the grass,\n"
+	.string "wild POKéMON will jump out!$"
+
+ArchevaleTown_EventScript_FatMan_Text_0:
+# 74 "data/maps/ArchevaleTown/scripts.pory"
 	.string "Did you know that HM's can be used now\n"
 	.string "without teaching them to your Pokémon?\p"
 	.string "Technology is amazing!$"
 
 ArchevaleTown_EventScript_NinjaBoy_Text_0:
-# 74 "data/maps/ArchevaleTown/scripts.pory"
+# 81 "data/maps/ArchevaleTown/scripts.pory"
 	.string "I love sliding through ice!$"
