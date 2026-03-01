@@ -64,7 +64,7 @@ script ArchevaleTown_Warning {
 script ArchevaleTown_EventScript_FatMan {
 	lockall
 	faceplayer
-	msgbox(format("New discoveries are done everyday regarding Pokémon's biology\pTechnology is amazing!"))
+	msgbox(format("Did you know that HM's can be used now witout teaching them to your Pokémon?\pTechnology is amazing!"))
 	releaseall
 }
 
