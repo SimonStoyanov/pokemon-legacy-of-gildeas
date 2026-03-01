@@ -178,7 +178,7 @@ ArchevaleTown_Warning_Text_0:
 ArchevaleTown_EventScript_FatMan_Text_0:
 # 67 "data/maps/ArchevaleTown/scripts.pory"
 	.string "New discoveries are done everyday\n"
-	.string "reagarding Pokémon's biology\p"
+	.string "regarding Pokémon's biology\p"
 	.string "Technology is amazing!$"
 
 ArchevaleTown_EventScript_NinjaBoy_Text_0:
