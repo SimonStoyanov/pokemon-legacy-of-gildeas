@@ -21,8 +21,8 @@ mapscripts ArchevaleTown_MapScripts {
 }
 
 script ArchevaleTown_SetIntro {
-	setflag(FLAG_HIDE_PLAYERS_HOUSE_CHERRY)
-	setvar(VAR_ARCHEVALE_HOUSE_STATE, 3)
+	setflag(FLAG_HIDE_LAB_PERCY)
+	setvar(VAR_ARCHEVALE_LAB_STATE, 0)
 }
 
 script ArchevaleTown_Home_Sign {

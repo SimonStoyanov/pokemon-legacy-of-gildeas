@@ -156,7 +156,7 @@
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
+#define VAR_ARCHEVALE_LAB_STATE                          0x408B // 0-1: Intro, 2: Starter chosen
 #define VAR_ARCHEVALE_HOUSE_STATE                        0x408C // 0-2: FTUE, 3: Normal State, 4: Marshadow found, 5: Champion
 #define VAR_LITTLEROOT_RIVAL_STATE                       0x408D 
 #define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E

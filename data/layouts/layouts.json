@@ -4484,7 +4484,7 @@
     {
       "id": "LAYOUT_ARCHEVALE_TOWN_CHERRY_LAB",
       "name": "ArchevaleTown_CherryLab_Layout",
-      "width": 14,
+      "width": 13,
       "height": 15,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",

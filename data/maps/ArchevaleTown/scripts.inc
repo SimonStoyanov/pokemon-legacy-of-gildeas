@@ -38,9 +38,9 @@ ArchevaleTown_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 
 ArchevaleTown_SetIntro::
 # 24 "data/maps/ArchevaleTown/scripts.pory"
-	setflag FLAG_HIDE_PLAYERS_HOUSE_CHERRY
+	setflag FLAG_HIDE_LAB_PERCY
 # 25 "data/maps/ArchevaleTown/scripts.pory"
-	setvar VAR_ARCHEVALE_HOUSE_STATE, 3
+	setvar VAR_ARCHEVALE_LAB_STATE, 0
 	return
 
 

@@ -1,11 +1,183 @@
 mapscripts ArchevaleTown_CherryLab_MapScripts { }
 
-script ArchevaleTown_PlayerHouse_1F_MeetCherry3 {
+script ArchevaleTown_CherryLab_MoveTowardsCherry_0 {
+	setvar(VAR_0x8008, 0)
+	call(ArchevaleTown_CherryLab_Intro)
+}
+script ArchevaleTown_CherryLab_MoveTowardsCherry_1 {
+	setvar(VAR_0x8008, 1)
+	call(ArchevaleTown_CherryLab_Intro)
+}
+script ArchevaleTown_CherryLab_MoveTowardsCherry_2 {
+	setvar(VAR_0x8008, 2)
+	call(ArchevaleTown_CherryLab_Intro)
+}
+script ArchevaleTown_CherryLab_MoveTowardsCherry_3 {
+	setvar(VAR_0x8008, 3)
+	call(ArchevaleTown_CherryLab_Intro)
+}
+script ArchevaleTown_CherryLab_MoveTowardsCherry_4 {
+	setvar(VAR_0x8008, 4)
+	call(ArchevaleTown_CherryLab_Intro)
+}
+
+script ArchevaleTown_CherryLab_Intro {
 	lock
-	msgbox(format("MOM: Don't go out yet, didn't you want to get a partner?"))
-	applymovement(LOCALID_PLAYER, moves(walk_up))
+	switch (var(VAR_0x8008))
+	{
+		case 0:	
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up * 2
+				walk_right * 2
+				walk_up * 5
+			))
+		
+		case 1:	
+			applymovement(LOCALID_PLAYER, moves(
+				walk_right
+				walk_up * 6
+			))
+			
+		case 2:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up * 6
+			))
+		
+		case 3: 
+			applymovement(LOCALID_PLAYER, moves(
+				walk_left
+				walk_up * 6
+			))
+		
+		case 4:	
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up * 2
+				walk_left * 2
+				walk_up * 5
+			))
+		
+	}
+	waitmovement(LOCALID_PLAYER)
+	setvar(VAR_ARCHEVALE_LAB_STATE, 1)
+	msgbox(format("PROF. CHERRY: Hi {PLAYER}, today marks the start of your journey through Gildeas. 
+				That means that you'll be able to join the pilgrimage side-by-side with a partner
+				\p........\n.......\p
+				Percy should be arriving soon too, but it seems he overslept again, so you may choose first"))
+	applymovement(LOCALID_CHERRY, moves(
+		walk_right * 2
+		walk_up * 2
+		face_down
+	))
+	waitmovement(LOCALID_CHERRY)
+	releaseall
+}
+
+script ArchevaleTown_CherryLab_MoveUp {
+	lock
+	msgbox(format("CHERRY: Aren't you forgetting something?"))
+	applymovement(LOCALID_PLAYER, moves(
+		walk_up
+	))
 	waitmovement(LOCALID_PLAYER)
 	release
+}
+
+script ArchevaleTown_CherryLab_PokeballBudbitt {
+	lockall
+	if (!(flag(FLAG_STARTER_BUDBITT) || flag(FLAG_STARTER_GLISCALE) || flag(FLAG_STARTER_BUCCANUB))) {
+		call(ArchevaleTown_CherryLab_Budbitt)
+	}
+	else {
+		msgbox(format("What may be of the remaining Pokémon...?"))
+	}
+	waitmessage
+	releaseall
+	end
+}
+script ArchevaleTown_CherryLab_PokeballGliscale {
+	lockall
+	if (!(flag(FLAG_STARTER_BUDBITT) || flag(FLAG_STARTER_GLISCALE) || flag(FLAG_STARTER_BUCCANUB))) {
+		call(ArchevaleTown_CherryLab_Gliscale)
+	}
+	else {
+		msgbox(format("What may be of the remaining Pokémon...?"))
+	}
+	waitmessage
+	releaseall
+	end
+}
+script ArchevaleTown_CherryLab_PokeballBuccanub {
+	lockall
+	if (!(flag(FLAG_STARTER_BUDBITT) || flag(FLAG_STARTER_GLISCALE) || flag(FLAG_STARTER_BUCCANUB))) {
+		call(ArchevaleTown_CherryLab_Buccanub)
+	}
+	else {
+		msgbox(format("What may be of the remaining Pokémon...?"))
+	}
+	waitmessage
+	releaseall
+	end
+}
+
+script ArchevaleTown_CherryLab_Budbitt {
+	showmonpic(SPECIES_BUDBITT, 10, 3)
+	msgbox(format("Do you want to choose Budbitt, the Grass Hare Pokémon?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		givemon(SPECIES_BUDBITT, 5)
+    	setflag(FLAG_SYS_POKEMON_GET)
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox("Receieved Budbitt")
+		removeobject(LOCALID_BUDBITT)
+		setflag(FLAG_STARTER_BUDBITT)
+		setvar(VAR_STARTER_MON, 0)
+		call(Common_EventScript_NameReceivedPartyMon)
+		setvar(VAR_ARCHEVALE_LAB_STATE, 2)
+		call(ArchevaleTown_AfterStarterChoice)
+	}
+	else {
+		hidemonpic
+		msgbox("PROF. CHERRY: Take your time")
+	}
+}
+script ArchevaleTown_CherryLab_Gliscale {
+	showmonpic(SPECIES_GLISCALE, 10, 3)
+	msgbox(format("Do you want to choose Gliscale, the Fire Snake Pokémon?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		givemon(SPECIES_GLISCALE, 5)
+    	setflag(FLAG_SYS_POKEMON_GET)
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox("Receieved Gliscale")
+		removeobject(LOCALID_GLISCALE)
+		setflag(FLAG_STARTER_GLISCALE)
+		setvar(VAR_STARTER_MON, 1)
+		call(Common_EventScript_NameReceivedPartyMon)
+		setvar(VAR_ARCHEVALE_LAB_STATE, 2)
+		call(ArchevaleTown_AfterStarterChoice)
+	}
+	else {
+		hidemonpic
+		msgbox("PROF. CHERRY: Take your time")
+	}
+}
+script ArchevaleTown_CherryLab_Buccanub {
+	showmonpic(SPECIES_BUCCANUB, 10, 3)
+	msgbox(format("Do you want to choose Buccanub, the Cadet Shark Pokémon?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		givemon(SPECIES_BUCCANUB, 5)
+    	setflag(FLAG_SYS_POKEMON_GET)
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox("Receieved Buccanub")
+		removeobject(LOCALID_BUCCANUB)
+		setflag(FLAG_STARTER_BUCCANUB)
+		setvar(VAR_STARTER_MON, 1)
+		call(Common_EventScript_NameReceivedPartyMon)
+		setvar(VAR_ARCHEVALE_LAB_STATE, 2)
+		call(ArchevaleTown_AfterStarterChoice)
+	}
+	else {
+		hidemonpic
+		msgbox("PROF. CHERRY: Take your time")
+	}
 }
 
 script PlayersHouse_1F_EventScript_Cherry {
@@ -17,17 +189,13 @@ script PlayersHouse_1F_EventScript_Cherry {
 	release
 }
 
-script ArchevaleTown_StarterChoice {
+script ArchevaleTown_AfterStarterChoice {
 	lock
-	faceplayer
-	setvar(VAR_ARCHEVALE_HOUSE_STATE, 2)
-	setflag(FLAG_SYS_POKEMON_GET)
-	fadescreen(FADE_TO_BLACK)
-	special(ChooseStarter)
-	waitstate
-	clearflag(FLAG_HIDE_PLAYERS_HOUSE_PERCY)
+	setvar(VAR_ARCHEVALE_HOUSE_STATE, 3)
+	clearflag(FLAG_HIDE_LAB_PERCY)
 
 	playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
+	applymovement(LOCALID_PLAYER, moves(face_down))
 	msgbox(format("???: I'm late!"))
 
 	call(PlayersHouse_1F_EventScript_Rival)
@@ -38,30 +206,30 @@ script ArchevaleTown_StarterChoice {
 script PlayersHouse_1F_EventScript_Rival {
 	lock
 	
-	addobject(LOCALID_PERCY_HOUSE_1F, MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_1F)
+	addobject(LOCALID_PERCY_LAB, MAP_ARCHEVALE_TOWN_CHERRY_LAB)
 
-	applymovement(LOCALID_PERCY_HOUSE_1F, moves(
-		walk_fast_up * 2
+	applymovement(LOCALID_PERCY_LAB, moves(
+		walk_fast_up * 7
 	))
-	waitmovement(LOCALID_PERCY_HOUSE_1F)
+	waitmovement(LOCALID_PERCY_LAB)
 
 	msgbox(format("PERCY: Can I still get a partner aunty Cherry?"))
 	msgbox(format("CHERRY: Suit yourself"))
 
 	
-	applymovement(LOCALID_PERCY_HOUSE_1F, moves(
+	applymovement(LOCALID_PERCY_LAB, moves(
 		walk_left
 		walk_up
 		face_right
 	))
-	waitmovement(LOCALID_PERCY_HOUSE_1F)
+	waitmovement(LOCALID_PERCY_LAB)
 
 	delay(60)
 
-	applymovement(LOCALID_PERCY_HOUSE_1F, moves(
+	applymovement(LOCALID_PERCY_LAB, moves(
 		face_up
 	))
-	waitmovement(LOCALID_PERCY_HOUSE_1F)
+	waitmovement(LOCALID_PERCY_LAB)
 
 	switch (var(VAR_STARTER_MON)) {
 		case 0: call(PlayerHouse1F_Rival_BudbittChosen)
@@ -71,17 +239,14 @@ script PlayersHouse_1F_EventScript_Rival {
 
 	msgbox(format("PERCY: Well I'll be...\n...\pBegginer's luck! I'll see you soon"))
 
-	applymovement(LOCALID_PERCY_HOUSE_1F, moves(
+	applymovement(LOCALID_PERCY_LAB, moves(
 		walk_fast_down * 2
 	))
 
-	setflag(FLAG_HIDE_PLAYERS_HOUSE_PERCY)
-	removeobject(LOCALID_PERCY_HOUSE_1F, MAP_ARCHEVALE_TOWN_PLAYER_HOUSE_1F)
+	setflag(FLAG_HIDE_LAB_PERCY)
+	removeobject(LOCALID_PERCY_LAB, MAP_ARCHEVALE_TOWN_CHERRY_LAB)
 
 	msgbox(format("CHERRY: An outstanding job, for a first battle. I hope you take good care of Percy on your journey"))
-
-	setflag(FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG)
-	removeobject(LOCALID_CHERRY_BAG)
 
 	releaseall
 }
