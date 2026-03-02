@@ -59,17 +59,17 @@ Route103_EventScript_RivalBrendan::
 	end
 
 Route103_EventScript_StartMayBattleTreecko::
-	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_TREECKO, Route103_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
 
 Route103_EventScript_StartMayBattleTorchic::
-	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_TORCHIC, Route103_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
 
 Route103_EventScript_StartMayBattleMudkip::
-	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_MUDKIP, Route103_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
 

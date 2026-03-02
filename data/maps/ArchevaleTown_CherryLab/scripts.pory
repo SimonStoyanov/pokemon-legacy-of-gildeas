@@ -88,7 +88,7 @@ script ArchevaleTown_CherryLab_PokeballBudbitt {
 		call(ArchevaleTown_CherryLab_Budbitt)
 	}
 	else {
-		msgbox(format("What may be of the remaining Pokémon...?"))
+		msgbox(format("What will happen to the remaining Pokémon...?"))
 	}
 	waitmessage
 	releaseall
@@ -100,7 +100,7 @@ script ArchevaleTown_CherryLab_PokeballGliscale {
 		call(ArchevaleTown_CherryLab_Gliscale)
 	}
 	else {
-		msgbox(format("What may be of the remaining Pokémon...?"))
+		msgbox(format("What will happen to the remaining Pokémon...?"))
 	}
 	waitmessage
 	releaseall
@@ -112,7 +112,7 @@ script ArchevaleTown_CherryLab_PokeballBuccanub {
 		call(ArchevaleTown_CherryLab_Buccanub)
 	}
 	else {
-		msgbox(format("What may be of the remaining Pokémon...?"))
+		msgbox(format("What will happen to the remaining Pokémon...?"))
 	}
 	waitmessage
 	releaseall
@@ -121,12 +121,13 @@ script ArchevaleTown_CherryLab_PokeballBuccanub {
 
 script ArchevaleTown_CherryLab_Budbitt {
 	showmonpic(SPECIES_BUDBITT, 10, 3)
+	playmoncry(SPECIES_BUDBITT, CRY_MODE_NORMAL)
 	msgbox(format("Do you want to choose Budbitt, the Grass Hare Pokémon?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		givemon(SPECIES_BUDBITT, 5)
     	setflag(FLAG_SYS_POKEMON_GET)
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox("Receieved Budbitt")
+		msgbox("Recieved Budbitt")
 		removeobject(LOCALID_BUDBITT)
 		setflag(FLAG_STARTER_BUDBITT)
 		setvar(VAR_STARTER_MON, 0)
@@ -141,12 +142,13 @@ script ArchevaleTown_CherryLab_Budbitt {
 }
 script ArchevaleTown_CherryLab_Gliscale {
 	showmonpic(SPECIES_GLISCALE, 10, 3)
+	playmoncry(SPECIES_GLISCALE, CRY_MODE_NORMAL)
 	msgbox(format("Do you want to choose Gliscale, the Fire Snake Pokémon?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		givemon(SPECIES_GLISCALE, 5)
     	setflag(FLAG_SYS_POKEMON_GET)
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox("Receieved Gliscale")
+		msgbox("Recieved Gliscale")
 		removeobject(LOCALID_GLISCALE)
 		setflag(FLAG_STARTER_GLISCALE)
 		setvar(VAR_STARTER_MON, 1)
@@ -161,15 +163,16 @@ script ArchevaleTown_CherryLab_Gliscale {
 }
 script ArchevaleTown_CherryLab_Buccanub {
 	showmonpic(SPECIES_BUCCANUB, 10, 3)
+	playmoncry(SPECIES_BUCCANUB, CRY_MODE_NORMAL)
 	msgbox(format("Do you want to choose Buccanub, the Cadet Shark Pokémon?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		givemon(SPECIES_BUCCANUB, 5)
     	setflag(FLAG_SYS_POKEMON_GET)
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox("Receieved Buccanub")
+		msgbox("Recieved Buccanub")
 		removeobject(LOCALID_BUCCANUB)
 		setflag(FLAG_STARTER_BUCCANUB)
-		setvar(VAR_STARTER_MON, 1)
+		setvar(VAR_STARTER_MON, 2)
 		call(Common_EventScript_NameReceivedPartyMon)
 		setvar(VAR_ARCHEVALE_LAB_STATE, 2)
 		call(ArchevaleTown_AfterStarterChoice)
@@ -209,39 +212,26 @@ script PlayersHouse_1F_EventScript_Rival {
 	addobject(LOCALID_PERCY_LAB, MAP_ARCHEVALE_TOWN_CHERRY_LAB)
 
 	applymovement(LOCALID_PERCY_LAB, moves(
-		walk_fast_up * 7
+		walk_fast_up * 8
 	))
 	waitmovement(LOCALID_PERCY_LAB)
 
 	msgbox(format("PERCY: Can I still get a partner aunty Cherry?"))
-	msgbox(format("CHERRY: Suit yourself"))
-
-	
-	applymovement(LOCALID_PERCY_LAB, moves(
-		walk_left
-		walk_up
-		face_right
-	))
-	waitmovement(LOCALID_PERCY_LAB)
-
 	delay(60)
-
-	applymovement(LOCALID_PERCY_LAB, moves(
-		face_up
-	))
-	waitmovement(LOCALID_PERCY_LAB)
+	msgbox(format("CHERRY: Suit yourself"))
 
 	switch (var(VAR_STARTER_MON)) {
 		case 0: call(PlayerHouse1F_Rival_BudbittChosen)
 		case 1: call(PlayerHouse1F_Rival_GliscaleChosen)
-		case 2: call(PlayerHouse1F_Rival_WaterChosen)
+		case 2: call(PlayerHouse1F_Rival_BuccanubChosen)
 	}
 
 	msgbox(format("PERCY: Well I'll be...\n...\pBegginer's luck! I'll see you soon"))
 
 	applymovement(LOCALID_PERCY_LAB, moves(
-		walk_fast_down * 2
+		walk_fast_down * 7
 	))
+	waitmovement(LOCALID_PERCY_LAB)
 
 	setflag(FLAG_HIDE_LAB_PERCY)
 	removeobject(LOCALID_PERCY_LAB, MAP_ARCHEVALE_TOWN_CHERRY_LAB)
@@ -252,22 +242,60 @@ script PlayersHouse_1F_EventScript_Rival {
 }
 
 script PlayerHouse1F_Rival_BudbittChosen {
+	applymovement(LOCALID_PERCY_LAB, moves(
+		walk_up
+	))
+	waitmovement(LOCALID_PERCY_LAB)
+	delay(60)
+	removeobject(LOCALID_GLISCALE)
+	applymovement(LOCALID_PERCY_LAB, moves(
+		face_left
+	))
+	waitmovement(LOCALID_PERCY_LAB)
+	applymovement(LOCALID_PLAYER, moves(face_right))
+	waitmovement(LOCALID_PLAYER)
 	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Budbitt...\N
-		Then I'll get this little guy! Let's tests our skills!"))	
+		Let's tests our skills!"))	
 
-	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_TREECKO, Route103_Text_MayDefeated)
+	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Route103_Text_MayDefeated)
 }
 
 script PlayerHouse1F_Rival_GliscaleChosen {
+	applymovement(LOCALID_PERCY_LAB, moves(
+		walk_right
+		walk_up
+	))
+	waitmovement(LOCALID_PERCY_LAB)
+	delay(60)
+	removeobject(LOCALID_BUCCANUB)
+	applymovement(LOCALID_PERCY_LAB, moves(
+		face_left
+	))
+	waitmovement(LOCALID_PERCY_LAB)	
+	applymovement(LOCALID_PLAYER, moves(face_right))
+	waitmovement(LOCALID_PLAYER)
 	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Gliscale...\N
-		Then I'll get this little guy! Let's tests our skills!"))	
+		Let's tests our skills!"))	
 	
-	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_TORCHIC, Route103_Text_MayDefeated)
+	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Route103_Text_MayDefeated)
 }
 
-script PlayerHouse1F_Rival_WaterChosen {
+script PlayerHouse1F_Rival_BuccanubChosen {
+	applymovement(LOCALID_PERCY_LAB, moves(
+		walk_left
+		walk_up
+	))
+	waitmovement(LOCALID_PERCY_LAB)
+	delay(60)
+	removeobject(LOCALID_BUDBITT)
+	applymovement(LOCALID_PERCY_LAB, moves(
+		walk_right
+	))
+	waitmovement(LOCALID_PERCY_LAB)
+	applymovement(LOCALID_PLAYER, moves(face_left))
+	waitmovement(LOCALID_PLAYER)	
 	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Water...\N
-		Then I'll get this little guy! Let's tests our skills!"))	
+		Let's tests our skills!"))	
 
-	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_MUDKIP, Route103_Text_MayDefeated)
+	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Route103_Text_MayDefeated)
 }
