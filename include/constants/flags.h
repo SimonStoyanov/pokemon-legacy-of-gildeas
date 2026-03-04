@@ -1504,7 +1504,7 @@
 
 #define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
 
-#define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
+#define FLAG_RECEIVED_POKEDEX_FROM_CHERRY            (SYSTEM_FLAGS + 0x84)
 
 // BADGES
 #define FLAG_BADGE01_GET                            (SYSTEM_FLAGS + 0x85) // BADGE
@@ -1525,7 +1525,7 @@
 #define FLAG_BADGE16_GET                            (SYSTEM_FLAGS + 0x94) // BADGE
 #define NUM_BADGES                                  (1 + FLAG_BADGE16_GET - FLAG_BADGE01_GET)
 
-#define FLAG_UNUSED_0x8F5                           (SYSTEM_FLAGS + 0x95) // Unused Flag
+#define FLAG_NO_WHITEOUT                            (SYSTEM_FLAGS + 0x95) // Unused Flag
 #define FLAG_UNUSED_0x8F6                           (SYSTEM_FLAGS + 0x96) // Unused Flag
 #define FLAG_UNUSED_0x8F7                           (SYSTEM_FLAGS + 0x97) // Unused Flag
 #define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag

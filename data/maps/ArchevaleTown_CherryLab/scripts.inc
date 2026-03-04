@@ -331,149 +331,286 @@ PlayersHouse_1F_EventScript_Cherry::
 # 188 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	faceplayer
 # 189 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	msgbox PlayersHouse_1F_EventScript_Cherry_Text_0
+	switch VAR_ARCHEVALE_LAB_STATE
 # 190 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_CHERRY, PlayersHouse_1F_EventScript_Cherry_Movement_0
+	case 2, PlayersHouse_1F_EventScript_Cherry_3
 # 191 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Cherry_Text_1
+PlayersHouse_1F_EventScript_Cherry_1:
+# 193 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_CHERRY, PlayersHouse_1F_EventScript_Cherry_Movement_0
+# 194 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	waitmovement LOCALID_CHERRY
-# 192 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 195 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	release
 	return
 
+PlayersHouse_1F_EventScript_Cherry_3:
+# 190 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Cherry_Text_0
+	goto PlayersHouse_1F_EventScript_Cherry_1
+
 
 ArchevaleTown_AfterStarterChoice::
-# 196 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 199 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	lock
-# 197 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	setvar VAR_ARCHEVALE_HOUSE_STATE, 3
-# 198 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	clearflag FLAG_HIDE_LAB_PERCY
 # 200 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	setvar VAR_ARCHEVALE_HOUSE_STATE, 3
 # 201 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_PLAYER, ArchevaleTown_AfterStarterChoice_Movement_0
-# 202 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	msgbox ArchevaleTown_AfterStarterChoice_Text_0
+	clearflag FLAG_HIDE_LAB_PERCY
+# 203 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 # 204 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PLAYER, ArchevaleTown_AfterStarterChoice_Movement_0
+# 205 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox ArchevaleTown_AfterStarterChoice_Text_0
+# 207 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setvar VAR_PERCY_RECORD_L, 0
+# 208 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setvar VAR_PERCY_RECORD_W, 0
+# 209 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	call PlayersHouse_1F_EventScript_Rival
-# 206 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 211 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	release
 	return
 
 
 PlayersHouse_1F_EventScript_Rival::
-# 210 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 215 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	lock
-# 212 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	addobject LOCALID_PERCY_LAB, MAP_ARCHEVALE_TOWN_CHERRY_LAB
-# 214 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_PERCY_LAB, PlayersHouse_1F_EventScript_Rival_Movement_0
 # 217 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	waitmovement LOCALID_PERCY_LAB
+	addobject LOCALID_PERCY_LAB, MAP_ARCHEVALE_TOWN_CHERRY_LAB
 # 219 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	msgbox PlayersHouse_1F_EventScript_Rival_Text_0
-# 220 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	delay 60
-# 221 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	msgbox PlayersHouse_1F_EventScript_Rival_Text_1
-# 223 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	switch VAR_STARTER_MON
+	applymovement LOCALID_PERCY_LAB, PlayersHouse_1F_EventScript_Rival_Movement_0
+# 222 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	waitmovement LOCALID_PERCY_LAB
 # 224 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	case 0, PlayersHouse_1F_EventScript_Rival_3
+	msgbox PlayersHouse_1F_EventScript_Rival_Text_0
 # 225 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	case 1, PlayersHouse_1F_EventScript_Rival_4
+	delay 60
 # 226 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Rival_Text_1
+# 228 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	switch VAR_STARTER_MON
+# 229 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	case 0, PlayersHouse_1F_EventScript_Rival_3
+# 230 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	case 1, PlayersHouse_1F_EventScript_Rival_4
+# 231 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	case 2, PlayersHouse_1F_EventScript_Rival_5
 PlayersHouse_1F_EventScript_Rival_1:
-# 229 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	msgbox PlayersHouse_1F_EventScript_Rival_Text_2
-# 231 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_PERCY_LAB, PlayersHouse_1F_EventScript_Rival_Movement_1
 # 234 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	waitmovement LOCALID_PERCY_LAB
+	call Lab_Rival_PostBattle
 # 236 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	setflag FLAG_HIDE_LAB_PERCY
-# 237 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	removeobject LOCALID_PERCY_LAB, MAP_ARCHEVALE_TOWN_CHERRY_LAB
+	applymovement LOCALID_PERCY_LAB, PlayersHouse_1F_EventScript_Rival_Movement_1
 # 239 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	msgbox PlayersHouse_1F_EventScript_Rival_Text_3
+	waitmovement LOCALID_PERCY_LAB
+# 240 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setflag FLAG_HIDE_LAB_PERCY
 # 241 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	removeobject LOCALID_PERCY_LAB, MAP_ARCHEVALE_TOWN_CHERRY_LAB
+# 242 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	closemessage
+# 244 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	switch VAR_STARTER_MON
+# 245 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	case 0, PlayersHouse_1F_EventScript_Rival_8
+# 249 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	case 1, PlayersHouse_1F_EventScript_Rival_9
+# 253 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	case 2, PlayersHouse_1F_EventScript_Rival_10
+PlayersHouse_1F_EventScript_Rival_6:
+# 258 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	waitmovement LOCALID_CHERRY
+# 259 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_EventScript_Rival_Movement_5
+# 260 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 262 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	compare VAR_PERCY_RECORD_L, VAR_PERCY_RECORD_W
+	goto_if_gt PlayersHouse_1F_EventScript_Rival_12
+# 266 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	call CherryLab_RivalLost
+PlayersHouse_1F_EventScript_Rival_11:
+# 269 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	call Common_EventScript_OutOfCenterPartyHeal
+# 271 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Rival_Text_2
+# 272 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 273 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Rival_Text_3
+# 274 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	waitfanfare
+# 275 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setflag FLAG_SYS_POKEDEX_GET
+# 276 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	special SetUnlockedPokedexFlags
+# 277 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setflag FLAG_RECEIVED_POKEDEX_FROM_CHERRY
+# 278 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+# 280 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox PlayersHouse_1F_EventScript_Rival_Text_4
+# 283 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	playfanfare MUS_OBTAIN_BADGE
+# 284 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_1_STARTERS
+# 285 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	waitfanfare
+# 286 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	openquestmenu
+# 288 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setvar VAR_ARCHEVALE_HOUSE_STATE, 3
+# 289 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setvar VAR_ARCHEVALE_LAB_STATE, 3
+# 291 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	releaseall
 	return
 
 PlayersHouse_1F_EventScript_Rival_3:
-# 224 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	call PlayerHouse1F_Rival_BudbittChosen
+# 229 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	call CherryLab_Percy_Rival_BudbittChosen
 	goto PlayersHouse_1F_EventScript_Rival_1
 
 PlayersHouse_1F_EventScript_Rival_4:
-# 225 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	call PlayerHouse1F_Rival_GliscaleChosen
+# 230 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	call CherryLab_Percy_Rival_GliscaleChosen
 	goto PlayersHouse_1F_EventScript_Rival_1
 
 PlayersHouse_1F_EventScript_Rival_5:
-# 226 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	call PlayerHouse1F_Rival_BuccanubChosen
+# 231 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	call CherryLab_Percy_Rival_BuccanubChosen
 	goto PlayersHouse_1F_EventScript_Rival_1
 
-
-PlayerHouse1F_Rival_BudbittChosen::
+PlayersHouse_1F_EventScript_Rival_8:
 # 245 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_PERCY_LAB, ArchevaleTown_CherryLab_MoveUp_Movement_0
-# 248 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	waitmovement LOCALID_PERCY_LAB
+	applymovement LOCALID_CHERRY, PlayersHouse_1F_EventScript_Rival_Movement_2
+	goto PlayersHouse_1F_EventScript_Rival_6
+
+PlayersHouse_1F_EventScript_Rival_9:
 # 249 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_CHERRY, PlayersHouse_1F_EventScript_Rival_Movement_3
+	goto PlayersHouse_1F_EventScript_Rival_6
+
+PlayersHouse_1F_EventScript_Rival_10:
+# 253 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_CHERRY, PlayersHouse_1F_EventScript_Rival_Movement_4
+	goto PlayersHouse_1F_EventScript_Rival_6
+
+PlayersHouse_1F_EventScript_Rival_12:
+# 263 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	call CherryLab_RivalWon
+	goto PlayersHouse_1F_EventScript_Rival_11
+
+
+CherryLab_RivalLost::
+# 295 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox CherryLab_RivalLost_Text_0
+	return
+
+
+CherryLab_RivalWon::
+# 301 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox CherryLab_RivalWon_Text_0
+	return
+
+
+CherryLab_Percy_Rival_BudbittChosen::
+# 307 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PERCY_LAB, ArchevaleTown_CherryLab_MoveUp_Movement_0
+# 310 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	waitmovement LOCALID_PERCY_LAB
+# 311 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	delay 60
-# 250 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 312 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	removeobject LOCALID_GLISCALE
-# 251 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_PERCY_LAB, PlayerHouse1F_Rival_BudbittChosen_Movement_0
-# 254 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 313 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PERCY_LAB, CherryLab_Percy_Rival_BudbittChosen_Movement_0
+# 316 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	waitmovement LOCALID_PERCY_LAB
-# 255 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	msgbox PlayerHouse1F_Rival_BudbittChosen_Text_0
-# 258 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Route103_Text_MayDefeated
+# 317 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_EventScript_Rival_Movement_5
+# 318 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 319 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox CherryLab_Percy_Rival_BudbittChosen_Text_0
+# 322 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setflag FLAG_NO_WHITEOUT
+# 323 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	trainerbattle_no_intro_no_whiteout TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle
 	return
 
 
-PlayerHouse1F_Rival_GliscaleChosen::
-# 262 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_PERCY_LAB, PlayerHouse1F_Rival_GliscaleChosen_Movement_0
-# 266 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+CherryLab_Percy_Rival_GliscaleChosen::
+# 327 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PERCY_LAB, CherryLab_Percy_Rival_GliscaleChosen_Movement_0
+# 331 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	waitmovement LOCALID_PERCY_LAB
-# 267 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 332 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	delay 60
-# 268 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 333 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	removeobject LOCALID_BUCCANUB
-# 269 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_PERCY_LAB, PlayerHouse1F_Rival_BudbittChosen_Movement_0
-# 272 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 334 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PERCY_LAB, CherryLab_Percy_Rival_BudbittChosen_Movement_0
+# 337 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	waitmovement LOCALID_PERCY_LAB
-# 273 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	msgbox PlayerHouse1F_Rival_GliscaleChosen_Text_0
-# 276 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Route103_Text_MayDefeated
+# 338 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_EventScript_Rival_Movement_5
+# 339 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 340 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox CherryLab_Percy_Rival_GliscaleChosen_Text_0
+# 343 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setflag FLAG_NO_WHITEOUT
+# 344 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	trainerbattle_no_intro_no_whiteout TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle
 	return
 
 
-PlayerHouse1F_Rival_BuccanubChosen::
-# 280 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_PERCY_LAB, PlayerHouse1F_Rival_BuccanubChosen_Movement_0
-# 284 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+CherryLab_Percy_Rival_BuccanubChosen::
+# 348 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PERCY_LAB, CherryLab_Percy_Rival_BuccanubChosen_Movement_0
+# 352 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	waitmovement LOCALID_PERCY_LAB
-# 285 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 353 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	delay 60
-# 286 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 354 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	removeobject LOCALID_BUDBITT
-# 287 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	applymovement LOCALID_PERCY_LAB, PlayerHouse1F_Rival_BuccanubChosen_Movement_1
-# 290 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 355 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PERCY_LAB, CherryLab_Percy_Rival_BuccanubChosen_Movement_1
+# 358 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	waitmovement LOCALID_PERCY_LAB
-# 291 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	msgbox PlayerHouse1F_Rival_BuccanubChosen_Text_0
-# 294 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Route103_Text_MayDefeated
+# 359 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	applymovement LOCALID_PLAYER, CherryLab_Percy_Rival_BudbittChosen_Movement_0
+# 360 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 361 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox CherryLab_Percy_Rival_BuccanubChosen_Text_0
+# 364 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	setflag FLAG_NO_WHITEOUT
+# 365 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	trainerbattle_no_intro_no_whiteout TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle
+	return
+
+
+Lab_Rival_PostBattle::
+# 369 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 370 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq Lab_Rival_PostBattle_1
+# 375 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox Lab_Rival_PostBattle_Text_1
+# 376 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	special UpdatePercyLose
+	return
+
+Lab_Rival_PostBattle_1:
+# 371 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	msgbox Lab_Rival_PostBattle_Text_0
+# 372 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	special UpdatePercyWin
 	return
 
 
@@ -593,81 +730,113 @@ ArchevaleTown_CherryLab_MoveUp_Movement_0:
 	walk_up
 	step_end
 
-# 190 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 193 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 PlayersHouse_1F_EventScript_Cherry_Movement_0:
-# 190 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 193 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	face_original_direction
 	step_end
 
-# 201 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 204 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 ArchevaleTown_AfterStarterChoice_Movement_0:
-# 201 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 204 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	face_down
 	step_end
 
-# 214 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 219 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 PlayersHouse_1F_EventScript_Rival_Movement_0:
-# 215 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 220 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_up
-# 215 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 220 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_up
-# 215 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 220 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_up
-# 215 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 220 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_up
-# 215 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 220 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_up
-# 215 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 220 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_up
-# 215 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 220 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_up
-# 215 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 220 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 231 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 236 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 PlayersHouse_1F_EventScript_Rival_Movement_1:
-# 232 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 237 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_down
-# 232 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 237 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_down
-# 232 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 237 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_down
-# 232 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 237 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_down
-# 232 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 237 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_down
-# 232 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 237 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_down
-# 232 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 237 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_fast_down
 	step_end
 
+# 245 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+PlayersHouse_1F_EventScript_Rival_Movement_2:
+# 246 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	walk_down
+# 247 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	walk_left
+# 247 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	walk_left
+	step_end
+
+# 249 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+PlayersHouse_1F_EventScript_Rival_Movement_3:
+# 250 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	walk_down
 # 251 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-PlayerHouse1F_Rival_BudbittChosen_Movement_0:
-# 252 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	walk_left
+	step_end
+
+# 253 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+PlayersHouse_1F_EventScript_Rival_Movement_4:
+# 254 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	walk_down
+# 255 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	face_left
 	step_end
 
-# 262 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-PlayerHouse1F_Rival_GliscaleChosen_Movement_0:
-# 263 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 259 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+PlayersHouse_1F_EventScript_Rival_Movement_5:
+# 259 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	face_right
+	step_end
+
+# 313 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+CherryLab_Percy_Rival_BudbittChosen_Movement_0:
+# 314 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	face_left
+	step_end
+
+# 327 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+CherryLab_Percy_Rival_GliscaleChosen_Movement_0:
+# 328 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_right
-# 264 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 329 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_up
 	step_end
 
-# 280 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-PlayerHouse1F_Rival_BuccanubChosen_Movement_0:
-# 281 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 348 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+CherryLab_Percy_Rival_BuccanubChosen_Movement_0:
+# 349 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_left
-# 282 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 350 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_up
 	step_end
 
-# 287 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-PlayerHouse1F_Rival_BuccanubChosen_Movement_1:
-# 288 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 355 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+CherryLab_Percy_Rival_BuccanubChosen_Movement_1:
+# 356 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	walk_right
 	step_end
 
@@ -686,7 +855,7 @@ ArchevaleTown_CherryLab_Intro_Text_0:
 
 ArchevaleTown_CherryLab_MoveUp_Text_0:
 # 77 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	.string "CHERRY: Aren't you forgetting\n"
+	.string "PROF. CHERRY: Aren't you forgetting\n"
 	.string "something?$"
 
 ArchevaleTown_CherryLab_PokeballBudbitt_Text_0:
@@ -726,50 +895,92 @@ ArchevaleTown_CherryLab_Buccanub_Text_1:
 	.string "Recieved Buccanub$"
 
 PlayersHouse_1F_EventScript_Cherry_Text_0:
-# 189 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	.string "CHERRY: A tough decision indeed\n"
+# 190 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PROF. CHERRY: A tough decision indeed\n"
 	.string "{PLAYER}, but rest assured, these are\l"
 	.string "great partners!$"
 
+PlayersHouse_1F_EventScript_Cherry_Text_1:
+# 191 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PROF. CHERRY: Catch many Pokémon and\n"
+	.string "treat them well! Good luck!$"
+
 ArchevaleTown_AfterStarterChoice_Text_0:
-# 202 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 205 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	.string "???: I'm late!$"
 
 PlayersHouse_1F_EventScript_Rival_Text_0:
-# 219 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+# 224 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	.string "PERCY: Can I still get a partner aunty\n"
 	.string "Cherry?$"
 
 PlayersHouse_1F_EventScript_Rival_Text_1:
-# 221 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	.string "CHERRY: Suit yourself$"
+# 226 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PROF. CHERRY: Suit yourself$"
 
 PlayersHouse_1F_EventScript_Rival_Text_2:
-# 229 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	.string "PERCY: Well I'll be...\n"
-	.string "...\p"
-	.string "Begginer's luck! I'll see you soon$"
+# 271 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PROF. CHERRY: I almost forgot, since\n"
+	.string "Percy already has one.$"
 
 PlayersHouse_1F_EventScript_Rival_Text_3:
-# 239 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	.string "CHERRY: An outstanding job, for a first\n"
-	.string "battle. I hope you take good care of\l"
-	.string "Percy on your journey$"
+# 273 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "{PLAYER} received the POKéDEX!$"
 
-PlayerHouse1F_Rival_BudbittChosen_Text_0:
-# 255 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+PlayersHouse_1F_EventScript_Rival_Text_4:
+# 280 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PROF. CHERRY: The POKéDEX is a\n"
+	.string "high-tech tool that automatically\l"
+	.string "makes a record of any Pokémon you meet\l"
+	.string "or catch.\p"
+	.string "Make sure to check the many species\n"
+	.string "living in Gildeas, and be careful with\l"
+	.string "the stronger ones!\p"
+	.string "Go on {PLAYER}, find glory on the\n"
+	.string "golden pilgrimage!$"
+
+CherryLab_RivalLost_Text_0:
+# 295 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PROF. CHERRY: An outstanding job, for a\n"
+	.string "first battle. I hope you take good care\l"
+	.string "of Percy on your journey$"
+
+CherryLab_RivalWon_Text_0:
+# 301 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PROF. CHERRY: Winning will not be\n"
+	.string "assured, but you will always get\l"
+	.string "experience from these loses\p"
+	.string "Let me take care of your Pokémon$"
+
+CherryLab_Percy_Rival_BudbittChosen_Text_0:
+# 319 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	.string "PERCY: Hey {PLAYER}! So you've\n"
 	.string "chosen Budbitt...\l"
 	.string "Let's tests our skills!$"
 
-PlayerHouse1F_Rival_GliscaleChosen_Text_0:
-# 273 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+CherryLab_Percy_Rival_GliscaleChosen_Text_0:
+# 340 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	.string "PERCY: Hey {PLAYER}! So you've\n"
 	.string "chosen Gliscale...\l"
 	.string "Let's tests our skills!$"
 
-PlayerHouse1F_Rival_BuccanubChosen_Text_0:
-# 291 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+CherryLab_Percy_Rival_BuccanubChosen_Text_0:
+# 361 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	.string "PERCY: Hey {PLAYER}! So you've\n"
 	.string "chosen Water...\l"
 	.string "Let's tests our skills!$"
+
+Lab_Rival_PostBattle_Text_0:
+# 371 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PERCY: Well I'll be...\n"
+	.string "...\p"
+	.string "Begginer's luck! I'll see you soon$"
+
+Lab_Rival_PostBattle_Text_1:
+# 375 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PERCY: What a great start to my\n"
+	.string "journey! See you later!$"
+
+Lab_Text_PercyWins::
+# 380 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "PERCY: That's all you've got?$"

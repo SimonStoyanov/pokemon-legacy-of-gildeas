@@ -74,7 +74,7 @@ script ArchevaleTown_CherryLab_Intro {
 
 script ArchevaleTown_CherryLab_MoveUp {
 	lock
-	msgbox(format("CHERRY: Aren't you forgetting something?"))
+	msgbox(format("PROF. CHERRY: Aren't you forgetting something?"))
 	applymovement(LOCALID_PLAYER, moves(
 		walk_up
 	))
@@ -186,7 +186,10 @@ script ArchevaleTown_CherryLab_Buccanub {
 script PlayersHouse_1F_EventScript_Cherry {
 	lock
 	faceplayer
-	msgbox(format("CHERRY: A tough decision indeed {PLAYER}, but rest assured, these are great partners!"))
+	switch (var(VAR_ARCHEVALE_LAB_STATE)) {
+		case 2: msgbox(format("PROF. CHERRY: A tough decision indeed {PLAYER}, but rest assured, these are great partners!"))
+		default: msgbox(format("PROF. CHERRY: Catch many Pokémon and treat them well! Good luck!"))
+	}
 	applymovement(LOCALID_CHERRY, moves(face_original_direction))
 	waitmovement(LOCALID_CHERRY)
 	release
@@ -200,7 +203,9 @@ script ArchevaleTown_AfterStarterChoice {
 	playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
 	applymovement(LOCALID_PLAYER, moves(face_down))
 	msgbox(format("???: I'm late!"))
-
+	
+	setvar(VAR_PERCY_RECORD_L, 0)
+	setvar(VAR_PERCY_RECORD_W, 0)
 	call(PlayersHouse_1F_EventScript_Rival)
 
 	release
@@ -218,30 +223,87 @@ script PlayersHouse_1F_EventScript_Rival {
 
 	msgbox(format("PERCY: Can I still get a partner aunty Cherry?"))
 	delay(60)
-	msgbox(format("CHERRY: Suit yourself"))
+	msgbox(format("PROF. CHERRY: Suit yourself"))
 
 	switch (var(VAR_STARTER_MON)) {
-		case 0: call(PlayerHouse1F_Rival_BudbittChosen)
-		case 1: call(PlayerHouse1F_Rival_GliscaleChosen)
-		case 2: call(PlayerHouse1F_Rival_BuccanubChosen)
+		case 0: call(CherryLab_Percy_Rival_BudbittChosen)
+		case 1: call(CherryLab_Percy_Rival_GliscaleChosen)
+		case 2: call(CherryLab_Percy_Rival_BuccanubChosen)
 	}
 
-	msgbox(format("PERCY: Well I'll be...\n...\pBegginer's luck! I'll see you soon"))
+	call(Lab_Rival_PostBattle)
 
 	applymovement(LOCALID_PERCY_LAB, moves(
 		walk_fast_down * 7
 	))
 	waitmovement(LOCALID_PERCY_LAB)
-
 	setflag(FLAG_HIDE_LAB_PERCY)
 	removeobject(LOCALID_PERCY_LAB, MAP_ARCHEVALE_TOWN_CHERRY_LAB)
+	closemessage
 
-	msgbox(format("CHERRY: An outstanding job, for a first battle. I hope you take good care of Percy on your journey"))
+	switch (var(VAR_STARTER_MON)) {
+		case 0: applymovement(LOCALID_CHERRY, moves(
+				walk_down * 1
+				walk_left * 2
+			))
+		case 1: applymovement(LOCALID_CHERRY, moves(
+				walk_down * 1
+				walk_left * 1
+			))
+		case 2: applymovement(LOCALID_CHERRY, moves(
+				walk_down * 1
+				face_left
+			))
+	}
+	waitmovement(LOCALID_CHERRY)
+	applymovement(LOCALID_PLAYER, moves(face_right))
+	waitmovement(LOCALID_PLAYER)
+
+	if (var(VAR_PERCY_RECORD_L) > VAR_PERCY_RECORD_W) {
+		call(CherryLab_RivalWon)
+	}
+	else {
+		call(CherryLab_RivalLost)
+	}
+
+	call(Common_EventScript_OutOfCenterPartyHeal)
+
+	msgbox(format("PROF. CHERRY: I almost forgot, since Percy already has one."))
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox("{PLAYER} received the POKéDEX!")
+	waitfanfare
+	setflag(FLAG_SYS_POKEDEX_GET)
+	special(SetUnlockedPokedexFlags)
+	setflag(FLAG_RECEIVED_POKEDEX_FROM_CHERRY)
+	setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
+
+	msgbox(format("PROF. CHERRY: The POKéDEX is a high-tech tool that automatically makes a record of any Pokémon you meet or catch.\pMake sure to check the many species living in Gildeas, and be careful with the stronger ones!\p
+		Go on {PLAYER}, find glory on the golden pilgrimage!"))
+
+	playfanfare(MUS_OBTAIN_BADGE)
+	questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_1_STARTERS)
+	waitfanfare
+	openquestmenu
+
+	setvar(VAR_ARCHEVALE_HOUSE_STATE, 3)
+	setvar(VAR_ARCHEVALE_LAB_STATE, 3)
 
 	releaseall
 }
 
-script PlayerHouse1F_Rival_BudbittChosen {
+script CherryLab_RivalLost {
+	msgbox(format("PROF. CHERRY: An outstanding job, for a first battle. I hope you take good care of Percy on your journey"))
+
+	return
+}
+
+script CherryLab_RivalWon {
+	msgbox(format("PROF. CHERRY: Winning will not be assured, but you will always get experience from these loses\pLet me take care of your Pokémon"))
+	
+	return
+}
+
+script CherryLab_Percy_Rival_BudbittChosen {
 	applymovement(LOCALID_PERCY_LAB, moves(
 		walk_up
 	))
@@ -257,10 +319,11 @@ script PlayerHouse1F_Rival_BudbittChosen {
 	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Budbitt...\N
 		Let's tests our skills!"))	
 
-	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Route103_Text_MayDefeated)
+	setflag(FLAG_NO_WHITEOUT)
+	trainerbattle_no_intro_no_whiteout(TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle)
 }
 
-script PlayerHouse1F_Rival_GliscaleChosen {
+script CherryLab_Percy_Rival_GliscaleChosen {
 	applymovement(LOCALID_PERCY_LAB, moves(
 		walk_right
 		walk_up
@@ -277,10 +340,11 @@ script PlayerHouse1F_Rival_GliscaleChosen {
 	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Gliscale...\N
 		Let's tests our skills!"))	
 	
-	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Route103_Text_MayDefeated)
+	setflag(FLAG_NO_WHITEOUT)
+	trainerbattle_no_intro_no_whiteout(TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle)
 }
 
-script PlayerHouse1F_Rival_BuccanubChosen {
+script CherryLab_Percy_Rival_BuccanubChosen {
 	applymovement(LOCALID_PERCY_LAB, moves(
 		walk_left
 		walk_up
@@ -297,5 +361,22 @@ script PlayerHouse1F_Rival_BuccanubChosen {
 	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Water...\N
 		Let's tests our skills!"))	
 
-	trainerbattle_no_intro(TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Route103_Text_MayDefeated)
+	setflag(FLAG_NO_WHITEOUT)
+	trainerbattle_no_intro_no_whiteout(TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle)
+}
+
+script Lab_Rival_PostBattle {
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+		msgbox(format("PERCY: Well I'll be...\n...\pBegginer's luck! I'll see you soon"))
+		special(UpdatePercyWin)
+	}
+	else {
+		msgbox(format("PERCY: What a great start to my journey! See you later!"))
+		special(UpdatePercyLose)
+	}
+}
+
+text Lab_Text_PercyWins {
+	"PERCY: That's all you've got?"
 }
