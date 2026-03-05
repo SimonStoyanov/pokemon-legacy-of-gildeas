@@ -1688,8 +1688,10 @@
 #define SPECIES_HYPMAREA                                1569
 #define SPECIES_MAEMPERIFF                              1570
 #define SPECIES_FALINKS_WEST                            1571
+#define SPECIES_COMBRISK                                1572
+#define SPECIES_CLACIQUEN                               1573
 
-#define SPECIES_EGG                                     (SPECIES_FALINKS_WEST + 1)
+#define SPECIES_EGG                                     (SPECIES_CLACIQUEN + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

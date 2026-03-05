@@ -6789,4 +6789,10 @@ static const struct SpriteFrameImage sPicTable_Gecqua[] = {
 };
 #endif //P_FAMILY_GECQUA
 
+#if P_FAMILY_COMBRISK
+static const struct SpriteFrameImage sPicTable_Combrisk[] = {
+    overworld_ascending_frames(gObjectEventPic_Combrisk, 4, 4),
+};
+#endif //P_FAMILY_COMBRISK
+
 #endif //OW_POKEMON_OBJECT_EVENTS

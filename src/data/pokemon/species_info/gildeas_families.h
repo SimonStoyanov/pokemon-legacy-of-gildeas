@@ -588,6 +588,84 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
     },
 #endif //P_FAMILY_BUCCANUB
 
+#if P_FAMILY_COMBRISK
+[SPECIES_COMBRISK] =
+    {
+        .baseHP        = 30,
+        .baseAttack    = 30,
+        .baseDefense   = 42,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 42,
+        .types = MON_TYPES(TYPE_ICE, TYPE_ROCK),
+        .catchRate = 120,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 49 : 63,
+        .evYield_Speed = 1,
+        .itemCommon = ITEM_ICY_ROCK,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Combrisk"),
+        .cryId = CRY_COMBEE,
+        .natDexNum = NATIONAL_DEX_COMBRISK,
+        .categoryName = _("Ice Cluster"),
+        .height = 4,
+        .weight = 120,
+        .description = COMPOUND_STRING(
+            "Each piece of Combrisk is a living\n"
+            "crystal node.\n"
+            "When three align their heat cycles,\n"
+            "they move as one body."),
+        .pokemonScale = 530,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Combrisk,
+        .frontPicSize = MON_COORDS_SIZE(64, 40),
+        .frontPicYOffset = 16,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 1),
+        ),
+        .frontAnimId = ANIM_V_SLIDE_WOBBLE,
+        .enemyMonElevation = 15,
+        .backPic = gMonBackPic_Combrisk,
+        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = 22,
+        .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
+        .palette = gMonPalette_Combrisk,
+        .shinyPalette = gMonShinyPalette_Combrisk,
+        .iconSprite = gMonIcon_Combrisk,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-4, 10, SHADOW_SIZE_S)
+        FOOTPRINT(Combrisk)
+        OVERWORLD(
+            sPicTable_Combrisk,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Combrisk,
+            gShinyOverworldPalette_Combrisk
+        )
+        //.tmIlliterate = TRUE,
+        .levelUpLearnset = sCombriskLevelUpLearnset,
+        .teachableLearnset = sCombriskTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 21, SPECIES_VESPIQUEN, CONDITIONS({IF_GENDER, MON_FEMALE})}),
+    },
+
+#endif //P_FAMILY_COMBRISK
+
 #if P_FAMILY_BROWT
     [SPECIES_BROWT] =
     {
