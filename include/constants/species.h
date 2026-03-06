@@ -1676,8 +1676,8 @@
 #define SPECIES_CORSHARK                                1557
 #define SPECIES_ADMIRAZOR                               1558
 #define SPECIES_BROWT                                   1559
-#define SPECIES_BROWT2                                  1560
-#define SPECIES_BROWT3                                  1561
+#define SPECIES_VERDROW                                 1560
+#define SPECIES_TEMPESTREL                              1561
 #define SPECIES_POMBON                                  1562
 #define SPECIES_POMBON2                                 1563
 #define SPECIES_POMBON3                                 1564
