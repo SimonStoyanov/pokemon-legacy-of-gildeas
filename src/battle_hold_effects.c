@@ -857,26 +857,8 @@ static u32 ItemRestorePp(enum BattlerId battler, enum Item itemId)
 
         if (currentPP == 0)
         {
-            u32 ppRestored = GetItemHoldEffectParam(itemId);
-
-            if (ability == ABILITY_RIPEN)
-            {
-                ppRestored *= 2;
-                gBattlerAbility = battler;
-            }
-            if (currentPP + ppRestored > maxPP)
-                changedPP = maxPP;
-            else
-                changedPP = currentPP + ppRestored;
-
-            PREPARE_MOVE_BUFFER(gBattleTextBuff1, move);
-            BattleScriptCall(BattleScript_BerryPPHeal);
-            gBattleScripting.battler = battler;
-            BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, i + REQUEST_PPMOVE1_BATTLE, 0, 1, &changedPP);
-            MarkBattlerForControllerExec(battler);
-            if (MOVE_IS_PERMANENT(battler, i))
-                gBattleMons[battler].pp[i] = changedPP;
-            effect = ITEM_PP_CHANGE;
+            restoreMove = i;
+            break;
         }
 
         if (override && missingMove == MAX_MON_MOVES)
@@ -908,10 +890,7 @@ static u32 ItemRestorePp(enum BattlerId battler, enum Item itemId)
 
         PREPARE_MOVE_BUFFER(gBattleTextBuff1, move);
 
-        if (timing == IsOnSwitchInFirstTurnActivation)
-            BattleScriptExecute(BattleScript_BerryPPHealEnd2);
-        else
-            BattleScriptCall(BattleScript_BerryPPHealRet);
+        BattleScriptCall(BattleScript_BerryPPHeal);
 
         gBattleScripting.battler = battler;
         BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, restoreMove + REQUEST_PPMOVE1_BATTLE, 0, 1, &changedPP);

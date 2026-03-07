@@ -216,9 +216,7 @@ static void RecordedPartnerHandleDrawTrainerPic(enum BattlerId battler)
     s16 xPos, yPos;
     enum TrainerPicID trainerPicId;
 
-    trainerPicId = TRAINER_PIC_BACK_STEVEN;
-    xPos = 90;
-    yPos = (8 - gTrainerBacksprites[trainerPicId].coordinates.size) * 4 + 80;
+    enum DifficultyLevel difficulty = GetBattlePartnerDifficultyLevel(gPartnerTrainerId);
 
     if (gPartnerTrainerId > TRAINER_PARTNER(PARTNER_NONE))
     {
