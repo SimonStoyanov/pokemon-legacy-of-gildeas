@@ -40,6 +40,7 @@
 #include "mystery_event_script.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "constants/party_menu.h"
 #include "pokedex.h"
 #include "pokemon_storage_system.h"
 #include "random.h"

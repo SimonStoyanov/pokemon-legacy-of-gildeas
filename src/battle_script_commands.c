@@ -2215,7 +2215,7 @@ void StealTargetItem(enum BattlerId battlerStealer, enum BattlerId itemBattler)
     gLastUsedItem = gBattleMons[itemBattler].item;
     gBattleMons[itemBattler].item = ITEM_NONE;
 
-    if (GetConfig(CONFIG_STEAL_WILD_ITEMS) >= GEN_9
+    if (GetConfig(B_STEAL_WILD_ITEMS) >= GEN_9
      && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_PALACE))
      && GetMoveEffect(gCurrentMove) == EFFECT_STEAL_ITEM
      && battlerStealer == gBattlerAttacker) // ensure that Pickpocket isn't activating this
@@ -2453,7 +2453,7 @@ void SetMoveEffect(enum BattlerId battlerAtk, enum BattlerId effectBattler, enum
           && IsSheerForceAffected(gCurrentMove, abilities[battlerAtk])
           && !(moveEffect == MOVE_EFFECT_ORDER_UP && gBattleStruct->battlerState[gBattlerAttacker].commanderSpecies != SPECIES_NONE))
         moveEffect = MOVE_EFFECT_NONE;
-    else if (!IsBattlerAlive(gEffectBattler) && !activateAfterFaint)
+    else if (!IsBattlerAlive(gEffectBattler))
         moveEffect = MOVE_EFFECT_NONE;
     else if (DoesSubstituteBlockMove(gBattlerAttacker, gEffectBattler, gCurrentMove) && !affectsUser)
         moveEffect = MOVE_EFFECT_NONE;
@@ -7086,7 +7086,7 @@ static bool32 TryDefogClear(enum BattlerId battlerAtk, bool32 clear)
             DEFOG_CLEAR(SIDE_STATUS_AURORA_VEIL, auroraVeilTimer, BattleScript_SideStatusWoreOffReturn, MOVE_AURORA_VEIL);
             DEFOG_CLEAR(SIDE_STATUS_SAFEGUARD, safeguardTimer, BattleScript_SideStatusWoreOffReturn, MOVE_SAFEGUARD);
         }
-        if (GetConfig(CONFIG_DEFOG_EFFECT_CLEARING) >= GEN_6)
+        if (GetConfig(B_DEFOG_EFFECT_CLEARING) >= GEN_6)
         {
             gBattlerAttacker = i; // For correct battle string. Ally's / Foe's
             if (DefogClearHazards(saveBattler, i, clear))
@@ -7101,7 +7101,7 @@ static bool32 TryDefogClear(enum BattlerId battlerAtk, bool32 clear)
             }
             return TRUE;
         }
-        if (GetConfig(CONFIG_DEFOG_EFFECT_CLEARING) >= GEN_8 && (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY))
+        if (GetConfig(B_DEFOG_EFFECT_CLEARING) >= GEN_8 && (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY))
         {
             if (clear)
             {
@@ -7638,7 +7638,7 @@ static void TryPlayStatChangeAnimation(enum BattlerId battler, enum Ability abil
                     }
                 }
                 else if (!((ability == ABILITY_KEEN_EYE || ability == ABILITY_MINDS_EYE) && currStat == STAT_ACC)
-                        && !(GetConfig(CONFIG_ILLUMINATE_EFFECT) >= GEN_9 && ability == ABILITY_ILLUMINATE && currStat == STAT_ACC)
+                        && !(GetConfig(B_ILLUMINATE_EFFECT) >= GEN_9 && ability == ABILITY_ILLUMINATE && currStat == STAT_ACC)
                         && !(ability == ABILITY_HYPER_CUTTER && currStat == STAT_ATK)
                         && !(ability == ABILITY_BIG_PECKS && currStat == STAT_DEF))
                 {
@@ -7803,7 +7803,7 @@ static u32 ChangeStatBuffs(enum BattlerId battler, s8 statValue, enum Stat statI
         }
         else if (!flags.certain
                 && (((battlerAbility == ABILITY_KEEN_EYE || battlerAbility == ABILITY_MINDS_EYE) && statId == STAT_ACC)
-                || (GetConfig(CONFIG_ILLUMINATE_EFFECT) >= GEN_9 && battlerAbility == ABILITY_ILLUMINATE && statId == STAT_ACC)
+                || (GetConfig(B_ILLUMINATE_EFFECT) >= GEN_9 && battlerAbility == ABILITY_ILLUMINATE && statId == STAT_ACC)
                 || (battlerAbility == ABILITY_HYPER_CUTTER && statId == STAT_ATK)
                 || (battlerAbility == ABILITY_BIG_PECKS && statId == STAT_DEF)))
         {
@@ -8530,8 +8530,8 @@ static void Cmd_setfocusenergy(void)
     }
     else
     {
-        if (GetConfig(CONFIG_FOCUS_ENERGY_CRIT_RATIO) >= GEN_3
-         || GetConfig(CONFIG_CRIT_CHANCE) == GEN_1)
+        if (GetConfig(B_FOCUS_ENERGY_CRIT_RATIO) >= GEN_3
+         || GetConfig(B_CRIT_CHANCE) == GEN_1)
             gBattleMons[battler].volatiles.focusEnergy = TRUE;
         else
             gBattleMons[battler].volatiles.dragonCheer = TRUE;
@@ -8801,7 +8801,7 @@ static void Cmd_settypetorandomresistance(void)
     enum Move moveToCheck;
     enum Type typeToCheck;
 
-    if (GetConfig(CONFIG_UPDATED_CONVERSION_2) < GEN_5)
+    if (GetConfig(B_UPDATED_CONVERSION_2) < GEN_5)
     {
         moveToCheck = gLastLandedMoves[gBattlerAttacker];
         if (GetMoveEffect(moveToCheck) == EFFECT_STRUGGLE)
@@ -8951,7 +8951,7 @@ static void Cmd_settailwind(void)
     if (!(gSideStatuses[side] & SIDE_STATUS_TAILWIND))
     {
         gSideStatuses[side] |= SIDE_STATUS_TAILWIND;
-        gSideTimers[side].tailwindTimer = (GetConfig(CONFIG_TAILWIND_TURNS) >= GEN_5 ? 4 : 3);
+        gSideTimers[side].tailwindTimer = (GetConfig(B_TAILWIND_TURNS) >= GEN_5 ? 4 : 3);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
     else
@@ -9041,8 +9041,8 @@ static void Cmd_healpartystatus(void)
     struct Pokemon *party = GetBattlerParty(gBattlerAttacker);
     bool32 isSoundMove = IsSoundMove(gCurrentMove);
 
-    if (GetConfig(CONFIG_HEAL_BELL_SOUNDPROOF) == GEN_5
-     || GetConfig(CONFIG_HEAL_BELL_SOUNDPROOF) >= GEN_8
+    if (GetConfig(B_HEAL_BELL_SOUNDPROOF) == GEN_5
+     || GetConfig(B_HEAL_BELL_SOUNDPROOF) >= GEN_8
      || !(isSoundMove && GetBattlerAbility(gBattlerAttacker) == ABILITY_SOUNDPROOF))
     {
         if (isSoundMove)
@@ -9062,7 +9062,7 @@ static void Cmd_healpartystatus(void)
 
     if (IsBattlerAlive(partner))
     {
-        if (GetConfig(CONFIG_HEAL_BELL_SOUNDPROOF) == GEN_5
+        if (GetConfig(B_HEAL_BELL_SOUNDPROOF) == GEN_5
          || !(isSoundMove && GetBattlerAbility(partner) == ABILITY_SOUNDPROOF))
         {
             gBattleMons[partner].status1 = 0;
@@ -9088,10 +9088,10 @@ static void Cmd_healpartystatus(void)
             bool32 isAttacker = gBattlerPartyIndexes[gBattlerAttacker] == i;
             bool32 isDoublesPartner = gBattlerPartyIndexes[partner] == i && IsBattlerAlive(partner);
 
-            if (GetConfig(CONFIG_HEAL_BELL_SOUNDPROOF) == GEN_5
-             || (GetConfig(CONFIG_HEAL_BELL_SOUNDPROOF) >= GEN_8 && isAttacker))
+            if (GetConfig(B_HEAL_BELL_SOUNDPROOF) == GEN_5
+             || (GetConfig(B_HEAL_BELL_SOUNDPROOF) >= GEN_8 && isAttacker))
                 ability = ABILITY_NONE;
-            else if (GetConfig(CONFIG_HEAL_BELL_SOUNDPROOF) > GEN_5 && !isAttacker && !isDoublesPartner)
+            else if (GetConfig(B_HEAL_BELL_SOUNDPROOF) > GEN_5 && !isAttacker && !isDoublesPartner)
                 ability = ABILITY_NONE;
             else if (isAttacker)
                 ability = GetBattlerAbility(gBattlerAttacker);
@@ -9405,7 +9405,7 @@ static void Cmd_recoverbasedonsunlight(void)
             else
                 recoverAmount = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
         }
-        else if (GetConfig(CONFIG_TIME_OF_DAY_HEALING_MOVES) != GEN_2)
+        else if (GetConfig(B_TIME_OF_DAY_HEALING_MOVES) != GEN_2)
         {
             if (!(gBattleWeather & B_WEATHER_ANY) || !HasWeatherEffect() || GetBattlerHoldEffect(gBattlerAttacker) == HOLD_EFFECT_UTILITY_UMBRELLA)
                 recoverAmount = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
@@ -9614,7 +9614,7 @@ static void Cmd_settaunt(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
-    if (GetConfig(CONFIG_OBLIVIOUS_TAUNT) >= GEN_6 && GetBattlerAbility(gBattlerTarget) == ABILITY_OBLIVIOUS)
+    if (GetConfig(B_OBLIVIOUS_TAUNT) >= GEN_6 && GetBattlerAbility(gBattlerTarget) == ABILITY_OBLIVIOUS)
     {
         gBattlescriptCurrInstr = BattleScript_NotAffectedAbilityPopUp;
         gLastUsedAbility = ABILITY_OBLIVIOUS;
@@ -12450,7 +12450,7 @@ void BS_TryAllySwitch(void)
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
-    else if (GetConfig(CONFIG_ALLY_SWITCH_FAIL_CHANCE) >= GEN_9)
+    else if (GetConfig(B_ALLY_SWITCH_FAIL_CHANCE) >= GEN_9)
     {
         TryResetConsecutiveUseCounter(gBattlerAttacker);
 
@@ -13168,7 +13168,7 @@ void BS_JumpIfIntimidateAbilityPrevented(void)
     case ABILITY_SCRAPPY:
     case ABILITY_OWN_TEMPO:
     case ABILITY_OBLIVIOUS:
-        if (GetConfig(CONFIG_UPDATED_INTIMIDATE) >= GEN_8)
+        if (GetConfig(B_UPDATED_INTIMIDATE) >= GEN_8)
         {
             hasAbility = TRUE;
             gBattlescriptCurrInstr = BattleScript_IntimidatePrevented;
@@ -14731,7 +14731,7 @@ void BS_JumpIfAbilityPreventsRest(void)
     NATIVE_ARGS(u8 battler, const u8 *jumpInstr);
     enum BattlerId battler = GetBattlerForBattleScript(cmd->battler);
     u32 ability = GetBattlerAbility(battler);
-    if (GetConfig(CONFIG_LEAF_GUARD_PREVENTS_REST) >= GEN_5 && IsLeafGuardProtected(battler, ability))
+    if (GetConfig(B_LEAF_GUARD_PREVENTS_REST) >= GEN_5 && IsLeafGuardProtected(battler, ability))
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else if (IsShieldsDownProtected(battler, ability))
         gBattlescriptCurrInstr = cmd->jumpInstr;
@@ -14817,7 +14817,7 @@ void BS_BattlerItemToLastUsedItem(void)
 void BS_JumpIfGenConfigLowerThan(void)
 {
     NATIVE_ARGS(u16 tag, u8 gen, const u8 *jumpInstr);
-    if (GetConfig(cmd->tag) < cmd->gen)
+    if (GetConfigInternal(cmd->tag) < cmd->gen)
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else
         gBattlescriptCurrInstr = cmd->nextInstr;
