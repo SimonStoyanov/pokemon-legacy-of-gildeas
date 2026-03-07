@@ -1676,8 +1676,8 @@
 #define SPECIES_CORSHARK                                1557
 #define SPECIES_ADMIRAZOR                               1558
 #define SPECIES_BROWT                                   1559
-#define SPECIES_BROWT2                                  1560
-#define SPECIES_BROWT3                                  1561
+#define SPECIES_VERDROW                                 1560
+#define SPECIES_TEMPESTREL                              1561
 #define SPECIES_POMBON                                  1562
 #define SPECIES_POMBON2                                 1563
 #define SPECIES_POMBON3                                 1564
@@ -1688,8 +1688,10 @@
 #define SPECIES_HYPMAREA                                1569
 #define SPECIES_MAEMPERIFF                              1570
 #define SPECIES_FALINKS_WEST                            1571
+#define SPECIES_COMBRISK                                1572
+#define SPECIES_CLACIQUEN                               1573
 
-#define SPECIES_EGG                                     (SPECIES_FALINKS_WEST + 1)
+#define SPECIES_EGG                                     (SPECIES_CLACIQUEN + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

@@ -4655,6 +4655,15 @@ BattleScript_LocalBattleLostDoTrainer2WinText::
 	waitstate
 	printstring STRINGID_TRAINER2WINTEXT
 BattleScript_LocalBattleLostEnd_::
+	returnopponentmon1toball
+	waitstate
+	trainerslidein BS_OPPONENT1
+	waitstate
+	printstring STRINGID_TRAINER2LOSETEXT
+	waitstate
+	waitmessage B_WAIT_TIME_LONG
+	trainerslideout BS_OPPONENT1
+	waitstate
 	end2
 
 BattleScript_FrontierLinkBattleLost::

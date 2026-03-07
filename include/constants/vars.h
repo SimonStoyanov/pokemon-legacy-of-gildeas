@@ -156,7 +156,7 @@
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
+#define VAR_ARCHEVALE_LAB_STATE                          0x408B // 0-1: Intro, 2: Starter chosen
 #define VAR_ARCHEVALE_HOUSE_STATE                        0x408C // 0-2: FTUE, 3: Normal State, 4: Marshadow found, 5: Champion
 #define VAR_LITTLEROOT_RIVAL_STATE                       0x408D 
 #define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
@@ -271,8 +271,8 @@
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_PERCY_RECORD_W                               0x40FE // Unused Var
+#define VAR_PERCY_RECORD_L                               0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

@@ -6775,6 +6775,12 @@ static const struct SpriteFrameImage sPicTable_Admirazor[] = {
 static const struct SpriteFrameImage sPicTable_Browt[] = {
     overworld_ascending_frames(gObjectEventPic_Browt, 4, 4),
 };
+static const struct SpriteFrameImage sPicTable_Verdrow[] = {
+    overworld_ascending_frames(gObjectEventPic_Verdrow, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Tempestrel[] = {
+    overworld_ascending_frames(gObjectEventPic_Tempestrel, 4, 4),
+};
 #endif //P_FAMILY_BROWT
 
 #if P_FAMILY_POMBON
@@ -6788,5 +6794,11 @@ static const struct SpriteFrameImage sPicTable_Gecqua[] = {
     overworld_ascending_frames(gObjectEventPic_Gecqua, 4, 4),
 };
 #endif //P_FAMILY_GECQUA
+
+#if P_FAMILY_COMBRISK
+static const struct SpriteFrameImage sPicTable_Combrisk[] = {
+    overworld_ascending_frames(gObjectEventPic_Combrisk, 4, 4),
+};
+#endif //P_FAMILY_COMBRISK
 
 #endif //OW_POKEMON_OBJECT_EVENTS

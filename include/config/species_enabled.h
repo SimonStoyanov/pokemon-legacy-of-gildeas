@@ -607,6 +607,7 @@
 #define P_FAMILY_BUDBITT                 P_GILDEAS_POKEMON
 #define P_FAMILY_GLISCALE                P_GILDEAS_POKEMON
 #define P_FAMILY_BUCCANUB                P_GILDEAS_POKEMON
+#define P_FAMILY_COMBRISK                P_GILDEAS_POKEMON
 #define P_FAMILY_BROWT                   P_GILDEAS_POKEMON
 #define P_FAMILY_POMBON                  P_GILDEAS_POKEMON
 #define P_FAMILY_GECQUA                  P_GILDEAS_POKEMON

@@ -4381,3 +4381,17 @@ void SetAbility(void)
     u32 ability = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &ability);
 }
+
+void UpdatePercyWin(void)
+{
+    u16 *varPercyRecord = GetVarPointer(VAR_PERCY_RECORD_W);
+
+    varPercyRecord += 1;
+}
+
+void UpdatePercyLose(void)
+{
+    u16 *varPercyRecord = GetVarPointer(VAR_PERCY_RECORD_L);
+
+    varPercyRecord += 1;
+}

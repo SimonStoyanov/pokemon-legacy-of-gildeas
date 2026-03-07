@@ -26966,6 +26966,38 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Browt[] = INCBIN_U16("graphics/pokemon/browt/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_Verdrow[] = INCBIN_U32("graphics/pokemon/verdrow/front.4bpp.smol");
+    const u16 gMonPalette_Verdrow[] = INCBIN_U16("graphics/pokemon/verdrow/normal.gbapal");
+    const u32 gMonBackPic_Verdrow[] = INCBIN_U32("graphics/pokemon/verdrow/back.4bpp.smol");
+    const u16 gMonShinyPalette_Verdrow[] = INCBIN_U16("graphics/pokemon/verdrow/shiny.gbapal");
+    const u8 gMonIcon_Verdrow[] = INCBIN_U8("graphics/pokemon/verdrow/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Verdrow[] = INCBIN_U8("graphics/pokemon/verdrow/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Verdrow[] = INCBIN_COMP("graphics/pokemon/verdrow/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Verdrow[] = INCBIN_U16("graphics/pokemon/verdrow/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Verdrow[] = INCBIN_U16("graphics/pokemon/verdrow/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_Tempestrel[] = INCBIN_U32("graphics/pokemon/tempestrel/front.4bpp.smol");
+    const u16 gMonPalette_Tempestrel[] = INCBIN_U16("graphics/pokemon/tempestrel/normal.gbapal");
+    const u32 gMonBackPic_Tempestrel[] = INCBIN_U32("graphics/pokemon/tempestrel/back.4bpp.smol");
+    const u16 gMonShinyPalette_Tempestrel[] = INCBIN_U16("graphics/pokemon/tempestrel/shiny.gbapal");
+    const u8 gMonIcon_Tempestrel[] = INCBIN_U8("graphics/pokemon/tempestrel/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Tempestrel[] = INCBIN_U8("graphics/pokemon/tempestrel/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Tempestrel[] = INCBIN_COMP("graphics/pokemon/tempestrel/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Tempestrel[] = INCBIN_U16("graphics/pokemon/tempestrel/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Tempestrel[] = INCBIN_U16("graphics/pokemon/tempestrel/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_BROWT
 
 #if P_FAMILY_POMBON
@@ -27022,6 +27054,25 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_HYPMAREA
+
+
+#if P_FAMILY_COMBRISK
+    const u32 gMonFrontPic_Combrisk[] = INCBIN_U32("graphics/pokemon/combrisk/front.4bpp.smol");
+    const u16 gMonPalette_Combrisk[] = INCBIN_U16("graphics/pokemon/combrisk/normal.gbapal");
+    const u32 gMonBackPic_Combrisk[] = INCBIN_U32("graphics/pokemon/combrisk/back.4bpp.smol");
+    const u16 gMonShinyPalette_Combrisk[] = INCBIN_U16("graphics/pokemon/combrisk/shiny.gbapal");
+    const u8 gMonIcon_Combrisk[] = INCBIN_U8("graphics/pokemon/combrisk/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Combrisk[] = INCBIN_U8("graphics/pokemon/combrisk/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Combrisk[] = INCBIN_COMP("graphics/pokemon/combrisk/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Combrisk[] = INCBIN_U16("graphics/pokemon/combrisk/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Combrisk[] = INCBIN_U16("graphics/pokemon/combrisk/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_FAMILY_COMBRISK
 
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.smol");
     const u16 gMonPalette_Egg[] = INCBIN_U16("graphics/pokemon/egg/normal.gbapal");

@@ -565,7 +565,7 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .enemyMonElevation = 2,
         .backPic = gMonBackPic_Admirazor,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 0,
+        .backPicYOffset = 2,
         //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_Admirazor,
         .shinyPalette = gMonShinyPalette_Admirazor,
@@ -588,15 +588,93 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
     },
 #endif //P_FAMILY_BUCCANUB
 
+#if P_FAMILY_COMBRISK
+[SPECIES_COMBRISK] =
+    {
+        .baseHP        = 30,
+        .baseAttack    = 30,
+        .baseDefense   = 42,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 42,
+        .types = MON_TYPES(TYPE_ICE, TYPE_ROCK),
+        .catchRate = 120,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 49 : 63,
+        .evYield_Speed = 1,
+        .itemCommon = ITEM_ICY_ROCK,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Combrisk"),
+        .cryId = CRY_COMBEE,
+        .natDexNum = NATIONAL_DEX_COMBRISK,
+        .categoryName = _("Ice Cluster"),
+        .height = 4,
+        .weight = 120,
+        .description = COMPOUND_STRING(
+            "Each piece of Combrisk is a living\n"
+            "crystal node.\n"
+            "When three align their heat cycles,\n"
+            "they move as one body."),
+        .pokemonScale = 530,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Combrisk,
+        .frontPicSize = MON_COORDS_SIZE(64, 40),
+        .frontPicYOffset = 16,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 1),
+        ),
+        .frontAnimId = ANIM_V_SLIDE_WOBBLE,
+        .enemyMonElevation = 15,
+        .backPic = gMonBackPic_Combrisk,
+        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = 22,
+        .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
+        .palette = gMonPalette_Combrisk,
+        .shinyPalette = gMonShinyPalette_Combrisk,
+        .iconSprite = gMonIcon_Combrisk,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 10, SHADOW_SIZE_M)
+        FOOTPRINT(Combrisk)
+        OVERWORLD(
+            sPicTable_Combrisk,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Combrisk,
+            gShinyOverworldPalette_Combrisk
+        )
+        //.tmIlliterate = TRUE,
+        .levelUpLearnset = sCombriskLevelUpLearnset,
+        .teachableLearnset = sCombriskTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 21, SPECIES_VESPIQUEN, CONDITIONS({IF_GENDER, MON_FEMALE})}),
+    },
+
+#endif //P_FAMILY_COMBRISK
+
 #if P_FAMILY_BROWT
     [SPECIES_BROWT] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 50,
-        .baseDefense   = 50,
-        .baseSpeed     = 50,
-        .baseSpAttack  = 50,
+        .baseHP        = 45,
+        .baseAttack    = 40,
+        .baseDefense   = 40,
+        .baseSpAttack  = 60,
         .baseSpDefense = 50,
+        .baseSpeed     = 80,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = 62,
@@ -651,6 +729,135 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
             gShinyOverworldPalette_Browt
         )
         .levelUpLearnset = sBrowtLevelUpLearnset,
+        .teachableLearnset = sBrowtTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_VERDROW}),
+    },
+    [SPECIES_VERDROW] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 55,
+        .baseDefense   = 55,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 65,
+        .baseSpeed     = 95,
+        .types = MON_TYPES(TYPE_GRASS),
+        .catchRate = 45,
+        .expYield = 62,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_OVERGROW, ABILITY_OVERGROW },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Verdrow"),
+        .cryId = CRY_BROWT,
+        .natDexNum = NATIONAL_DEX_VERDROW,
+        .categoryName = _("Crestleaf"),
+        .height = 13,
+        .weight = 98,
+        // TODO
+        .description = COMPOUND_STRING(
+            "The grassy brows of Verdrow store energy\n"
+            "from the sun.\n"
+            "When stirred by wind, they crackle with\n"
+            "faint sparks"),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Verdrow,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_SMALL,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_Verdrow,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Verdrow,
+        .shinyPalette = gMonShinyPalette_Verdrow,
+        .iconSprite = gMonIcon_Verdrow,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 11, SHADOW_SIZE_M)
+        FOOTPRINT(Verdrow)
+        OVERWORLD(
+            sPicTable_Verdrow,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Verdrow,
+            gShinyOverworldPalette_Verdrow
+        )
+        .levelUpLearnset = sVerdrowLevelUpLearnset,
+        .teachableLearnset = sBrowtTeachableLearnset,
+    },
+    [SPECIES_TEMPESTREL] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 70,
+        .baseDefense   = 70,
+        .baseSpAttack  = 120,
+        .baseSpDefense = 85,
+        .baseSpeed     = 110,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_ELECTRIC),
+        .catchRate = 45,
+        .expYield = 62,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_OVERGROW, ABILITY_OVERGROW },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Tempestrel"),
+        .cryId = CRY_BROWT,
+        .natDexNum = NATIONAL_DEX_TEMPESTREL,
+        .categoryName = _("Crown Gryph"),
+        .height = 19,
+        .weight = 420,
+        // TODO
+        .description = COMPOUND_STRING(
+            "The crown that replaced its grassy\n"
+            "brows absorbs sunlight and thunder\n"
+            "powering its attacks to defend\n" 
+            "their trainer."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Tempestrel,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_STRETCH,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_Tempestrel,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Tempestrel,
+        .shinyPalette = gMonShinyPalette_Tempestrel,
+        .iconSprite = gMonIcon_Tempestrel,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Tempestrel)
+        OVERWORLD(
+            sPicTable_Tempestrel,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Tempestrel,
+            gShinyOverworldPalette_Tempestrel
+        )
+        .levelUpLearnset = sTempestrelLevelUpLearnset,
         .teachableLearnset = sBrowtTeachableLearnset,
     },
 #endif //P_FAMILY_BROWT

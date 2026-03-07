@@ -9666,12 +9666,12 @@ Marshtomp
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_PERCY_FIRST_BATTLE_MUDKIP ===
+=== TRAINER_PERCY_FIRST_BATTLE_BUCCANUB ===
 Name: PERCY
 Class: Rival
 Pic: Rival Percy
-Gender: Female
-Music: Female
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
@@ -9721,12 +9721,12 @@ Grovyle
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_PERCY_FIRST_BATTLE_TREECKO ===
+=== TRAINER_PERCY_FIRST_BATTLE_BUDBITT ===
 Name: PERCY
 Class: Rival
 Pic: Rival Percy
-Gender: Female
-Music: Female
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
@@ -9776,12 +9776,12 @@ Combusken
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_PERCY_FIRST_BATTLE_TORCHIC ===
+=== TRAINER_PERCY_FIRST_BATTLE_GLISCALE ===
 Name: PERCY
 Class: Rival
 Pic: Rival Percy
-Gender: Female
-Music: Female
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 

@@ -21,8 +21,8 @@ mapscripts ArchevaleTown_MapScripts {
 }
 
 script ArchevaleTown_SetIntro {
-	setflag(FLAG_HIDE_PLAYERS_HOUSE_CHERRY)
-	setvar(VAR_ARCHEVALE_HOUSE_STATE, 3)
+	setflag(FLAG_HIDE_LAB_PERCY)
+	setvar(VAR_ARCHEVALE_LAB_STATE, 0)
 }
 
 script ArchevaleTown_Home_Sign {
@@ -61,10 +61,17 @@ script ArchevaleTown_Warning {
 	releaseall
 }
 
+script ArchevaleTown_EventScript_SmallGirl {
+	lockall
+	faceplayer
+	msgbox(format("Um, um, um!\pIf you go outside and go in the grass,\nwild POKéMON will jump out!$"))
+	releaseall
+}
+
 script ArchevaleTown_EventScript_FatMan {
 	lockall
 	faceplayer
-	msgbox(format("New discoveries are done everyday regarding Pokémon's biology\pTechnology is amazing!"))
+	msgbox(format("Did you know that HM's can be used now without teaching them to your Pokémon?\pTechnology is amazing!"))
 	releaseall
 }
 

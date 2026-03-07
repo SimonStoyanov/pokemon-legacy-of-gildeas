@@ -15,20 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_CHERRY_BAG",
-      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
-      "x": 8,
-      "y": 9,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ArchevaleTown_StarterChoice",
-      "flag": "FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG"
-    },
-    {
+      "local_id": "LOCAL_ID_MOM",
       "graphics_id": "OBJ_EVENT_GFX_MOM",
       "x": 10,
       "y": 9,
@@ -40,34 +27,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PlayersHouse_1F_EventScript_Mom",
       "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_PERCY_HOUSE_1F",
-      "graphics_id": "OBJ_EVENT_GFX_PERCY",
-      "x": 8,
-      "y": 13,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "PlayersHouse_1F_EventScript_Rival",
-      "flag": "FLAG_HIDE_PLAYERS_HOUSE_PERCY"
-    },
-    {
-      "local_id": "LOCALID_CHERRY",
-      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 10,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "PlayersHouse_1F_EventScript_Cherry",
-      "flag": "FLAG_HIDE_PLAYERS_HOUSE_CHERRY"
     }
   ],
   "warp_events": [
@@ -96,39 +55,12 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 12,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_ARCHEVALE_HOUSE_STATE",
-      "var_value": "1",
-      "script": "ArchevaleTown_PlayerHouse_1F_MeetCherry0"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_ARCHEVALE_HOUSE_STATE",
-      "var_value": "1",
-      "script": "ArchevaleTown_PlayerHouse_1F_MeetCherry1"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_ARCHEVALE_HOUSE_STATE",
-      "var_value": "1",
-      "script": "ArchevaleTown_PlayerHouse_1F_MeetCherry2"
-    },
-    {
-      "type": "trigger",
       "x": 7,
       "y": 13,
       "elevation": 0,
       "var": "VAR_ARCHEVALE_HOUSE_STATE",
       "var_value": "1",
-      "script": "ArchevaleTown_PlayerHouse_1F_MeetCherry3"
+      "script": "ArchevaleTown_PlayerHouse_1F_RunningShoes_L"
     },
     {
       "type": "trigger",
@@ -137,7 +69,7 @@
       "elevation": 0,
       "var": "VAR_ARCHEVALE_HOUSE_STATE",
       "var_value": "1",
-      "script": "ArchevaleTown_PlayerHouse_1F_MeetCherry3"
+      "script": "ArchevaleTown_PlayerHouse_1F_RunningShoes_R"
     }
   ],
   "bg_events": []

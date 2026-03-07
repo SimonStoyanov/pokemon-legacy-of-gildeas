@@ -23,7 +23,7 @@ ArchevaleTown_PlayerHouse_2F_SetIntroFlags::
 # 13 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	setrespawn HEAL_LOCATION_ARCHEVALE_TOWN_PLAYER_HOUSE_2F
 # 14 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_QUEST_MENU_GET
 	return
 
 
@@ -37,15 +37,13 @@ ArchevaleTown_Test::
 # 21 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
 	setvar VAR_ARCHEVALE_HOUSE_STATE, 1
 # 22 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	setflag FLAG_HIDE_ARCHVALE_CHERRY_STARTERS_BAG
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_1_STARTERS
 # 23 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	setflag FLAG_HIDE_PLAYERS_HOUSE_PERCY
-# 24 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	clearflag FLAG_HIDE_PLAYERS_HOUSE_CHERRY
+	openquestmenu
 	return
 
 
 ArchevaleTown_Test_Text_0:
 # 19 "data/maps/ArchevaleTown_PlayerHouse_2F/scripts.pory"
-	.string "{PLAYER}, COME DOWNSTAIRS, THERE'S A\n"
-	.string "SURPRISE FOR YOU$"
+	.string "MOM: {PLAYER}, honey! You'll be late\n"
+	.string "to meet Prof Cherry$"
