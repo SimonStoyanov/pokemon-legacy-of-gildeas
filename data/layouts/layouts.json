@@ -4849,7 +4849,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
-      "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+      "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_MAROLIVA_TOWN",
@@ -4859,7 +4860,8 @@
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/MarolivaTown/border.bin",
-      "blockdata_filepath": "data/layouts/MarolivaTown/map.bin"
+      "blockdata_filepath": "data/layouts/MarolivaTown/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_MAROLIVA_TOWN_PLAYER_HOUSE",
@@ -4869,7 +4871,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/MarolivaTown_PlayerHouse/border.bin",
-      "blockdata_filepath": "data/layouts/MarolivaTown_PlayerHouse/map.bin"
+      "blockdata_filepath": "data/layouts/MarolivaTown_PlayerHouse/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ARCHEVALE_TOWN",
@@ -4879,7 +4882,8 @@
       "primary_tileset": "gTileset_Snow",
       "secondary_tileset": "gTileset_Archevale",
       "border_filepath": "data/layouts/ArchevaleTown/border.bin",
-      "blockdata_filepath": "data/layouts/ArchevaleTown/map.bin"
+      "blockdata_filepath": "data/layouts/ArchevaleTown/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ARCHEVALE_TOWN_PLAYER_HOUSE_1F",
@@ -4889,7 +4893,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ArchevaleTown_PlayerHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/ArchevaleTown_PlayerHouse_1F/map.bin"
+      "blockdata_filepath": "data/layouts/ArchevaleTown_PlayerHouse_1F/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ARCHEVALE_TOWN_PLAYER_HOUSE_2F",
@@ -4899,7 +4904,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ArchevaleTown_PlayerHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/ArchevaleTown_PlayerHouse_2F/map.bin"
+      "blockdata_filepath": "data/layouts/ArchevaleTown_PlayerHouse_2F/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ARCHEVALE_TOWN_PERCY_HOUSE_2F",
@@ -4909,7 +4915,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ArchevaleTown_PercyHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/ArchevaleTown_PercyHouse_2F/map.bin"
+      "blockdata_filepath": "data/layouts/ArchevaleTown_PercyHouse_2F/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ARCHEVALE_TOWN_PERCY_HOUSE_1F",
@@ -4919,7 +4926,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ArchevaleTown_PercyHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/ArchevaleTown_PercyHouse_1F/map.bin"
+      "blockdata_filepath": "data/layouts/ArchevaleTown_PercyHouse_1F/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ARCHEVALE_TOWN_CHERRY_LAB",
@@ -4929,7 +4937,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/ArchevaleTown_CherryLab/border.bin",
-      "blockdata_filepath": "data/layouts/ArchevaleTown_CherryLab/map.bin"
+      "blockdata_filepath": "data/layouts/ArchevaleTown_CherryLab/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ARCHEVALE_TOWN_MART",
@@ -4939,7 +4948,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ArchevaleTown_Mart/border.bin",
-      "blockdata_filepath": "data/layouts/ArchevaleTown_Mart/map.bin"
+      "blockdata_filepath": "data/layouts/ArchevaleTown_Mart/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_1F_FRLG",
