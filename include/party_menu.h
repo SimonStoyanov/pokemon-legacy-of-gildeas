@@ -20,12 +20,6 @@ struct PartyMenu
     s16 learnMoveState;  // data2, used only as a learn move state
 };
 
-enum {
-    CAN_LEARN_MOVE,
-    CANNOT_LEARN_MOVE,
-    ALREADY_KNOWS_MOVE,
-    CANNOT_LEARN_MOVE_IS_EGG
-};
 #define DATA1_PARTY_MENU_FROM_FIELD -1
 
 extern struct PartyMenu gPartyMenu;
@@ -41,8 +35,8 @@ extern const u16 gHeldItemPalette[];
 extern void (*gItemUseCB)(u8, TaskFunc);
 extern const struct SpriteTemplate gSpriteTemplate_StatusIcons;
 
+enum CanMoveBeLearned CanTeachMove(struct Pokemon *, enum Move);
 void AnimatePartySlot(u8 slot, u8 animNum);
-u8 CanTeachMove(struct Pokemon *, u16);
 bool8 IsMultiBattle(void);
 u8 GetCursorSelectionMonId(void);
 u8 GetPartyMenuType(void);
@@ -71,10 +65,10 @@ void ItemUseCB_ResetEVs(u8 taskId, TaskFunc task);
 void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task);
 void ItemUseCB_PPRecovery(u8 taskId, TaskFunc task);
 void ItemUseCB_PPUp(u8 taskId, TaskFunc task);
-u16 ItemIdToBattleMoveId(u16 item);
-bool8 MonKnowsMove(struct Pokemon *mon, u16 move);
-bool8 BoxMonKnowsMove(struct BoxPokemon *boxMon, u16 move);
-int MoveToHM(u16 move);
+enum Move ItemIdToBattleMoveId(enum Item item);
+bool8 MonKnowsMove(struct Pokemon *mon, enum Move move);
+bool8 BoxMonKnowsMove(struct BoxPokemon *boxMon, enum Move move);
+enum Item MoveToHM(enum Move move);
 void ItemUseCB_TMHM(u8 taskId, TaskFunc task);
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc task);
 void ItemUseCB_DynamaxCandy(u8 taskId, TaskFunc task);
@@ -86,7 +80,7 @@ void ItemUseCB_RotomCatalog(u8 taskId, TaskFunc task);
 void ItemUseCB_ZygardeCube(u8 taskId, TaskFunc task);
 void ItemUseCB_Fusion(u8 taskId, TaskFunc task);
 void ItemUseCB_TeraCrystal(u8 taskId, TaskFunc task);
-u8 GetItemEffectType(u16 item);
+enum ItemEffectType GetItemEffectType(enum Item item);
 void CB2_PartyMenuFromStartMenu(void);
 void CB2_ChooseMonToGiveItem(void);
 void ChooseMonToGiveMailFromMailbox(void);
@@ -98,8 +92,8 @@ void ChooseMonForWirelessMinigame(void);
 void OpenPartyMenuInBattle(u8 partyAction);
 void ChooseMonForInBattleItem(void);
 void BufferBattlePartyCurrentOrder(void);
-void BufferBattlePartyCurrentOrderBySide(u8 battler, u8 flankId);
-void SwitchPartyOrderLinkMulti(u8 battler, u8 slot, u8 slot2);
+void BufferBattlePartyCurrentOrderBySide(enum BattlerId battler, u8 flankId);
+void SwitchPartyOrderLinkMulti(enum BattlerId battler, u8 slot, u8 slot2);
 void SwitchPartyMonSlots(u8 slot, u8 slot2);
 u8 GetPartyIdFromBattlePartyId(u8 battlePartyId);
 void ShowPartyMenuToShowcaseMultiBattleParty(void);
