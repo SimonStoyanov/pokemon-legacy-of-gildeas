@@ -110,11 +110,15 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
     {8, 4},
 };
 
+#define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_BUDBITT)
+#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_GLISCALE)
+#define WATER_STARTER (IS_FRLG ? PECIES_SQUIRTLE    : SPECIES_BUCCANUB)
+
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
-    SPECIES_BUDBITT,
-    SPECIES_GLISCALE,
-    SPECIES_BUCCANUB,
+    GRASS_STARTER,
+    FIRE_STARTER,
+    WATER_STARTER,
 };
 
 static const struct BgTemplate sBgTemplates[3] =
