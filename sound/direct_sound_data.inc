@@ -6439,6 +6439,16 @@ Cry_Buccanub::
 	.incbin "sound/direct_sound_samples/cries/buccanub.bin"
 .endif @ P_FAMILY_BUCCANUB
 
+.if P_FAMILY_COMBRISK == TRUE
+	.align 2
+Cry_Combrisk::
+	.incbin "sound/direct_sound_samples/cries/combrisk.bin"
+	
+	.align 2
+Cry_Claciquen::
+	.incbin "sound/direct_sound_samples/cries/claciquen.bin"
+.endif @ P_FAMILY_COMBRISK
+
 
 .endif @ P_CRIES_ENABLED
 
