@@ -1747,3 +1747,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/ArchevaleTown_PercyHouse_2F/scripts.inc"
 	.include "data/maps/ArchevaleTown_CherryLab/scripts.inc"
 	.include "data/maps/ArchevaleTown_Mart/scripts.inc"
+	.include "data/maps/ArchevaleTown_WaveyHouse/scripts.inc"
+	.include "data/maps/ArchevaleTown_WindaHouse/scripts.inc"

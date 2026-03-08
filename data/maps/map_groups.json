@@ -666,9 +666,6 @@
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
   ],
-  "gMapGroup_IndoorMaroliva": [
-    "MarolivaTown_PlayerHouse"
-  ],
   "gMapGroup_Link_Frlg": [
     "BattleColosseum_2P_Frlg",
     "TradeCenter_Frlg",
@@ -1168,7 +1165,10 @@
   "gMapGroup_IndoorSevenIslandRoute_Frlg": [
     "SevenIsland_SevaultCanyon_House_Frlg"
   ],
-    "gMapGroup_Gildeas_TownsAndRoutes": [
+  "gMapGroup_IndoorMaroliva": [
+    "MarolivaTown_PlayerHouse"
+  ],
+  "gMapGroup_Gildeas_TownsAndRoutes": [
     "ArchevaleTown"
   ],
   "gMapGroup_Gildeas_IndoorArchevale": [
@@ -1177,6 +1177,8 @@
     "ArchevaleTown_PercyHouse_1F",
     "ArchevaleTown_PercyHouse_2F",
     "ArchevaleTown_CherryLab",
-    "ArchevaleTown_Mart"
+    "ArchevaleTown_Mart",
+    "ArchevaleTown_WindaHouse",
+    "ArchevaleTown_WaveyHouse"
   ]
 }

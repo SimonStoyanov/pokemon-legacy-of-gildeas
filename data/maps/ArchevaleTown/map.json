@@ -93,7 +93,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_LITTLEROOT_TWIN",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 15,
       "y": 32,
@@ -147,14 +146,14 @@
       "x": 25,
       "y": 27,
       "elevation": 0,
-      "dest_map": "MAP_ARCHEVALE_TOWN",
+      "dest_map": "MAP_ARCHEVALE_TOWN_WINDA_HOUSE",
       "dest_warp_id": "0"
     },
     {
       "x": 28,
       "y": 27,
       "elevation": 0,
-      "dest_map": "MAP_ARCHEVALE_TOWN",
+      "dest_map": "MAP_ARCHEVALE_TOWN_WAVEY_HOUSE",
       "dest_warp_id": "0"
     },
     {
