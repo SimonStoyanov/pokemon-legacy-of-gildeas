@@ -417,7 +417,7 @@ struct SpeciesInfo /*0xC4*/
     u8 safariZoneFleeRate;
 
     // Pokédex data
-    u8 categoryName[13];
+    u8 categoryName[16];
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
     enum PokemonCry cryId:16;
     enum NationalDexOrder natDexNum:16;
@@ -843,14 +843,14 @@ bool8 IsMonPastEvolutionLevel(struct Pokemon *mon);
 u16 NationalPokedexNumToSpecies(enum NationalDexOrder nationalNum);
 u32 NationalToRegionalOrder(enum NationalDexOrder nationalNum);
 enum KantoDexOrder NationalToKantoOrder(enum NationalDexOrder nationalNum);
-enum HoennDexOrder NationalToHoennOrder(enum NationalDexOrder nationalNum);
+enum GildeasDexOrder NationalToGildeasOrder(enum NationalDexOrder nationalNum);
 enum NationalDexOrder SpeciesToNationalPokedexNum(u16 species);
 u32 SpeciesToRegionalPokedexNum(u16 species);
 enum KantoDexOrder SpeciesToKantoPokedexNum(u16 species);
-enum HoennDexOrder SpeciesToHoennPokedexNum(u16 species);
+enum GildeasDexOrder SpeciesToGildeasPokedexNum(u16 species);
 enum NationalDexOrder RegionalToNationalOrder(u32 regionNum);
 enum NationalDexOrder KantoToNationalOrder(enum KantoDexOrder kantoNum);
-enum NationalDexOrder HoennToNationalOrder(enum HoennDexOrder hoennNum);
+enum NationalDexOrder GildeasToNationalOrder(enum GildeasDexOrder gildeasNum);
 void DrawSpindaSpots(u32 personality, u8 *dest, bool32 isSecondFrame);
 void EvolutionRenameMon(struct Pokemon *mon, u16 oldSpecies, u16 newSpecies);
 u8 GetPlayerFlankId(void);
@@ -868,7 +868,7 @@ u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves);
 u16 SpeciesToPokedexNum(u16 species);
 bool32 IsSpeciesInRegionalDex(u16 species);
 bool32 IsSpeciesInKantoDex(u16 species);
-bool32 IsSpeciesInHoennDex(u16 species);
+bool32 IsSpeciesInGildeasDex(u16 species);
 u16 GetBattleBGM(void);
 void PlayBattleBGM(void);
 void PlayMapChosenOrBattleBGM(u16 songId);

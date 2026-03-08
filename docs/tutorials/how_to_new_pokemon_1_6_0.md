@@ -416,23 +416,23 @@ enum {
 +   #define NATIONAL_DEX_COUNT  NATIONAL_DEX_MEWTHREE
 ```
 
-Do keep in mind that if you intend to add your new species to the Hoenn Dex, you'll also want to add a `HOENN_DEX` constant for it, like this:
+Do keep in mind that if you intend to add your new species to the Hoenn Dex, you'll also want to add a `GILDEAS_DEX` constant for it, like this:
 
 ```diff
 // Hoenn Pokedex order
 enum {
-    HOENN_DEX_NONE,
-    HOENN_DEX_TREECKO,
+    GILDEAS_DEX_NONE,
+    GILDEAS_DEX_TREECKO,
 ...
-    HOENN_DEX_DEOXYS,
-+   HOENN_DEX_MEWTHREE,
+    GILDEAS_DEX_DEOXYS,
++   GILDEAS_DEX_MEWTHREE,
 ...
 };
 ```
 
 ```diff
-- #define HOENN_DEX_COUNT (HOENN_DEX_DEOXYS + 1)
-+ #define HOENN_DEX_COUNT (HOENN_DEX_MEWTHREE + 1)
+- #define GILDEAS_DEX_COUNT (GILDEAS_DEX_DEOXYS + 1)
++ #define GILDEAS_DEX_COUNT (GILDEAS_DEX_MEWTHREE + 1)
 ```
 
 Edit [src/pokemon.c](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/src/pokemon.c):
@@ -453,20 +453,20 @@ Just like before, if we want to insert our new species in the Hoenn Dex, we'll h
  // Assigns all species to the Hoenn Dex Index (Summary No. for Hoenn Dex)
  static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
  {
-     SPECIES_TO_HOENN(TREECKO),
+     SPECIES_TO_GILDEAS(TREECKO),
      ...
-     SPECIES_TO_HOENN(DEOXYS),
-+    SPECIES_TO_HOENN(MEWTHREE),
+     SPECIES_TO_GILDEAS(DEOXYS),
++    SPECIES_TO_GILDEAS(MEWTHREE),
  };
 ```
 
 ```diff
  const u16 gHoennToNationalOrder[NUM_SPECIES] = // Assigns Hoenn Dex Pokémon (Using National Dex Index)
  {
-     HOENN_TO_NATIONAL(TREECKO),
+     GILDEAS_TO_NATIONAL(TREECKO),
      ...
-     HOENN_TO_NATIONAL(DEOXYS),
-+    HOENN_TO_NATIONAL(MEWTHREE),
+     GILDEAS_TO_NATIONAL(DEOXYS),
++    GILDEAS_TO_NATIONAL(MEWTHREE),
  };
 ```
 

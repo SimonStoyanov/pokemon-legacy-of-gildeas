@@ -392,21 +392,21 @@ enum NationalDexOrder
 +   #define NATIONAL_DEX_COUNT  NATIONAL_DEX_MEWTHREE
 ```
 
-Do keep in mind that if you intend to add your new species to the Hoenn Dex, you'll also want to add a `HOENN_DEX` constant for it and give it a `HOENN_TO_NATIONAL` member, like this:
+Do keep in mind that if you intend to add your new species to the Hoenn Dex, you'll also want to add a `GILDEAS_DEX` constant for it and give it a `GILDEAS_TO_NATIONAL` member, like this:
 
 ```diff
 // Hoenn Pokedex order
 enum HoennDexOrder
 {
-    HOENN_DEX_NONE,
-    HOENN_DEX_TREECKO,
+    GILDEAS_DEX_NONE,
+    GILDEAS_DEX_TREECKO,
 ...
-    HOENN_DEX_DEOXYS,
-+   HOENN_DEX_MEWTHREE,
+    GILDEAS_DEX_DEOXYS,
++   GILDEAS_DEX_MEWTHREE,
 };
 
-- #define HOENN_DEX_COUNT (HOENN_DEX_DEOXYS + 1)
-+ #define HOENN_DEX_COUNT (HOENN_DEX_MEWTHREE + 1)
+- #define GILDEAS_DEX_COUNT (GILDEAS_DEX_DEOXYS + 1)
++ #define GILDEAS_DEX_COUNT (GILDEAS_DEX_MEWTHREE + 1)
 ```
 
 Edit [src/pokemon.c](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/src/pokemon.c):
@@ -414,10 +414,10 @@ Edit [src/pokemon.c](https://github.com/rh-hideout/pokeemerald-expansion/blob/ma
 ```diff
  const u16 sHoennToNationalOrder[NUM_SPECIES] = // Assigns Hoenn Dex Pokémon (Using National Dex Index)
  {
-     HOENN_TO_NATIONAL(TREECKO),
+     GILDEAS_TO_NATIONAL(TREECKO),
      ...
-     HOENN_TO_NATIONAL(DEOXYS),
-+    HOENN_TO_NATIONAL(MEWTHREE),
+     GILDEAS_TO_NATIONAL(DEOXYS),
++    GILDEAS_TO_NATIONAL(MEWTHREE),
  };
 ```
 
@@ -965,7 +965,7 @@ static const u16 sPikachuFormSpeciesIdTable[] = {
     SPECIES_PIKACHU_PH_D,
     SPECIES_PIKACHU_LIBRE,
     SPECIES_PIKACHU_ORIGINAL_CAP,
-    SPECIES_PIKACHU_HOENN_CAP,
+    SPECIES_PIKACHU_GILDEAS_CAP,
     SPECIES_PIKACHU_SINNOH_CAP,
     SPECIES_PIKACHU_UNOVA_CAP,
     SPECIES_PIKACHU_KALOS_CAP,
