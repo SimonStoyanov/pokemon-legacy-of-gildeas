@@ -358,7 +358,7 @@ script CherryLab_Percy_Rival_BuccanubChosen {
 	waitmovement(LOCALID_PERCY_LAB)
 	applymovement(LOCALID_PLAYER, moves(face_left))
 	waitmovement(LOCALID_PLAYER)	
-	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Water...\N
+	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Buccanub...\N
 		Let's tests our skills!"))	
 
 	setflag(FLAG_NO_WHITEOUT)

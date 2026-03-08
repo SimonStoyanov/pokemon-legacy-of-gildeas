@@ -967,7 +967,7 @@ CherryLab_Percy_Rival_GliscaleChosen_Text_0:
 CherryLab_Percy_Rival_BuccanubChosen_Text_0:
 # 361 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	.string "PERCY: Hey {PLAYER}! So you've\n"
-	.string "chosen Water...\l"
+	.string "chosen Buccanub...\l"
 	.string "Let's tests our skills!$"
 
 Lab_Rival_PostBattle_Text_0:
