@@ -77,7 +77,8 @@
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
     "gMapGroup_IndoorMaroliva",
     "gMapGroup_Gildeas_TownsAndRoutes",
-    "gMapGroup_Gildeas_IndoorArchevale"
+    "gMapGroup_Gildeas_IndoorArchevale",
+    "gMapGroup_GildeasIndoorRoute001"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -1180,5 +1181,8 @@
     "ArchevaleTown_Mart",
     "ArchevaleTown_WindaHouse",
     "ArchevaleTown_WaveyHouse"
+  ],
+  "gMapGroup_GildeasIndoorRoute001": [
+    "Route001_NorthEntrance"
   ]
 }

@@ -9444,6 +9444,16 @@
       "border_filepath": "data/layouts/ArchevaleTown_WindaHouse/border.bin",
       "blockdata_filepath": "data/layouts/ArchevaleTown_WindaHouse/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE001_NORTH_ENTRANCE",
+      "name": "Route001_NorthEntrance_Layout",
+      "width": 12,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_OceanicMuseum",
+      "border_filepath": "data/layouts/Route001_NorthEntrance/border.bin",
+      "blockdata_filepath": "data/layouts/Route001_NorthEntrance/map.bin"
     }
   ]
 }

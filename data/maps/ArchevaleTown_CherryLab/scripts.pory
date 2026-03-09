@@ -187,7 +187,7 @@ script PlayersHouse_1F_EventScript_Cherry {
 	lock
 	faceplayer
 	switch (var(VAR_ARCHEVALE_LAB_STATE)) {
-		case 2: msgbox(format("PROF. CHERRY: A tough decision indeed {PLAYER}, but rest assured, these are great partners!"))
+		case 1: msgbox(format("PROF. CHERRY: A tough decision indeed {PLAYER}, but rest assured, these are great partners!"))
 		default: msgbox(format("PROF. CHERRY: Catch many Pokémon and treat them well! Good luck!"))
 	}
 	applymovement(LOCALID_CHERRY, moves(face_original_direction))
@@ -262,7 +262,7 @@ script PlayersHouse_1F_EventScript_Rival {
 	if (var(VAR_PERCY_RECORD_L) > VAR_PERCY_RECORD_W) {
 		call(CherryLab_RivalWon)
 	}
-	else {
+	elif (var(VAR_PERCY_RECORD_W) > VAR_PERCY_RECORD_L) {
 		call(CherryLab_RivalLost)
 	}
 

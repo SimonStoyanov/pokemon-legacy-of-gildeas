@@ -333,7 +333,7 @@ PlayersHouse_1F_EventScript_Cherry::
 # 189 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	switch VAR_ARCHEVALE_LAB_STATE
 # 190 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	case 2, PlayersHouse_1F_EventScript_Cherry_3
+	case 1, PlayersHouse_1F_EventScript_Cherry_3
 # 191 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	msgbox PlayersHouse_1F_EventScript_Cherry_Text_1
 PlayersHouse_1F_EventScript_Cherry_1:
@@ -429,8 +429,9 @@ PlayersHouse_1F_EventScript_Rival_6:
 # 262 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	compare VAR_PERCY_RECORD_L, VAR_PERCY_RECORD_W
 	goto_if_gt PlayersHouse_1F_EventScript_Rival_12
-# 266 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	call CherryLab_RivalLost
+# 265 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	compare VAR_PERCY_RECORD_W, VAR_PERCY_RECORD_L
+	goto_if_gt PlayersHouse_1F_EventScript_Rival_13
 PlayersHouse_1F_EventScript_Rival_11:
 # 269 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	call Common_EventScript_OutOfCenterPartyHeal
@@ -501,6 +502,11 @@ PlayersHouse_1F_EventScript_Rival_10:
 PlayersHouse_1F_EventScript_Rival_12:
 # 263 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	call CherryLab_RivalWon
+	goto PlayersHouse_1F_EventScript_Rival_11
+
+PlayersHouse_1F_EventScript_Rival_13:
+# 266 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	call CherryLab_RivalLost
 	goto PlayersHouse_1F_EventScript_Rival_11
 
 
