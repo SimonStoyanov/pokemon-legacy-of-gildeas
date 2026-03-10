@@ -5,6 +5,11 @@ gText_WouldYouLikeToRestYourPkmn::
 	.string "to full health.\p"
 	.string "Would you like to rest your POKéMON?$"
 
+gText_WouldYouLikeToRestYourPkmnOut::
+	.string "Hello, how are your POKéMON\n"
+	.string "feeling?\p"
+	.string "Would you like to rest your POKéMON?$"
+
 gText_IllTakeYourPkmn::
 	.string "Okay, I'll take your POKéMON\n"
 	.string "for a few seconds.$"

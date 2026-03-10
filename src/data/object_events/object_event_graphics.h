@@ -468,6 +468,8 @@ const u32 gFieldEffectObjectPic_CaveDust[] = INCBIN_U32("graphics/field_effects/
 const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effects/palettes/cave_dust.gbapal");
 
 const u32 gObjectEventPic_ApricornTree[] = INCBIN_U32("graphics/object_events/pics/misc/apricorn_tree.4bpp");
+const u16 gObjectEventPic_Policeman[] = INCBIN_U16("graphics/object_events/pics/people/policeman.4bpp");
+const u16 gObjectEventPic_Clipboard[] = INCBIN_U16("graphics/object_events/pics/misc/clipboard.4bpp");
 
 #if IS_FRLG
 
@@ -573,7 +575,6 @@ const u16 gObjectEventPic_Misty[] = INCBIN_U16("graphics/object_events/pics/peop
 const u16 gObjectEventPic_Lance[] = INCBIN_U16("graphics/object_events/pics/people/lance.4bpp");
 const u16 gObjectEventPic_GBAKid[] = INCBIN_U16("graphics/object_events/pics/people/gba_kid.4bpp");
 const u16 gObjectEventPic_MomFrlg[] = INCBIN_U16("graphics/object_events/pics/people/mom_frlg.4bpp");
-const u16 gObjectEventPic_Policeman[] = INCBIN_U16("graphics/object_events/pics/people/policeman.4bpp");
 
 const u16 gObjectEventPic_CuttableTreeFrlg[] = INCBIN_U16("graphics/object_events/pics/misc/cuttable_tree_frlg.4bpp");
 const u32 gObjectEventPic_BreakableRockFrlg[] = INCBIN_U32("graphics/object_events/pics/misc/breakable_rock_frlg.4bpp");
@@ -585,7 +586,6 @@ const u16 gObjectEventPic_OldAmber[] = INCBIN_U16("graphics/object_events/pics/m
 const u16 gObjectEventPic_GymSign[] = INCBIN_U16("graphics/object_events/pics/misc/gym_sign.4bpp");
 const u16 gObjectEventPic_Sign[] = INCBIN_U16("graphics/object_events/pics/misc/sign.4bpp");
 const u16 gObjectEventPic_WoodenSign[] = INCBIN_U16("graphics/object_events/pics/misc/wooden_sign.4bpp");
-const u16 gObjectEventPic_Clipboard[] = INCBIN_U16("graphics/object_events/pics/misc/clipboard.4bpp");
 const u16 gObjectEventPal_Meteorite[] = INCBIN_U16("graphics/object_events/palettes/meteorite.gbapal");
 const u16 gObjectEventPic_BirthIslandStoneFrlg[] = INCBIN_U16("graphics/object_events/pics/misc/birth_island_stone_frlg.4bpp");
 const u16 gObjectEventPic_LaprasDoll[] = INCBIN_U16("graphics/object_events/pics/misc/lapras_doll.4bpp");

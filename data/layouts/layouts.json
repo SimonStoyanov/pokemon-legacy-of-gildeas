@@ -9448,10 +9448,10 @@
     {
       "id": "LAYOUT_ROUTE001_NORTH_ENTRANCE",
       "name": "Route001_NorthEntrance_Layout",
-      "width": 12,
-      "height": 20,
+      "width": 14,
+      "height": 18,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_OceanicMuseum",
+      "secondary_tileset": "gTileset_GatehouseAlt",
       "border_filepath": "data/layouts/Route001_NorthEntrance/border.bin",
       "blockdata_filepath": "data/layouts/Route001_NorthEntrance/map.bin"
     }

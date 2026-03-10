@@ -1234,7 +1234,7 @@ const u8 gText_QuestActive[] =_("active");
 
 //names
 const u8 gText_SideQuestName_1[] = _("Quest 1: Starting my adventure");
-const u8 gText_SideQuestName_2[] = _("Side Quest 2");
+const u8 gText_SideQuestName_2[] = _("Quest 2: Obtain all gym badges");
 const u8 gText_SideQuestName_3[] = _("Side Quest 3");
 const u8 gText_SideQuestName_4[] = _("Side Quest 4");
 const u8 gText_SideQuestName_5[] = _("Side Quest 5");
@@ -1266,7 +1266,7 @@ const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 
 //descriptions
 const u8 gText_SideQuestDesc_1[] = _("Go to Cherry's Lab and choose your\nStarter Pokémon");
-const u8 gText_SideQuestDesc_2[] = _("Description 2");
+const u8 gText_SideQuestDesc_2[] = _("Learn about the virtues of the\npilgrimage and obtain glory");
 const u8 gText_SideQuestDesc_3[] = _("Description 3");
 const u8 gText_SideQuestDesc_4[] = _("Description 4");
 const u8 gText_SideQuestDesc_5[] = _("Description 5");
@@ -1330,7 +1330,7 @@ const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
 
 //map
 const u8 gText_SideQuestMap1[] = _("Archevale Town");
-const u8 gText_SideQuestMap2[] = _("Map 2");
+const u8 gText_SideQuestMap2[] = _("Gildeas Region");
 const u8 gText_SideQuestMap3[] = _("Map 3");
 const u8 gText_SideQuestMap4[] = _("Map 4");
 const u8 gText_SideQuestMap5[] = _("Map 5");
@@ -1361,37 +1361,22 @@ const u8 gText_SideQuestMap29[] = _("Map 29");
 const u8 gText_SideQuestMap30[] = _("Map 30");
 
 //subquests
-const u8 gText_SubQuest1_Name1[] = _("Part 1");
-const u8 gText_SubQuest1_Name2[] = _("Part 2");
-const u8 gText_SubQuest1_Name3[] = _("Part 3");
-const u8 gText_SubQuest1_Name4[] = _("Part 4");
-const u8 gText_SubQuest1_Name5[] = _("Part 5");
-const u8 gText_SubQuest1_Name6[] = _("Part 6");
-const u8 gText_SubQuest1_Name7[] = _("Part 7");
-const u8 gText_SubQuest1_Name8[] = _("Part 8");
-const u8 gText_SubQuest1_Name9[] = _("Part 9");
-const u8 gText_SubQuest1_Name10[] = _("Part 10");
-
-const u8 gText_SubQuest2_Name1[] = _("Part 1");
-const u8 gText_SubQuest2_Name2[] = _("Part 2");
-const u8 gText_SubQuest2_Name3[] = _("Part 3");
-const u8 gText_SubQuest2_Name4[] = _("Part 4");
-const u8 gText_SubQuest2_Name5[] = _("Part 5");
-const u8 gText_SubQuest2_Name6[] = _("Part 6");
-const u8 gText_SubQuest2_Name7[] = _("Part 7");
-const u8 gText_SubQuest2_Name8[] = _("Part 8");
-const u8 gText_SubQuest2_Name9[] = _("Part 9");
-const u8 gText_SubQuest2_Name10[] = _("Part 10");
-const u8 gText_SubQuest2_Name11[] = _("Part 11");
-const u8 gText_SubQuest2_Name12[] = _("Part 12");
-const u8 gText_SubQuest2_Name13[] = _("Part 13");
-const u8 gText_SubQuest2_Name14[] = _("Part 14");
-const u8 gText_SubQuest2_Name15[] = _("Part 15");
-const u8 gText_SubQuest2_Name16[] = _("Part 16");
-const u8 gText_SubQuest2_Name17[] = _("Part 17");
-const u8 gText_SubQuest2_Name18[] = _("Part 18");
-const u8 gText_SubQuest2_Name19[] = _("Part 19");
-const u8 gText_SubQuest2_Name20[] = _("Part 20");
+const u8 gText_SubQuest2_GetBadge1_Name[] = _("Obtain the Endurance Badge");
+const u8 gText_SubQuest2_GetBadge2_Name[] = _("Obtain the Harmony Badge");
+const u8 gText_SubQuest2_GetBadge3_Name[] = _("Obtain the Discipline Badge");
+const u8 gText_SubQuest2_GetBadge4_Name[] = _("Obtain the Wisdom Badge");
+const u8 gText_SubQuest2_GetBadge5_Name[] = _("Obtain the Growth Badge");
+const u8 gText_SubQuest2_GetBadge6_Name[] = _("Obtain the Courage Badge");
+const u8 gText_SubQuest2_GetBadge7_Name[] = _("Obtain the Temptation Badge");
+const u8 gText_SubQuest2_GetBadge8_Name[] = _("Obtain the Determination Badge");
+const u8 gText_SubQuest2_GetBadge9_Name[] = _("Obtain the Memory Badge");
+const u8 gText_SubQuest2_GetBadge10_Name[] = _("Obtain the Resilience Badge");
+const u8 gText_SubQuest2_GetBadge11_Name[] = _("Obtain the Adaptability Badge");
+const u8 gText_SubQuest2_GetBadge12_Name[] = _("Obtain the Strength Badge");
+const u8 gText_SubQuest2_GetBadge13_Name[] = _("Obtain the Survival Badge");
+const u8 gText_SubQuest2_GetBadge14_Name[] = _("Obtain the Humility Badge");
+const u8 gText_SubQuest2_GetBadge15_Name[] = _("Obtain the Insight Badge");
+const u8 gText_SubQuest2_GetBadge16_Name[] = _("Obtain the Acceptance Badge");
 
 const u8 gText_SubQuest1_Desc1[] = _("Description Sub 1");
 const u8 gText_SubQuest1_Desc2[] = _("Description Sub 2");

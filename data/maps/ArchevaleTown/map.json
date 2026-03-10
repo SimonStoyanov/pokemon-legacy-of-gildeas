@@ -118,15 +118,15 @@
       "x": 23,
       "y": 39,
       "elevation": 0,
-      "dest_map": "MAP_ARCHEVALE_TOWN",
+      "dest_map": "MAP_ROUTE001_NORTH_ENTRANCE",
       "dest_warp_id": "0"
     },
     {
       "x": 24,
       "y": 39,
       "elevation": 0,
-      "dest_map": "MAP_ARCHEVALE_TOWN",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ROUTE001_NORTH_ENTRANCE",
+      "dest_warp_id": "1"
     },
     {
       "x": 11,

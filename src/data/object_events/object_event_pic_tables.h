@@ -1345,6 +1345,18 @@ static const struct SpriteFrameImage sPicTable_HoOhOld[] = {
     overworld_frame(gObjectEventPic_HoOhOld, 4, 4, 1),
 };
 
+static const struct SpriteFrameImage sPicTable_Policeman[] = {
+    overworld_frame(gObjectEventPic_Policeman, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Policeman, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Policeman, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Policeman, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Policeman, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Policeman, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Policeman, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Policeman, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Policeman, 2, 4, 8),
+};
+
 static const struct SpriteFrameImage sPicTable_RubySapphireBrendan[] = {
     overworld_ascending_frames(gObjectEventPic_RubySapphireBrendanNormal, 2, 4),
 };
@@ -1359,6 +1371,10 @@ static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
 
 static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
     overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
+};
+
+static const struct SpriteFrameImage sPicTable_Clipboard[] = {
+    overworld_frame(gObjectEventPic_Clipboard, 2, 2, 0),
 };
 
 static const struct SpriteFrameImage sPicTable_Percy[] = {
@@ -1537,18 +1553,6 @@ static const struct SpriteFrameImage sPicTable_GreenVSSeekerBike[] = {
     overworld_frame(gObjectEventPic_GreenVSSeekerBike, 4, 4, 3),
     overworld_frame(gObjectEventPic_GreenVSSeekerBike, 4, 4, 4),
     overworld_frame(gObjectEventPic_GreenVSSeekerBike, 4, 4, 5),
-};
-
-static const struct SpriteFrameImage sPicTable_Policeman[] = {
-    overworld_frame(gObjectEventPic_Policeman, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Policeman, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Policeman, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Policeman, 2, 4, 3),
-    overworld_frame(gObjectEventPic_Policeman, 2, 4, 4),
-    overworld_frame(gObjectEventPic_Policeman, 2, 4, 5),
-    overworld_frame(gObjectEventPic_Policeman, 2, 4, 6),
-    overworld_frame(gObjectEventPic_Policeman, 2, 4, 7),
-    overworld_frame(gObjectEventPic_Policeman, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage sPicTable_LittleBoyFrlg[] = {
@@ -2514,10 +2518,6 @@ static const struct SpriteFrameImage sPicTable_Sign[] = {
 
 static const struct SpriteFrameImage sPicTable_WoodenSign[] = {
     overworld_frame(gObjectEventPic_WoodenSign, 2, 2, 0),
-};
-
-static const struct SpriteFrameImage sPicTable_Clipboard[] = {
-    overworld_frame(gObjectEventPic_Clipboard, 2, 2, 0),
 };
 
 static const struct SpriteFrameImage sPicTable_BirthIslandStoneFrlg[] = {
