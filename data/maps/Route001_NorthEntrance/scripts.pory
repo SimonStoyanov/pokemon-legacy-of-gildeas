@@ -1,0 +1,24 @@
+mapscripts Route001_NorthEntrance_MapScripts {}
+
+script Route001_NEntrance_PoliceMan {
+	lock
+	msgbox(format("Be aware of combrisks if you are going to Skalista City"))
+	release
+}
+
+script Route001_NEntrance_EventScript_Nurse {
+    lock
+	setvar(VAR_0x8004, 0)
+	msgbox(gText_WouldYouLikeToRestYourPkmnOut, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		msgbox(gText_IllTakeYourPkmn)
+		waitmessage
+		call(Common_EventScript_OutOfCenterPartyHeal)
+		msgbox("Take care!")
+	}
+	else {
+		call(EventScript_PkmnCenterNurse_Goodbye)
+	}
+    release
+}
+

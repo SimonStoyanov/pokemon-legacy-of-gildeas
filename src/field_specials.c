@@ -5781,13 +5781,13 @@ bool8 CheckAddCoins(void)
 void UpdatePercyWin(void)
 {
     u16 *varPercyRecord = GetVarPointer(VAR_PERCY_RECORD_W);
-
-    varPercyRecord += 1;
+    *varPercyRecord += 1;
+    VarSet(VAR_PERCY_RECORD_W, *varPercyRecord);
 }
 
 void UpdatePercyLose(void)
 {
     u16 *varPercyRecord = GetVarPointer(VAR_PERCY_RECORD_L);
-
-    varPercyRecord += 1;
+    *varPercyRecord += 1;
+    VarSet(VAR_PERCY_RECORD_L, *varPercyRecord);
 }

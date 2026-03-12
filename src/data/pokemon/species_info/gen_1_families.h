@@ -3363,7 +3363,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
     },
 
-    [SPECIES_PIKACHU_HOENN] =
+    [SPECIES_PIKACHU_GILDEAS] =
     {
         .baseHP        = 35,
         .baseAttack    = 55,

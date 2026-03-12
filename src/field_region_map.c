@@ -236,7 +236,7 @@ static void PrintTitleWindowText(void)
         region = gText_Kanto;
     else
         region = gText_Hoenn;
-    u32 hoennOffset = GetStringCenterAlignXOffset(FONT_NORMAL, region, 0x38);
+    u32 gildeasOffset = GetStringCenterAlignXOffset(FONT_NORMAL, region, 0x38);
     u32 flyOffset = GetStringCenterAlignXOffset(FONT_NORMAL, FlyPromptText, 0x38);
 
     FillWindowPixelBuffer(WIN_TITLE, PIXEL_FILL(1));
@@ -249,7 +249,7 @@ static void PrintTitleWindowText(void)
     }
     else
     {
-        AddTextPrinterParameterized(WIN_TITLE, FONT_NORMAL, region, hoennOffset, 1, 0, NULL);
+        AddTextPrinterParameterized(WIN_TITLE, FONT_NORMAL, region, gildeasOffset, 1, 0, NULL);
         CopyWindowToVram(WIN_TITLE, COPYWIN_FULL);
     }
 }

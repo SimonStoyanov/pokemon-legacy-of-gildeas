@@ -2561,6 +2561,10 @@ gCryTable::
 .if P_FAMILY_BUCCANUB == TRUE
 	cry Cry_Buccanub
 .endif @ P_FAMILY_BUCCANUB
+.if P_FAMILY_COMBRISK == TRUE
+	cry Cry_Combrisk
+	cry Cry_Claciquen
+.endif @ P_FAMILY_COMBRISK
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -5126,5 +5130,9 @@ gCryTable_Reverse::
 .if P_FAMILY_BUCCANUB == TRUE
 	cry_reverse Cry_Buccanub
 .endif @ P_FAMILY_BUCCANUB
+.if P_FAMILY_COMBRISK == TRUE
+	cry_reverse Cry_Combrisk
+	cry_reverse Cry_Claciquen
+.endif @ P_FAMILY_COMBRISK
 
 .endif @ P_CRIES_ENABLED

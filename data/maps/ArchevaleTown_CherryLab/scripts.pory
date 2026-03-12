@@ -187,7 +187,7 @@ script PlayersHouse_1F_EventScript_Cherry {
 	lock
 	faceplayer
 	switch (var(VAR_ARCHEVALE_LAB_STATE)) {
-		case 2: msgbox(format("PROF. CHERRY: A tough decision indeed {PLAYER}, but rest assured, these are great partners!"))
+		case 1: msgbox(format("PROF. CHERRY: A tough decision indeed {PLAYER}, but rest assured, these are great partners!"))
 		default: msgbox(format("PROF. CHERRY: Catch many Pokémon and treat them well! Good luck!"))
 	}
 	applymovement(LOCALID_CHERRY, moves(face_original_direction))
@@ -262,7 +262,7 @@ script PlayersHouse_1F_EventScript_Rival {
 	if (var(VAR_PERCY_RECORD_L) > VAR_PERCY_RECORD_W) {
 		call(CherryLab_RivalWon)
 	}
-	else {
+	elif (var(VAR_PERCY_RECORD_W) > VAR_PERCY_RECORD_L) {
 		call(CherryLab_RivalLost)
 	}
 
@@ -280,13 +280,14 @@ script PlayersHouse_1F_EventScript_Rival {
 	msgbox(format("PROF. CHERRY: The POKéDEX is a high-tech tool that automatically makes a record of any Pokémon you meet or catch.\pMake sure to check the many species living in Gildeas, and be careful with the stronger ones!\p
 		Go on {PLAYER}, find glory on the golden pilgrimage!"))
 
-	playfanfare(MUS_OBTAIN_BADGE)
-	questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_1_STARTERS)
+	completequest(QUEST_1_STARTERS)
+	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_2_GYM_1)
 	waitfanfare
 	openquestmenu
 
 	setvar(VAR_ARCHEVALE_HOUSE_STATE, 3)
 	setvar(VAR_ARCHEVALE_LAB_STATE, 3)
+	clearflag(FLAG_NO_WHITEOUT)
 
 	releaseall
 }
@@ -358,7 +359,7 @@ script CherryLab_Percy_Rival_BuccanubChosen {
 	waitmovement(LOCALID_PERCY_LAB)
 	applymovement(LOCALID_PLAYER, moves(face_left))
 	waitmovement(LOCALID_PLAYER)	
-	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Water...\N
+	msgbox(format("PERCY: Hey {PLAYER}! So you've chosen Buccanub...\N
 		Let's tests our skills!"))	
 
 	setflag(FLAG_NO_WHITEOUT)

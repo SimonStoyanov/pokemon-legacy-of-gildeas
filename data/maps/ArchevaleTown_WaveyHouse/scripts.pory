@@ -1,0 +1,8 @@
+mapscripts ArchevaleTown_WaveyHouse_MapScripts { }
+
+script WaveyHouse_EventScript {
+    lock
+    faceplayer
+    msgbox("I should talk to her...")
+    release
+}

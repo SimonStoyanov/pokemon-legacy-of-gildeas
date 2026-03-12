@@ -23,7 +23,7 @@ For Porymap to work with FRLG maps you need to adjust a few settings (`Options >
 ![porymap_identifier](./img/frlg/porymap_identifier.png)
 
 ## How to add maps
-For maps to be included in the firered build process they need to have a custom attribute `region` with the value `REGION_KANTO`. Not defining this attribute defaults to `REGION_HOENN`. The attribute can either be added in porymap or manually in the `map.json` file.
+For maps to be included in the firered build process they need to have a custom attribute `region` with the value `REGION_KANTO`. Not defining this attribute defaults to `REGION_GILDEAS`. The attribute can either be added in porymap or manually in the `map.json` file.
 
 **Examples:**
 

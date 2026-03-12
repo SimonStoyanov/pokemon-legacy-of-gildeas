@@ -2,7 +2,7 @@
   "id": "MAP_ARCHEVALE_TOWN_CHERRY_LAB",
   "name": "ArchevaleTown_CherryLab",
   "layout": "LAYOUT_ARCHEVALE_TOWN_CHERRY_LAB",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BIRCH_LAB",
   "region_map_section": "MAPSEC_ARCHEVALE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -11,7 +11,7 @@
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": false,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_INDOOR_1",
   "connections": null,
   "object_events": [
     {

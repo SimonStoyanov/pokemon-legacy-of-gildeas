@@ -323,7 +323,7 @@ static const u32 sRegionMapSevii67_Tilemap[] = INCBIN_U32("graphics/pokenav/regi
 
 const struct RegionMapInfo gRegionMapInfos[] =
 {
-    [REGION_MAP_HOENN]    =
+    [REGION_MAP_GILDEAS]    =
     {
         .dexMapPalette = sPokedexAreaMap_Pal,
         .dexMapGfx = sPokedexAreaMap_Gfx,
@@ -1174,9 +1174,9 @@ enum RegionMapType GetRegionMapType(u32 mapSecId)
         default:
             return REGION_MAP_KANTO;
         }
-    case REGION_HOENN:
+    case REGION_GILDEAS:
     default:
-        return REGION_MAP_HOENN;
+        return REGION_MAP_GILDEAS;
     }
 }
 
@@ -1204,7 +1204,7 @@ static mapsec_u16_t GetMapSecIdAt(u16 x, u16 y)
         default:
                 return sRegionMapSections_Kanto[y][x];
         }
-    case REGION_HOENN:
+    case REGION_GILDEAS:
     default:
             return sRegionMap_MapSectionLayout[y][x];
     }
@@ -2141,82 +2141,82 @@ struct FlyLocation
 static const struct FlyLocation sFlyLocations[] =
 {
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_LITTLEROOT_TOWN,
         .flag = FLAG_VISITED_LITTLEROOT_TOWN,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_OLDALE_TOWN,
         .flag = FLAG_VISITED_OLDALE_TOWN,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_DEWFORD_TOWN,
         .flag = FLAG_VISITED_DEWFORD_TOWN,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_LAVARIDGE_TOWN,
         .flag = FLAG_VISITED_LAVARIDGE_TOWN,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_FALLARBOR_TOWN,
         .flag = FLAG_VISITED_FALLARBOR_TOWN,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_VERDANTURF_TOWN,
         .flag = FLAG_VISITED_VERDANTURF_TOWN,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_PACIFIDLOG_TOWN,
         .flag = FLAG_VISITED_PACIFIDLOG_TOWN,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_PETALBURG_CITY,
         .flag = FLAG_VISITED_PETALBURG_CITY,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_SLATEPORT_CITY,
         .flag = FLAG_VISITED_SLATEPORT_CITY,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_MAUVILLE_CITY,
         .flag = FLAG_VISITED_MAUVILLE_CITY,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_RUSTBORO_CITY,
         .flag = FLAG_VISITED_RUSTBORO_CITY,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_FORTREE_CITY,
         .flag = FLAG_VISITED_FORTREE_CITY,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_LILYCOVE_CITY,
         .flag = FLAG_VISITED_LILYCOVE_CITY,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_MOSSDEEP_CITY,
         .flag = FLAG_VISITED_MOSSDEEP_CITY,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_SOOTOPOLIS_CITY,
         .flag = FLAG_VISITED_SOOTOPOLIS_CITY,
     },
     {
-        .regionMapType = REGION_MAP_HOENN,
+        .regionMapType = REGION_MAP_GILDEAS,
         .mapsec = MAPSEC_EVER_GRANDE_CITY,
         .flag = FLAG_VISITED_EVER_GRANDE_CITY,
     },

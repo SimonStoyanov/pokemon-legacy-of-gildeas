@@ -1,0 +1,8 @@
+mapscripts ArchevaleTown_WindaHouse_MapScripts { }
+
+script WindaHouse_EventScript {
+    lock
+    faceplayer
+    msgbox(format("I'd like to go with him to that resort in a faraway region..."))
+    release
+}
