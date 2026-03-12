@@ -9454,6 +9454,16 @@
       "secondary_tileset": "gTileset_GatehouseAlt",
       "border_filepath": "data/layouts/Route001_NorthEntrance/border.bin",
       "blockdata_filepath": "data/layouts/Route001_NorthEntrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE001",
+      "name": "Route001_Layout",
+      "width": 20,
+      "height": 60,
+      "primary_tileset": "gTileset_Snow",
+      "secondary_tileset": "gTileset_Archevale",
+      "border_filepath": "data/layouts/Route001/border.bin",
+      "blockdata_filepath": "data/layouts/Route001/map.bin"
     }
   ]
 }

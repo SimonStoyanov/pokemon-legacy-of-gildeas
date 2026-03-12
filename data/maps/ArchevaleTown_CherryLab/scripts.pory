@@ -280,13 +280,14 @@ script PlayersHouse_1F_EventScript_Rival {
 	msgbox(format("PROF. CHERRY: The POKéDEX is a high-tech tool that automatically makes a record of any Pokémon you meet or catch.\pMake sure to check the many species living in Gildeas, and be careful with the stronger ones!\p
 		Go on {PLAYER}, find glory on the golden pilgrimage!"))
 
-	playfanfare(MUS_OBTAIN_BADGE)
-	questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_1_STARTERS)
+	completequest(QUEST_1_STARTERS)
+	questmenu(QUEST_MENU_SET_ACTIVE, QUEST_2_GYM_1)
 	waitfanfare
 	openquestmenu
 
 	setvar(VAR_ARCHEVALE_HOUSE_STATE, 3)
 	setvar(VAR_ARCHEVALE_LAB_STATE, 3)
+	clearflag(FLAG_NO_WHITEOUT)
 
 	releaseall
 }

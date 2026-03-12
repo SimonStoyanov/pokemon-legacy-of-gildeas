@@ -16,7 +16,7 @@
 
 // quest number defines
 #define QUEST_1_STARTERS          0
-#define QUEST_2_GYMBADGES         1
+#define QUEST_2_GYM_1             1
 #define QUEST_3          2
 #define QUEST_4          3
 #define QUEST_5          4

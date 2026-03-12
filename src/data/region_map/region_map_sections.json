@@ -1637,6 +1637,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_001",
+      "name": "ROUTE 001",
       "x": 1,
       "y": 2,
       "width": 1,

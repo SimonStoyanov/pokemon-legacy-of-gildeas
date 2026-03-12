@@ -1170,7 +1170,8 @@
     "MarolivaTown_PlayerHouse"
   ],
   "gMapGroup_Gildeas_TownsAndRoutes": [
-    "ArchevaleTown"
+    "ArchevaleTown",
+    "Route001"
   ],
   "gMapGroup_Gildeas_IndoorArchevale": [
     "ArchevaleTown_PlayerHouse_1F",

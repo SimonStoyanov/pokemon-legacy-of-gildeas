@@ -3,24 +3,6 @@ mapscripts Route001_NorthEntrance_MapScripts {}
 script Route001_NEntrance_PoliceMan {
 	lock
 	msgbox(format("Be aware of combrisks if you are going to Skalista City"))
-	startquest(QUEST_2_GYMBADGES)
-	completesubquest(QUEST_2_GYMBADGES, 0)
-	completesubquest(QUEST_2_GYMBADGES, 1)
-	completesubquest(QUEST_2_GYMBADGES, 2)
-	completesubquest(QUEST_2_GYMBADGES, 3)
-	completesubquest(QUEST_2_GYMBADGES, 4)
-	completesubquest(QUEST_2_GYMBADGES, 5)
-	completesubquest(QUEST_2_GYMBADGES, 6)
-	completesubquest(QUEST_2_GYMBADGES, 7)
-	completesubquest(QUEST_2_GYMBADGES, 8)
-	completesubquest(QUEST_2_GYMBADGES, 9)
-	completesubquest(QUEST_2_GYMBADGES, 10)
-	completesubquest(QUEST_2_GYMBADGES, 11)
-	completesubquest(QUEST_2_GYMBADGES, 12)
-	completesubquest(QUEST_2_GYMBADGES, 13)
-	completesubquest(QUEST_2_GYMBADGES, 14)
-	completesubquest(QUEST_2_GYMBADGES, 15)
-	completesubquest(QUEST_2_GYMBADGES, 16)
 	release
 }
 

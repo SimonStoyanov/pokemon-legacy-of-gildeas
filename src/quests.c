@@ -402,7 +402,7 @@ static const struct SubQuest sSubQuests_Gyms[QUEST_2_SUB_COUNT] =
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      sText_Found
-	),
+	)
 };
 
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
@@ -423,7 +423,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJ_EVENT_GFX_PROF_BIRCH,
 	      OBJECT,
 	      NULL,
-	      QUEST_1_STARTERS
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_2,
@@ -432,8 +432,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap2,
 	      OBJ_EVENT_GFX_CLIPBOARD,
 	      OBJECT,
-	      sSubQuests_Gyms,
-	      QUEST_2_SUB_COUNT
+	      NULL,
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_3,
