@@ -685,55 +685,46 @@ const struct SpeciesInfo gSpeciesInfoGildeas[] =
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Claciquen"),
         .cryId = CRY_CLACIQUEN,
-        .natDexNum = NATIONAL_DEX_COMBRISK,
+        .natDexNum = NATIONAL_DEX_CLACIQUEN,
         .categoryName = _("Cluster Monarch"),
-        .height = 4,
-        .weight = 120,
+        .height = 18,
+        .weight = 600,
         .description = COMPOUND_STRING(
-            "Each piece of Combrisk is a living\n"
-            "crystal node.\n"
-            "When three align their heat cycles,\n"
-            "they move as one body."),
+            "When multiple Combrisks sync their\n"
+            "crystal cores, they form Claciqueen.\n"
+            "The hive launches freezing hex\n"
+            "crystals to protect the colony."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Combrisk,
+        .frontPic = gMonFrontPic_Claciquen,
         .frontPicSize = MON_COORDS_SIZE(64, 40),
-        .frontPicYOffset = 16,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 10),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 20),
-            ANIMCMD_FRAME(1, 20),
-            ANIMCMD_FRAME(0, 20),
-            ANIMCMD_FRAME(1, 20),
-            ANIMCMD_FRAME(0, 1),
-        ),
+        .frontPicYOffset = 20,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .frontAnimId = ANIM_V_SLIDE_WOBBLE,
-        .enemyMonElevation = 15,
-        .backPic = gMonBackPic_Combrisk,
+        .enemyMonElevation = 25,
+        .backPic = gMonBackPic_Claciquen,
         .backPicSize = MON_COORDS_SIZE(64, 48),
-        .backPicYOffset = 22,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
-        .palette = gMonPalette_Combrisk,
-        .shinyPalette = gMonShinyPalette_Combrisk,
-        .iconSprite = gMonIcon_Combrisk,
+        .palette = gMonPalette_Claciquen,
+        .shinyPalette = gMonShinyPalette_Claciquen,
+        .iconSprite = gMonIcon_Claciquen,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(0, 10, SHADOW_SIZE_M)
-        FOOTPRINT(Combrisk)
+        SHADOW(-5, 17, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Claciquen)
         OVERWORLD(
-            sPicTable_Combrisk,
+            sPicTable_Claciquen,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Combrisk,
-            gShinyOverworldPalette_Combrisk
+            gOverworldPalette_Claciquen,
+            gShinyOverworldPalette_Claciquen
         )
-        //.tmIlliterate = TRUE,
-        .levelUpLearnset = sCombriskLevelUpLearnset,
+        .levelUpLearnset = sClaciquenLevelUpLearnset,
         .teachableLearnset = sCombriskTeachableLearnset,
     },
 

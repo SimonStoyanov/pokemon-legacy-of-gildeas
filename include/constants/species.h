@@ -1698,23 +1698,23 @@
 #define SPECIES_BUCCANUB                                1579
 #define SPECIES_CORSHARK                                1580
 #define SPECIES_ADMIRAZOR                               1581
-#define SPECIES_BROWT                                   1582
-#define SPECIES_VERDROW                                 1583
-#define SPECIES_TEMPESTREL                              1584
-#define SPECIES_POMBON                                  1585
-#define SPECIES_POMBON2                                 1586
-#define SPECIES_POMBON3                                 1587
-#define SPECIES_GECQUA                                  1588
-#define SPECIES_GECQUA2                                 1589
-#define SPECIES_GECQUA3                                 1590
-#define SPECIES_HANAZEKI                                1591
-#define SPECIES_HYPMAREA                                1592
-#define SPECIES_MAEMPERIFF                              1593
-#define SPECIES_FALINKS_WEST                            1594
-#define SPECIES_COMBRISK                                1595
-#define SPECIES_CLACIQUEN                               1596
+#define SPECIES_COMBRISK                                1582
+#define SPECIES_CLACIQUEN                               1583
+#define SPECIES_BROWT                                   1584
+#define SPECIES_VERDROW                                 1585
+#define SPECIES_TEMPESTREL                              1586
+#define SPECIES_POMBON                                  1587
+#define SPECIES_POMBON2                                 1588
+#define SPECIES_POMBON3                                 1589
+#define SPECIES_GECQUA                                  1590
+#define SPECIES_GECQUA2                                 1591
+#define SPECIES_GECQUA3                                 1592
+#define SPECIES_HANAZEKI                                1593
+#define SPECIES_HYPMAREA                                1594
+#define SPECIES_MAEMPERIFF                              1595
+#define SPECIES_FALINKS_WEST                            1596
 
-#define SPECIES_EGG                                     (SPECIES_CLACIQUEN + 1)
+#define SPECIES_EGG                                     (SPECIES_FALINKS_WEST + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

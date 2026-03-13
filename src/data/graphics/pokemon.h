@@ -27789,6 +27789,23 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Combrisk[] = INCBIN_U16("graphics/pokemon/combrisk/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_Claciquen[] = INCBIN_U32("graphics/pokemon/claciquen/front.4bpp.smol");
+    const u16 gMonPalette_Claciquen[] = INCBIN_U16("graphics/pokemon/claciquen/normal.gbapal");
+    const u32 gMonBackPic_Claciquen[] = INCBIN_U32("graphics/pokemon/claciquen/back.4bpp.smol");
+    const u16 gMonShinyPalette_Claciquen[] = INCBIN_U16("graphics/pokemon/claciquen/shiny.gbapal");
+    const u8 gMonIcon_Claciquen[] = INCBIN_U8("graphics/pokemon/claciquen/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Claciquen[] = INCBIN_U8("graphics/pokemon/claciquen/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Claciquen[] = INCBIN_COMP("graphics/pokemon/claciquen/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Claciquen[] = INCBIN_U16("graphics/pokemon/claciquen/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_Claciquen[] = INCBIN_U16("graphics/pokemon/claciquen/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
 #endif //P_FAMILY_COMBRISK
 
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.smol");
