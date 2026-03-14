@@ -546,7 +546,7 @@ CherryLab_Percy_Rival_BudbittChosen::
 # 323 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	setflag FLAG_NO_WHITEOUT
 # 324 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	trainerbattle_no_intro_no_whiteout TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle
+	trainerbattle_no_intro_no_whiteout TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Lab_Text_PercyDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle
 	return
 
 
@@ -572,7 +572,7 @@ CherryLab_Percy_Rival_GliscaleChosen::
 # 344 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	setflag FLAG_NO_WHITEOUT
 # 345 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	trainerbattle_no_intro_no_whiteout TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle
+	trainerbattle_no_intro_no_whiteout TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Lab_Text_PercyDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle
 	return
 
 
@@ -598,7 +598,7 @@ CherryLab_Percy_Rival_BuccanubChosen::
 # 365 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	setflag FLAG_NO_WHITEOUT
 # 366 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
-	trainerbattle_no_intro_no_whiteout TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle
+	trainerbattle_no_intro_no_whiteout TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Lab_Text_PercyDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle
 	return
 
 
@@ -989,6 +989,11 @@ Lab_Rival_PostBattle_Text_1:
 	.string "PERCY: What a great start to my\n"
 	.string "journey! See you later!$"
 
-Lab_Text_PercyWins::
+Lab_Text_PercyDefeated::
 # 381 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
+	.string "...\n"
+	.string "...$"
+
+Lab_Text_PercyWins::
+# 386 "data/maps/ArchevaleTown_CherryLab/scripts.pory"
 	.string "PERCY: That's all you've got?$"

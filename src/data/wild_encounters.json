@@ -15,7 +15,7 @@
             5,
             10,
             8,
-            1,
+            14,
             1,
             1,
             1
@@ -41350,9 +41350,9 @@
                 "species": "SPECIES_TEDDIURSA"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
                 "min_level": 5,
@@ -41419,9 +41419,9 @@
                 "species": "SPECIES_CUBCHOO"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
                 "min_level": 5,
@@ -41488,9 +41488,9 @@
                 "species": "SPECIES_TEDDIURSA"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
                 "min_level": 5,
@@ -41557,9 +41557,9 @@
                 "species": "SPECIES_CUBCHOO"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
                 "min_level": 5,

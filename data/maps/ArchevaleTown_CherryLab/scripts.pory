@@ -321,7 +321,7 @@ script CherryLab_Percy_Rival_BudbittChosen {
 		Let's tests our skills!"))	
 
 	setflag(FLAG_NO_WHITEOUT)
-	trainerbattle_no_intro_no_whiteout(TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle)
+	trainerbattle_no_intro_no_whiteout(TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Lab_Text_PercyDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle)
 }
 
 script CherryLab_Percy_Rival_GliscaleChosen {
@@ -342,7 +342,7 @@ script CherryLab_Percy_Rival_GliscaleChosen {
 		Let's tests our skills!"))	
 	
 	setflag(FLAG_NO_WHITEOUT)
-	trainerbattle_no_intro_no_whiteout(TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle)
+	trainerbattle_no_intro_no_whiteout(TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Lab_Text_PercyDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle)
 }
 
 script CherryLab_Percy_Rival_BuccanubChosen {
@@ -363,7 +363,7 @@ script CherryLab_Percy_Rival_BuccanubChosen {
 		Let's tests our skills!"))	
 
 	setflag(FLAG_NO_WHITEOUT)
-	trainerbattle_no_intro_no_whiteout(TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Route103_Text_MayDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle)
+	trainerbattle_no_intro_no_whiteout(TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Lab_Text_PercyDefeated, Lab_Text_PercyWins, Lab_Rival_PostBattle)
 }
 
 script Lab_Rival_PostBattle {
@@ -376,6 +376,11 @@ script Lab_Rival_PostBattle {
 		msgbox(format("PERCY: What a great start to my journey! See you later!"))
 		special(UpdatePercyLose)
 	}
+}
+
+text Lab_Text_PercyDefeated{
+	"...\n"
+	"..."
 }
 
 text Lab_Text_PercyWins {

@@ -1,0 +1,7 @@
+mapscripts Route001_MapScripts { }
+ 
+script Route001_EventScript_Ivan {
+    trainerbattle_single(TRAINER_001_IVAN, Route001_Text_IvanIntro, Route001_Text_IvanDefeated)
+	msgbox(Route001_Text_IvanPostBattle, MSGBOX_AUTOCLOSE)
+}
+

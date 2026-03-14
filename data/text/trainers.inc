@@ -4794,3 +4794,17 @@ VSSeeker_Text_TrainersNotReady::
 	.string "The other Trainers don't appear\n"
 	.string "to be ready for battle.\p"
 	.string "Let's wait till later.{PAUSE_UNTIL_PRESS}$"
+
+
+Route001_Text_IvanIntro::
+	.string "I see you have the pilgrimage emblem\n"
+	.string "on you, that means we must battle!$"
+
+Route001_Text_IvanDefeated::
+	.string "Arrgh! And I thought this would\n"
+	.string "be an easy target...$"
+
+Route001_Text_IvanPostBattle::
+	.string "You are strong! Make sure to\n"
+	.string "keep that level for Skalista's gym.$"
+

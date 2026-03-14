@@ -59,17 +59,14 @@ Route103_EventScript_RivalBrendan::
 	end
 
 Route103_EventScript_StartMayBattleTreecko::
-	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_BUDBITT, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
 
 Route103_EventScript_StartMayBattleTorchic::
-	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_GLISCALE, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
 
 Route103_EventScript_StartMayBattleMudkip::
-	trainerbattle_no_intro TRAINER_PERCY_FIRST_BATTLE_BUCCANUB, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
 
@@ -298,10 +295,6 @@ Route103_Text_MayLetsBattle:
 	.string "battle!\p"
 	.string "I'll give you a taste of what being\n"
 	.string "a TRAINER is like.$"
-
-Route103_Text_MayDefeated:
-	.string "Wow! That's great!\n"
-	.string "{PLAYER}{KUN}, you're pretty good!$"
 
 Route103_Text_MayTimeToHeadBack:
 	.string "MAY: I think I know why my dad has\n"
