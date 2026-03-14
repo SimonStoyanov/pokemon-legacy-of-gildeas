@@ -86,3 +86,9 @@ const u32 gBattleEnvironmentAnimTilemap_Building[] = INCBIN_U32("graphics/battle
 
 const u32 gBattleEnvironmentAnimTiles_Rayquaza[] = INCBIN_U32("graphics/battle_environment/sky/anim_tiles.4bpp.smol");
 const u32 gBattleEnvironmentAnimTilemap_Rayquaza[] = INCBIN_U32("graphics/battle_environment/sky/anim_map.bin.smolTM");
+
+const u32 gBattleEnvironmentTiles_Snow[] = INCBIN_U32("graphics/battle_environment/snow/tiles.4bpp.smol");
+const u16 gBattleEnvironmentPalette_Snow[] = INCBIN_U16("graphics/battle_environment/snow/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_Snow[] = INCBIN_U32("graphics/battle_environment/snow/map.bin.smolTM");
+const u32 gBattleEnvironmentAnimTiles_Snow[] = INCBIN_U32("graphics/battle_environment/snow/anim_tiles.4bpp.smol");
+const u32 gBattleEnvironmentAnimTilemap_Snow[] = INCBIN_U32("graphics/battle_environment/snow/anim_map.bin.smolTM");

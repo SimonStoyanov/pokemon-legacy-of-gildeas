@@ -6,9 +6,9 @@
 
 #define TRAINER_NONE                          0
 #define TRAINER_001_IVAN                      1
-#define TRAINER_UNUSED                      2
-#define TRAINER_UNUSED_2                        3
-#define TRAINER_UNUSED_3                        4
+#define TRAINER_001_ALEN                      2
+#define TRAINER_001_BRIGITA                   3
+#define TRAINER_001_TATIANA                   4
 #define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7

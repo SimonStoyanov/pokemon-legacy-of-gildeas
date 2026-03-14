@@ -4808,3 +4808,37 @@ Route001_Text_IvanPostBattle::
 	.string "You are strong! Make sure to\n"
 	.string "keep that level for Skalista's gym.$"
 
+Route001_Text_AlenIntro::
+	.string "Do you also feel the mountain's\n"
+	.string "call?$"
+
+Route001_Text_AlenDefeated::
+	.string "I guess the mountain has a\n"
+	.string "favorite$"
+
+Route001_Text_AlenPostBattle::
+	.string "With this cold you must warm up,\n"
+	.string "be it with a battle or by hiking$"
+
+Route001_Text_BrigitaIntro::
+	.string "Did you know that some Pokémon\n"
+	.string "only appear during the night?$"
+
+Route001_Text_BrigitaDefeated::
+	.string "My poor bears... How could you!$"
+
+Route001_Text_BrigitaPostBattle::
+	.string "You'll never see both bears in\n"
+	.string "the wild at the same time$"
+
+Route001_Text_TatianaIntro::
+	.string "I am looking for a Makuhita to\n"
+	.string "get an advantage for the gym$"
+
+Route001_Text_TatianaDefeated::
+	.string "It seems I need a bigger team$"
+
+Route001_Text_TatianaPostBattle::
+	.string "Make sure to be prepared for\n"
+	.string "the Endurance badge$"
+

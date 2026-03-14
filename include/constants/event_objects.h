@@ -415,6 +415,7 @@
 
 // GILDEAS
 #define OBJ_EVENT_GFX_PERCY                      388
+#define OBJ_EVENT_GFX_POKE_BALL_GREEN            389
 
 // FRLG equivalents
 
@@ -426,7 +427,7 @@
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        389
+#define NUM_OBJ_EVENT_GFX                        390
 
 
 // These are dynamic object gfx ids.

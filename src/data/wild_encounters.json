@@ -41355,19 +41355,19 @@
                 "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               }
             ]
           }
@@ -41424,19 +41424,19 @@
                 "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               }
             ]
           }
@@ -41493,19 +41493,19 @@
                 "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               }
             ]
           }
@@ -41562,19 +41562,19 @@
                 "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               },
               {
-                "min_level": 5,
+                "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_WATTREL"
               }
             ]
           }

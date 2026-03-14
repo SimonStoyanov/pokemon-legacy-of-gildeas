@@ -217,6 +217,11 @@ extern const u32 gMultiBattleIntroBg_Player_Tilemap[];
 // battle environments
 extern const u32 gBattleEnvironmentTiles_TallGrass[];
 extern const u32 gBattleEnvironmentTilemap_TallGrass[];
+extern const u32 gBattleEnvironmentTiles_Snow[];
+extern const u32 gBattleEnvironmentTilemap_Snow[];
+extern const u16 gBattleEnvironmentPalette_Snow[];
+extern const u32 gBattleEnvironmentAnimTiles_Snow[];
+extern const u32 gBattleEnvironmentAnimTilemap_Snow[];
 extern const u32 gBattleEnvironmentAnimTiles_TallGrass[];
 extern const u32 gBattleEnvironmentAnimTilemap_TallGrass[];
 extern const u16 gBattleEnvironmentPalette_TallGrass[];

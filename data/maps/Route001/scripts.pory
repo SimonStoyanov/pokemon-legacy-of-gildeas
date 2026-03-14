@@ -5,3 +5,23 @@ script Route001_EventScript_Ivan {
 	msgbox(Route001_Text_IvanPostBattle, MSGBOX_AUTOCLOSE)
 }
 
+script Route001_EventScript_Alen {
+    trainerbattle_single(TRAINER_001_ALEN, Route001_Text_AlenIntro, Route001_Text_AlenDefeated)
+	msgbox(Route001_Text_AlenPostBattle, MSGBOX_AUTOCLOSE)
+}
+
+script Route001_EventScript_Brigita {
+    trainerbattle_single(TRAINER_001_BRIGITA, Route001_Text_BrigitaIntro, Route001_Text_BrigitaDefeated)
+	msgbox(Route001_Text_BrigitaPostBattle, MSGBOX_AUTOCLOSE)
+}
+
+script Route001_EventScript_Tatiana {
+    trainerbattle_single(TRAINER_001_TATIANA, Route001_Text_TatianaIntro, Route001_Text_TatianaDefeated)
+	msgbox(Route001_Text_TatianaPostBattle, MSGBOX_AUTOCLOSE)    
+}
+
+script Route001_Sign { 
+    lock
+    msgbox("To Archevale Town")
+    release
+}

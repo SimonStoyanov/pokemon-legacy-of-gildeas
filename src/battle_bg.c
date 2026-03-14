@@ -918,6 +918,9 @@ static u8 GetBattleEnvironmentOverride(void)
             return BATTLE_ENVIRONMENT_CHAMPION;
     }
 
+    if (battleScene == MAP_BATTLE_SCENE_SNOW)
+        return BATTLE_ENVIRONMENT_SNOW;
+
     if (battleScene == MAP_BATTLE_SCENE_NORMAL)
         return gBattleEnvironment;
 
@@ -1309,6 +1312,7 @@ void DrawBattleEntryBackground(void)
         }
 
         LoadBattleEnvironmentEntryGfx(gBattleEnvironment);
+        DebugPrintf("Environment: %d", gBattleEnvironment);
     }
 }
 
